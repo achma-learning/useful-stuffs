@@ -239,88 +239,120 @@
     text-align: center;
   }
   footer a { color: var(--text-muted); }
+
+  .lang-switch {
+    display: flex;
+    justify-content: center;
+    gap: 0.4rem;
+    margin-top: 1rem;
+  }
+  .lang-switch button {
+    font: inherit;
+    font-size: 0.85rem;
+    cursor: pointer;
+    background: var(--chip-bg);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 0.35rem 0.9rem;
+  }
+  .lang-switch button[aria-pressed="true"] {
+    background: var(--accent-soft);
+    border-color: var(--accent);
+    color: var(--accent-text);
+    font-weight: 600;
+  }
+
+  [dir="rtl"] ul.plain,
+  [dir="rtl"] ol.plain { padding-left: 0; padding-right: 1.2rem; }
+  [dir="rtl"] table.perm th,
+  [dir="rtl"] table.perm td { text-align: right; }
 </style>
 </head>
 <body>
 
 <header>
-  <h1>🇲🇦 Démarches Utiles — Maroc</h1>
-  <p>Pense-bête personnel : CIN, passeport, compte bancaire, permis de conduire et assurance. Coche au fur et à mesure — tes cases sont sauvegardées dans ce navigateur.</p>
+  <h1 data-ary="🇲🇦 الوثائق و الإجراءات — المغرب">🇲🇦 Démarches Utiles — Maroc</h1>
+  <p data-ary="مفكرة شخصية: البطاقة الوطنية، الباسبور، الحساب البنكي، البيرمي و التأمين. سيني كل حاجة ملي تكملها — الاختيارات ديالك تتسجل ف هاد النافيݣاتور.">Pense-bête personnel : CIN, passeport, compte bancaire, permis de conduire et assurance. Coche au fur et à mesure — tes cases sont sauvegardées dans ce navigateur.</p>
+  <div class="lang-switch">
+    <button type="button" data-lang="fr" aria-pressed="true">Français</button>
+    <button type="button" data-lang="ary" aria-pressed="false">الدارجة</button>
+  </div>
 </header>
 
 <nav class="pills">
-  <a href="#cin">🪪 CIN</a>
-  <a href="#passeport">📘 Passeport</a>
-  <a href="#banque">🏦 Compte bancaire</a>
-  <a href="#permis">🚗 Permis de conduire</a>
-  <a href="#assurance">🛡️ Assurance</a>
-  <a href="#portails">🌐 Portails numériques</a>
+  <a href="#cin" data-ary="🪪 البطاقة الوطنية">🪪 CIN</a>
+  <a href="#passeport" data-ary="📘 الباسبور">📘 Passeport</a>
+  <a href="#banque" data-ary="🏦 الحساب البنكي">🏦 Compte bancaire</a>
+  <a href="#permis" data-ary="🚗 البيرمي">🚗 Permis de conduire</a>
+  <a href="#assurance" data-ary="🛡️ التأمين">🛡️ Assurance</a>
+  <a href="#portails" data-ary="🌐 المواقع الرسمية">🌐 Portails numériques</a>
 </nav>
 
 <main>
 
   <section class="card" id="cin">
-    <h2>🪪 Carte d'Identité Nationale (CNIE)</h2>
-    <p class="subtitle">Première demande ou renouvellement de la carte nationale d'identité électronique.</p>
+    <h2 data-ary="🪪 البطاقة الوطنية للتعريف الإلكترونية">🪪 Carte d'Identité Nationale (CNIE)</h2>
+    <p class="subtitle" data-ary="الطلب الأول ولا التجديد ديال البطاقة الوطنية للتعريف الإلكترونية.">Première demande ou renouvellement de la carte nationale d'identité électronique.</p>
 
     <div class="facts">
-      <div class="fact"><strong>16 ans</strong>Âge à partir duquel la CNIE est obligatoire</div>
-      <div class="fact"><strong>10 ans / 7 ans</strong>Validité (12 ans et + / moins de 12 ans)</div>
-      <div class="fact"><strong>75 DH / 50 DH</strong>Timbre (12 ans et + / moins de 12 ans)</div>
-      <div class="fact"><strong>7–15 jours</strong>Délai (7–10 j grandes villes, 10–15 j zones rurales)</div>
+      <div class="fact" data-ary="&lt;strong&gt;16 عام&lt;/strong&gt;السن اللي فيه البطاقة تولي إجبارية"><strong>16 ans</strong>Âge à partir duquel la CNIE est obligatoire</div>
+      <div class="fact" data-ary="&lt;strong&gt;10 سنين / 7 سنين&lt;/strong&gt;الصلاحية (12 عام وفوق / أقل من 12 عام)"><strong>10 ans / 7 ans</strong>Validité (12 ans et + / moins de 12 ans)</div>
+      <div class="fact" data-ary="&lt;strong&gt;75 درهم / 50 درهم&lt;/strong&gt;التمبر (12 عام وفوق / أقل من 12 عام)"><strong>75 DH / 50 DH</strong>Timbre (12 ans et + / moins de 12 ans)</div>
+      <div class="fact" data-ary="&lt;strong&gt;7–15 يوم&lt;/strong&gt;المدة (7–10 أيام ف المدن الكبار، 10–15 يوم ف البادية)"><strong>7–15 jours</strong>Délai (7–10 j grandes villes, 10–15 j zones rurales)</div>
     </div>
 
-    <h3>Où faire la demande</h3>
+    <h3 data-ary="فين تدير الطلب">Où faire la demande</h3>
     <ul class="plain">
-      <li>Choisir « 1ère demande » ou « renouvellement » et prendre rendez-vous sur <a href="https://www.cnie.ma/request-type" target="_blank" rel="noopener">cnie.ma/request-type</a></li>
-      <li>Dépôt du dossier à l'arrondissement / annexe administrative ou au caïdat de ton lieu de résidence</li>
-      <li>Retrait au même guichet une fois la carte prête (SMS de notification) — le statut du dossier peut aussi être suivi en ligne avec le numéro de rendez-vous</li>
+      <li data-ary="ختار «الطلب الأول» ولا «التجديد» و خود موعد ف &lt;a href=&quot;https://www.cnie.ma/request-type&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;cnie.ma/request-type&lt;/a&gt;">Choisir « 1ère demande » ou « renouvellement » et prendre rendez-vous sur <a href="https://www.cnie.ma/request-type" target="_blank" rel="noopener">cnie.ma/request-type</a></li>
+      <li data-ary="توديع الملف ف المقاطعة / الملحقة الإدارية ولا القيادة ديال بلاصة السكنى ديالك">Dépôt du dossier à l'arrondissement / annexe administrative ou au caïdat de ton lieu de résidence</li>
+      <li data-ary="تسحب البطاقة من نفس الݣيشي ملي تكون واجدة (غادي يوصلك SMS) — تقدر تتبع الملف أونلاين بنمرة الموعد">Retrait au même guichet une fois la carte prête (SMS de notification) — le statut du dossier peut aussi être suivi en ligne avec le numéro de rendez-vous</li>
     </ul>
 
-    <h3>🆕 Première demande — pièces à fournir</h3>
+    <h3 data-ary="🆕 الطلب الأول — الوثائق المطلوبة">🆕 Première demande — pièces à fournir</h3>
     <ul class="checklist" data-group="cin-first">
-      <li><input type="checkbox" id="cinf-1"><label for="cinf-1">Attestation de résidence (police en ville ; gendarmerie royale en zone rurale, ou autorité administrative locale à défaut), ou attestation d'immatriculation consulaire avec adresse pour les MRE</label></li>
-      <li><input type="checkbox" id="cinf-2"><label for="cinf-2">4 photos d'identité de moins de 6 mois, conformes aux normes officielles</label></li>
-      <li><input type="checkbox" id="cinf-3"><label for="cinf-3">Timbre fiscal : 75 DH (12 ans et +) ou 50 DH (moins de 12 ans)</label></li>
-      <li><input type="checkbox" id="cinf-4"><label for="cinf-4">Copie de la page du livret de famille + le livret, ou copie intégrale de l'état civil, ou acte de naissance (en arabe et en latin, validité &lt; 3 mois pour ces deux dernières)</label></li>
-      <li><input type="checkbox" id="cinf-5"><label for="cinf-5">Étrangers naturalisés : copie certifiée conforme du document accordant la nationalité marocaine ; en cas de doute sur la nationalité, certificat de nationalité</label></li>
-      <li><input type="checkbox" id="cinf-6"><label for="cinf-6">Mineur : présence obligatoire de l'enfant, accompagné du représentant légal (CNIE du représentant + justificatif de sa qualité)</label></li>
+      <li><input type="checkbox" id="cinf-1"><label for="cinf-1" data-ary="شهادة الإقامة (البوليس ف المدينة؛ الدرك الملكي ف البادية، ولا السلطة المحلية إلا ماكانش)، ولا شهادة التسجيل القنصلي فيها العنوان بالنسبة لمغاربة العالم">Attestation de résidence (police en ville ; gendarmerie royale en zone rurale, ou autorité administrative locale à défaut), ou attestation d'immatriculation consulaire avec adresse pour les MRE</label></li>
+      <li><input type="checkbox" id="cinf-2"><label for="cinf-2" data-ary="4 تصاور ديال التعريف ماخصهاش تفوت 6 شهور، و تكون مطابقة للمعايير الرسمية">4 photos d'identité de moins de 6 mois, conformes aux normes officielles</label></li>
+      <li><input type="checkbox" id="cinf-3"><label for="cinf-3" data-ary="التمبر: 75 درهم (12 عام وفوق) ولا 50 درهم (أقل من 12 عام)">Timbre fiscal : 75 DH (12 ans et +) ou 50 DH (moins de 12 ans)</label></li>
+      <li><input type="checkbox" id="cinf-4"><label for="cinf-4" data-ary="نسخة من الصفحة ديالك ف دفتر الحالة المدنية + الدفتر معاك، ولا نسخة كاملة من الحالة المدنية، ولا رسم الولادة (بالعربية و باللاتينية، و ماتفوتش 3 شهور ف هاد الجوج الأخرين)">Copie de la page du livret de famille + le livret, ou copie intégrale de l'état civil, ou acte de naissance (en arabe et en latin, validité &lt; 3 mois pour ces deux dernières)</label></li>
+      <li><input type="checkbox" id="cinf-5"><label for="cinf-5" data-ary="الأجانب اللي داو الجنسية: نسخة مصادق عليها من الوثيقة اللي عطاتهم الجنسية المغربية؛ و إلا كان شك ف الجنسية، شهادة الجنسية">Étrangers naturalisés : copie certifiée conforme du document accordant la nationalité marocaine ; en cas de doute sur la nationalité, certificat de nationalité</label></li>
+      <li><input type="checkbox" id="cinf-6"><label for="cinf-6" data-ary="القاصر: حضور الولد إجباري، معاه النائب الشرعي ديالو (البطاقة ديال النائب + وثيقة كتبين الصفة ديالو)">Mineur : présence obligatoire de l'enfant, accompagné du représentant légal (CNIE du représentant + justificatif de sa qualité)</label></li>
     </ul>
 
-    <h3>🔄 Renouvellement — pièces à fournir</h3>
+    <h3 data-ary="🔄 التجديد — الوثائق المطلوبة">🔄 Renouvellement — pièces à fournir</h3>
     <ul class="checklist" data-group="cin-renew">
-      <li><input type="checkbox" id="cinr-1"><label for="cinr-1">Attestation de résidence (police en ville ; gendarmerie royale en zone rurale, ou autorité administrative locale à défaut), ou attestation d'immatriculation consulaire avec adresse pour les MRE</label></li>
-      <li><input type="checkbox" id="cinr-2"><label for="cinr-2">4 photos d'identité de moins de 6 mois, conformes aux normes officielles</label></li>
-      <li><input type="checkbox" id="cinr-3"><label for="cinr-3">Timbre fiscal : 75 DH (12 ans et +) ou 50 DH (moins de 12 ans)</label></li>
-      <li><input type="checkbox" id="cinr-4"><label for="cinr-4">Restitution de l'ancienne CNIE</label></li>
-      <li><input type="checkbox" id="cinr-5"><label for="cinr-5">Carte perdue, volée ou détériorée : déclaration sur l'honneur (par le titulaire ou son représentant légal pour un mineur)</label></li>
-      <li><input type="checkbox" id="cinr-6"><label for="cinr-6">Changement de nom, prénom, date/lieu de naissance ou filiation : pièces administratives ou judiciaires justifiant le changement</label></li>
-      <li><input type="checkbox" id="cinr-7"><label for="cinr-7">Mineur : présence obligatoire de l'enfant, accompagné du représentant légal (CNIE du représentant + justificatif de sa qualité)</label></li>
+      <li><input type="checkbox" id="cinr-1"><label for="cinr-1" data-ary="شهادة الإقامة (البوليس ف المدينة؛ الدرك الملكي ف البادية، ولا السلطة المحلية إلا ماكانش)، ولا شهادة التسجيل القنصلي فيها العنوان بالنسبة لمغاربة العالم">Attestation de résidence (police en ville ; gendarmerie royale en zone rurale, ou autorité administrative locale à défaut), ou attestation d'immatriculation consulaire avec adresse pour les MRE</label></li>
+      <li><input type="checkbox" id="cinr-2"><label for="cinr-2" data-ary="4 تصاور ديال التعريف ماخصهاش تفوت 6 شهور، و تكون مطابقة للمعايير الرسمية">4 photos d'identité de moins de 6 mois, conformes aux normes officielles</label></li>
+      <li><input type="checkbox" id="cinr-3"><label for="cinr-3" data-ary="التمبر: 75 درهم (12 عام وفوق) ولا 50 درهم (أقل من 12 عام)">Timbre fiscal : 75 DH (12 ans et +) ou 50 DH (moins de 12 ans)</label></li>
+      <li><input type="checkbox" id="cinr-4"><label for="cinr-4" data-ary="ترجيع البطاقة الوطنية القديمة">Restitution de l'ancienne CNIE</label></li>
+      <li><input type="checkbox" id="cinr-5"><label for="cinr-5" data-ary="البطاقة ضاعت، تسرقات ولا تخسرات: تصريح بالشرف (من صاحبها ولا من النائب الشرعي إلا كان قاصر)">Carte perdue, volée ou détériorée : déclaration sur l'honneur (par le titulaire ou son représentant légal pour un mineur)</label></li>
+      <li><input type="checkbox" id="cinr-6"><label for="cinr-6" data-ary="تبديل الاسم، النسب، تاريخ/مكان الازدياد ولا النسب: وثائق إدارية ولا قضائية كتبين التبديل">Changement de nom, prénom, date/lieu de naissance ou filiation : pièces administratives ou judiciaires justifiant le changement</label></li>
+      <li><input type="checkbox" id="cinr-7"><label for="cinr-7" data-ary="القاصر: حضور الولد إجباري، معاه النائب الشرعي ديالو (البطاقة ديال النائب + وثيقة كتبين الصفة ديالو)">Mineur : présence obligatoire de l'enfant, accompagné du représentant légal (CNIE du représentant + justificatif de sa qualité)</label></li>
     </ul>
-    <p class="subtitle" style="margin-top:-0.4rem;">Un renouvellement délivre une carte valable 10 ans (12 ans et +) ou jusqu'à 7 ans au maximum, expirant à 12 ans, pour les enfants de moins de 12 ans.</p>
+    <p class="subtitle" style="margin-top:-0.4rem;" data-ary="ف التجديد كتعطاك بطاقة صالحة 10 سنين (12 عام وفوق)، ولا حتى 7 سنين ك أقصى حد للدراري أقل من 12 عام، و كتسالي الصلاحية ملي يوصل 12 عام.">Un renouvellement délivre une carte valable 10 ans (12 ans et +) ou jusqu'à 7 ans au maximum, expirant à 12 ans, pour les enfants de moins de 12 ans.</p>
 
-    <h3>Mention optionnelle « épouse / veuve / veuf »</h3>
+    <h3 data-ary="الإشارة الاختيارية «زوجة / أرملة / أرمل»">Mention optionnelle « épouse / veuve / veuf »</h3>
     <ul class="plain">
-      <li>Copie conforme du contrat de mariage</li>
-      <li>Copie de l'acte de décès du conjoint (le cas échéant)</li>
-      <li>Copie de l'acte de naissance du conjoint, en arabe et en latin</li>
+      <li data-ary="نسخة مطابقة للأصل من عقد الزواج">Copie conforme du contrat de mariage</li>
+      <li data-ary="نسخة من رسم وفاة الزوج ولا الزوجة (إلا كان الحال)">Copie de l'acte de décès du conjoint (le cas échéant)</li>
+      <li data-ary="نسخة من رسم ولادة الزوج، بالعربية و باللاتينية">Copie de l'acte de naissance du conjoint, en arabe et en latin</li>
     </ul>
 
-    <div class="tip">
+    <div class="tip" data-ary="&lt;strong&gt;💡 نصائح باش مايترفضش الملف ديالك:&lt;/strong&gt; تصاور جداد (أقل من 6 شهور) و مطابقة للمعايير • وثائق حديثة (شهادة الإقامة أقل من 3 شهور) • المعلومات ديال الموعد أونلاين تكون هي هي اللي ف الوثائق • الاسم و تاريخ الازدياد مطابقين لرسم الولادة. إلا كانت البطاقة القديمة سالات ولا قربات تسالي، المسطرة كتكون مبسطة — غير قدمها ملي تودع الملف.">
       <strong>💡 Conseils pour éviter un refus :</strong> photos récentes (&lt; 6 mois) et conformes aux normes • documents à jour (attestation de résidence &lt; 3 mois) • informations du rendez-vous en ligne identiques à celles des documents • nom et date de naissance conformes à l'acte de naissance. Si l'ancienne carte est expirée ou proche de l'expiration, la procédure est simplifiée — présente-la simplement au dépôt du dossier.
     </div>
 
-    <h3>📷 Normes des photos d'identité</h3>
+    <h3 data-ary="📷 معايير تصاور التعريف">📷 Normes des photos d'identité</h3>
     <ul class="plain">
-      <li>Taille : 35 × 45 mm (hors cadre) ; distance menton – haut du crâne entre 29 et 34 mm ; visage centré, nez sur l'axe</li>
-      <li>Qualité : photo nette, sans tache ni trace d'encre</li>
-      <li>Éclairage / couleurs : photo en couleur, sans flash direct ni yeux rouges, sans ombre sur le visage ou le fond</li>
-      <li>Fond : couleur unie et claire (gris clair ou bleu clair)</li>
-      <li>Couvre-chef : interdit, sauf le voile s'il laisse le visage entièrement dégagé, du menton au haut du front</li>
-      <li>Position de la tête : droite, visage face à l'objectif</li>
-      <li>Cadrage et expression : personne seule, sans objet à côté, expression neutre, bouche fermée</li>
-      <li>Visage et yeux : entièrement découverts, yeux ouverts</li>
-      <li>Lunettes : verres non teintés, non réfléchissants, monture fine</li>
+      <li data-ary="الحجم: 35 × 45 ملم (بلا الإطار)؛ المسافة ما بين الذقن و أعلى الراس ما بين 29 و 34 ملم؛ الوجه ف الوسط، النيف على المحور">Taille : 35 × 45 mm (hors cadre) ; distance menton – haut du crâne entre 29 et 34 mm ; visage centré, nez sur l'axe</li>
+      <li data-ary="الجودة: تصويرة صافية، بلا بقع و بلا علامات ديال المداد">Qualité : photo nette, sans tache ni trace d'encre</li>
+      <li data-ary="الإضاءة / الألوان: تصويرة ملونة، بلا فلاش مباشر و بلا عينين حمر، بلا ظلال على الوجه ولا على الخلفية">Éclairage / couleurs : photo en couleur, sans flash direct ni yeux rouges, sans ombre sur le visage ou le fond</li>
+      <li data-ary="الخلفية: لون موحد و فاتح (رمادي فاتح ولا أزرق فاتح)">Fond : couleur unie et claire (gris clair ou bleu clair)</li>
+      <li data-ary="غطاء الراس: ممنوع، ماعدا الحجاب إلا خلا الوجه كامل باين، من الذقن حتى لأعلى الجبهة">Couvre-chef : interdit, sauf le voile s'il laisse le visage entièrement dégagé, du menton au haut du front</li>
+      <li data-ary="وضعية الراس: مستقيمة، الوجه ف مواجهة الكاميرا">Position de la tête : droite, visage face à l'objectif</li>
+      <li data-ary="الإطار و التعبير: الشخص بوحدو، بلا حتى حاجة حداه، تعبير محايد، الفم مسدود">Cadrage et expression : personne seule, sans objet à côté, expression neutre, bouche fermée</li>
+      <li data-ary="الوجه و العينين: مكشوفين كاملين، العينين محلولين">Visage et yeux : entièrement découverts, yeux ouverts</li>
+      <li data-ary="النظارات: زاج ماشي مصبوغ، ماكيعكسش الضو، و الإطار رقيق">Lunettes : verres non teintés, non réfléchissants, monture fine</li>
     </ul>
 
     <div style="border:1px solid var(--border); border-radius:10px; overflow:hidden; margin-top:0.75rem;">
@@ -333,7 +365,7 @@
       <a href="assets/normes-photos-cin.pdf" download>📥 Télécharger le PDF</a>
     </div>
 
-    <h3>Liens utiles</h3>
+    <h3 data-ary="روابط مفيدة">Liens utiles</h3>
     <div class="links-row">
       <a href="https://www.cnie.ma/" target="_blank" rel="noopener">🌐 cnie.ma — portail officiel CNIE</a>
       <a href="https://www.cnie.ma/static/procedure" target="_blank" rel="noopener">📋 Procédure officielle (1ère demande / renouvellement)</a>
@@ -349,42 +381,44 @@
   </section>
 
   <section class="card" id="passeport">
-    <h2>📘 Passeport biométrique</h2>
-    <p class="subtitle">Basé sur les notes personnelles + le guide officiel passeport.ma.</p>
+    <h2 data-ary="📘 الباسبور البيومتري">📘 Passeport biométrique</h2>
+    <p class="subtitle" data-ary="معتمد على ملاحظات شخصية + الدليل الرسمي ديال passeport.ma.">Basé sur les notes personnelles + le guide officiel passeport.ma.</p>
 
     <div class="facts">
-      <div class="fact"><strong>500 DH</strong>Adulte</div>
-      <div class="fact"><strong>100 DH</strong>Enfant &lt; 12 ans</div>
-      <div class="fact"><strong>5 ans</strong>Durée de validité</div>
-      <div class="fact"><strong>4–8 semaines</strong>Délai moyen de fabrication</div>
+      <div class="fact" data-ary="&lt;strong&gt;500 درهم&lt;/strong&gt;الكبار"><strong>500 DH</strong>Adulte</div>
+      <div class="fact" data-ary="&lt;strong&gt;100 درهم&lt;/strong&gt;الدراري أقل من 12 عام"><strong>100 DH</strong>Enfant &lt; 12 ans</div>
+      <div class="fact" data-ary="&lt;strong&gt;5 سنين&lt;/strong&gt;مدة الصلاحية (3 سنين للدراري أقل من 3 سنين)"><strong>5 ans</strong>Durée de validité (3 ans pour les moins de 3 ans)</div>
+      <div class="fact" data-ary="&lt;strong&gt;4–8 سيمانات&lt;/strong&gt;المدة المتوسطة ديال التحضير"><strong>4–8 semaines</strong>Délai moyen de fabrication</div>
     </div>
 
-    <h3>Conditions de délivrance</h3>
+    <h3 data-ary="شروط التسليم">Conditions de délivrance</h3>
     <ul class="plain">
-      <li>Délivré sans condition d'âge à tout citoyen marocain qui en fait la demande, sauf décision judiciaire contraire</li>
-      <li>Pour un mineur ou un majeur sous tutelle : demande faite par l'un des parents ou, à défaut, le représentant légal</li>
-      <li>Validité : 5 ans. À chaque renouvellement, il faut racheter un e-timbre (500 DH) — même procédure et même tarif qu'une première demande</li>
-      <li>12 à 18 ans et adultes : passeport établi sur la base de la CNIE en cours de validité</li>
-      <li>Moins de 12 ans sans CNIE valide : passeport établi sur la base de l'extrait d'acte de naissance</li>
-      <li>Renouvellement : le nouveau passeport n'est remis qu'après annulation de l'ancien</li>
+      <li data-ary="كيتسلم بلا شرط ديال السن لكل مواطن مغربي اللي طلبو، إلا إلا كان حكم قضائي كيمنع">Délivré sans condition d'âge à tout citoyen marocain qui en fait la demande, sauf décision judiciaire contraire</li>
+      <li data-ary="بالنسبة للقاصر ولا الراشد تحت الوصاية: الطلب كيديرو واحد من الوالدين ولا، إلا ماكانوش، النائب الشرعي">Pour un mineur ou un majeur sous tutelle : demande faite par l'un des parents ou, à défaut, le représentant légal</li>
+      <li data-ary="الصلاحية: 5 سنين (3 سنين للدراري أقل من 3 سنين). ف كل تجديد خاصك تشري تمبر إلكتروني جديد (500 درهم) — نفس المسطرة و نفس الثمن بحال الطلب الأول">Validité : 5 ans (3 ans pour les enfants de moins de 3 ans). À chaque renouvellement, il faut racheter un e-timbre (500 DH) — même procédure et même tarif qu'une première demande</li>
+      <li data-ary="الثمن تزاد من 300 ل 500 درهم ف 2018 بموجب قانون المالية">Le tarif est passé de 300 à 500 DH en 2018 (loi de finances)</li>
+      <li data-ary="ديسمبر 2023: وزارة الداخلية أعلنات على رقمنة المسطرة باش يتقدر الطلب يتدار عن بعد بالبطاقة الوطنية الإلكترونية ولا الباسبور البيومتري">Décembre 2023 : le ministère de l'Intérieur a annoncé la dématérialisation de la demande, pour permettre de la déposer à distance avec la seule CNIE ou le passeport biométrique</li>
+      <li data-ary="من 12 ل 18 عام و الكبار: الباسبور كيتدار على أساس البطاقة الوطنية الصالحة">12 à 18 ans et adultes : passeport établi sur la base de la CNIE en cours de validité</li>
+      <li data-ary="أقل من 12 عام بلا بطاقة وطنية صالحة: الباسبور كيتدار على أساس رسم الولادة">Moins de 12 ans sans CNIE valide : passeport établi sur la base de l'extrait d'acte de naissance</li>
+      <li data-ary="التجديد: الباسبور الجديد ماكيتسلمش حتى يتلغى القديم">Renouvellement : le nouveau passeport n'est remis qu'après annulation de l'ancien</li>
     </ul>
 
-    <h3>🚨 Passeport provisoire (urgence)</h3>
+    <h3 data-ary="🚨 الباسبور المؤقت (حالة مستعجلة)">🚨 Passeport provisoire (urgence)</h3>
     <ul class="plain">
-      <li>Délivré à titre exceptionnel quand le passeport biométrique ne peut être attendu : motif humanitaire, médical, professionnel, scolaire, ou toute nécessité impérieuse et imprévisible dûment justifiée</li>
-      <li>Demande faite par l'intéressé ou, pour un mineur ou un majeur sous tutelle, par son représentant légal</li>
-      <li>12 à 18 ans et adultes : établi sur la base de la CNIE en cours de validité</li>
-      <li>Moins de 12 ans sans CNIE : établi sur la base de l'extrait d'acte de naissance ou de la copie intégrale de l'état civil</li>
-      <li>Non recevable si un passeport provisoire a déjà été obtenu au cours des 5 dernières années</li>
-      <li>Renouvellement : le nouveau passeport n'est remis qu'après annulation de l'ancien</li>
+      <li data-ary="كيتسلم استثنائيا ملي ماتقدرش تسنى الباسبور البيومتري: سبب إنساني، طبي، مهني، دراسي، ولا أي ضرورة قاهرة و غير متوقعة مبررة">Délivré à titre exceptionnel quand le passeport biométrique ne peut être attendu : motif humanitaire, médical, professionnel, scolaire, ou toute nécessité impérieuse et imprévisible dûment justifiée</li>
+      <li data-ary="الطلب كيديرو المعني بالأمر ولا، إلا كان قاصر ولا راشد تحت الوصاية، النائب الشرعي ديالو">Demande faite par l'intéressé ou, pour un mineur ou un majeur sous tutelle, par son représentant légal</li>
+      <li data-ary="من 12 ل 18 عام و الكبار: كيتدار على أساس البطاقة الوطنية الصالحة">12 à 18 ans et adultes : établi sur la base de la CNIE en cours de validité</li>
+      <li data-ary="أقل من 12 عام بلا بطاقة وطنية: كيتدار على أساس رسم الولادة ولا النسخة الكاملة من الحالة المدنية">Moins de 12 ans sans CNIE : établi sur la base de l'extrait d'acte de naissance ou de la copie intégrale de l'état civil</li>
+      <li data-ary="الطلب ماكيتقبلش إلا سبق ليك خديتي باسبور مؤقت ف 5 سنين اللي فاتو">Non recevable si un passeport provisoire a déjà été obtenu au cours des 5 dernières années</li>
+      <li data-ary="التجديد: الباسبور الجديد ماكيتسلمش حتى يتلغى القديم">Renouvellement : le nouveau passeport n'est remis qu'après annulation de l'ancien</li>
     </ul>
 
-    <h3>Étapes de la demande</h3>
+    <h3 data-ary="مراحل الطلب">Étapes de la demande</h3>
     <ol class="plain" style="padding-left:1.4rem;">
-      <li>Acheter le e-timbre en ligne (500 DH, code à 16 chiffres) — obligatoire avant de remplir le formulaire, y compris à chaque renouvellement (le passeport n'est valable que 5 ans)</li>
-      <li>Remplir le formulaire de demande de passeport (daté, signé, code e-timbre renseigné)</li>
-      <li>Réunir les pièces à fournir selon ton profil (voir listes ci-dessous) et déposer le dossier</li>
-      <li>Suivre l'avancement du dossier en ligne avec le numéro de dossier ou tes informations personnelles</li>
+      <li data-ary="تشري التمبر الإلكتروني أونلاين (500 درهم، كود ديال 16 رقم) — إجباري قبل ما تعمر الاستمارة، حتى ف كل تجديد (الباسبور صالح غير 5 سنين)">Acheter le e-timbre en ligne (500 DH, code à 16 chiffres) — obligatoire avant de remplir le formulaire, y compris à chaque renouvellement (le passeport n'est valable que 5 ans)</li>
+      <li data-ary="تعمر استمارة طلب الباسبور (مؤرخة، موقعة، و فيها كود التمبر)">Remplir le formulaire de demande de passeport (daté, signé, code e-timbre renseigné)</li>
+      <li data-ary="تجمع الوثائق حسب الحالة ديالك (شوف اللوائح تحت) و تودع الملف">Réunir les pièces à fournir selon ton profil (voir listes ci-dessous) et déposer le dossier</li>
+      <li data-ary="تتبع الملف أونلاين بنمرة الملف ولا بالمعلومات الشخصية ديالك">Suivre l'avancement du dossier en ligne avec le numéro de dossier ou tes informations personnelles</li>
     </ol>
     <div class="links-row">
       <a href="https://etf.tax.gov.ma/etimfisc" target="_blank" rel="noopener">💳 1. Acheter le e-timbre (500 DH)</a>
@@ -392,58 +426,58 @@
       <a href="https://www.passeport.ma/SuiviDemande/SuiviDemande" target="_blank" rel="noopener">🔍 4. Suivre ma demande</a>
     </div>
 
-    <h3>🧑 Pièces à fournir — majeurs</h3>
+    <h3 data-ary="🧑 الوثائق المطلوبة — الكبار">🧑 Pièces à fournir — majeurs</h3>
     <ul class="checklist" data-group="passeport-majeur">
-      <li><input type="checkbox" id="ppm-1"><label for="ppm-1">Formulaire de demande renseigné, daté et signé par le demandeur, avec le code e-timbre (16 chiffres)</label></li>
-      <li><input type="checkbox" id="ppm-2"><label for="ppm-2">Photocopie de la CNIE en cours de validité</label></li>
-      <li><input type="checkbox" id="ppm-3"><label for="ppm-3">1 photo d'identité récente 35×45 mm, fond bleu, blanc ou gris clair, de face, visage entièrement visible</label></li>
-      <li><input type="checkbox" id="ppm-4"><label for="ppm-4">Renouvellement : ancien passeport (ou justificatif de sa destination) ; perte/vol : déclaration établie auprès de la Sûreté Nationale / Gendarmerie Royale (au Maroc) ou police / consulat-ambassade (à l'étranger), mentionnant le numéro de l'ancien passeport</label></li>
+      <li><input type="checkbox" id="ppm-1"><label for="ppm-1" data-ary="استمارة الطلب معمرة، مؤرخة و موقعة من طرف صاحب الطلب، فيها كود التمبر (16 رقم)">Formulaire de demande renseigné, daté et signé par le demandeur, avec le code e-timbre (16 chiffres)</label></li>
+      <li><input type="checkbox" id="ppm-2"><label for="ppm-2" data-ary="نسخة من البطاقة الوطنية الصالحة">Photocopie de la CNIE en cours de validité</label></li>
+      <li><input type="checkbox" id="ppm-3"><label for="ppm-3" data-ary="تصويرة تعريف جديدة 35×45 ملم، الخلفية زرقة، بيضة ولا رمادية فاتحة، من قدام، و الوجه باين كامل">1 photo d'identité récente 35×45 mm, fond bleu, blanc ou gris clair, de face, visage entièrement visible</label></li>
+      <li><input type="checkbox" id="ppm-4"><label for="ppm-4" data-ary="التجديد: الباسبور القديم (ولا وثيقة كتبين فين مشا)؛ الضياع/السرقة: تصريح عند الأمن الوطني / الدرك الملكي (ف المغرب) ولا البوليس / القنصلية-السفارة (ف الخارج)، فيه نمرة الباسبور القديم">Renouvellement : ancien passeport (ou justificatif de sa destination) ; perte/vol : déclaration établie auprès de la Sûreté Nationale / Gendarmerie Royale (au Maroc) ou police / consulat-ambassade (à l'étranger), mentionnant le numéro de l'ancien passeport</label></li>
     </ul>
 
-    <h3>🧑‍🦯 Pièces à fournir — majeurs sous tutelle</h3>
+    <h3 data-ary="🧑‍🦯 الوثائق المطلوبة — الكبار تحت الوصاية">🧑‍🦯 Pièces à fournir — majeurs sous tutelle</h3>
     <ul class="checklist" data-group="passeport-tutelle">
-      <li><input type="checkbox" id="ppt-1"><label for="ppt-1">Formulaire de demande renseigné, daté et signé par l'un des parents ou, à défaut, le représentant légal, avec le code e-timbre</label></li>
-      <li><input type="checkbox" id="ppt-2"><label for="ppt-2">Photocopie de la CNIE du demandeur en cours de validité</label></li>
-      <li><input type="checkbox" id="ppt-3"><label for="ppt-3">Justificatif de l'identité et de la qualité du représentant légal</label></li>
-      <li><input type="checkbox" id="ppt-4"><label for="ppt-4">1 photo d'identité récente 35×45 mm, fond bleu, blanc ou gris clair, de face, visage entièrement visible</label></li>
-      <li><input type="checkbox" id="ppt-5"><label for="ppt-5">Renouvellement : ancien passeport (ou justificatif de sa destination) ; perte/vol : déclaration établie par le représentant légal auprès de la Sûreté Nationale / Gendarmerie Royale (au Maroc) ou police / consulat-ambassade (à l'étranger)</label></li>
+      <li><input type="checkbox" id="ppt-1"><label for="ppt-1" data-ary="استمارة الطلب معمرة، مؤرخة و موقعة من واحد من الوالدين ولا، إلا ماكانوش، من النائب الشرعي، فيها كود التمبر">Formulaire de demande renseigné, daté et signé par l'un des parents ou, à défaut, le représentant légal, avec le code e-timbre</label></li>
+      <li><input type="checkbox" id="ppt-2"><label for="ppt-2" data-ary="نسخة من البطاقة الوطنية ديال صاحب الطلب و تكون صالحة">Photocopie de la CNIE du demandeur en cours de validité</label></li>
+      <li><input type="checkbox" id="ppt-3"><label for="ppt-3" data-ary="وثيقة كتبين هوية و صفة النائب الشرعي">Justificatif de l'identité et de la qualité du représentant légal</label></li>
+      <li><input type="checkbox" id="ppt-4"><label for="ppt-4" data-ary="تصويرة تعريف جديدة 35×45 ملم، الخلفية زرقة، بيضة ولا رمادية فاتحة، من قدام، و الوجه باين كامل">1 photo d'identité récente 35×45 mm, fond bleu, blanc ou gris clair, de face, visage entièrement visible</label></li>
+      <li><input type="checkbox" id="ppt-5"><label for="ppt-5" data-ary="التجديد: الباسبور القديم (ولا وثيقة كتبين فين مشا)؛ الضياع/السرقة: تصريح كيديرو النائب الشرعي عند الأمن الوطني / الدرك الملكي (ف المغرب) ولا البوليس / القنصلية-السفارة (ف الخارج)">Renouvellement : ancien passeport (ou justificatif de sa destination) ; perte/vol : déclaration établie par le représentant légal auprès de la Sûreté Nationale / Gendarmerie Royale (au Maroc) ou police / consulat-ambassade (à l'étranger)</label></li>
     </ul>
 
-    <h3>🧒 Pièces à fournir — mineurs de 12 à 18 ans</h3>
+    <h3 data-ary="🧒 الوثائق المطلوبة — القاصرين من 12 ل 18 عام">🧒 Pièces à fournir — mineurs de 12 à 18 ans</h3>
     <ul class="checklist" data-group="passeport-12-18">
-      <li><input type="checkbox" id="pp1218-1"><label for="pp1218-1">Formulaire de demande renseigné, daté et signé par l'un des parents ou, à défaut, le représentant légal, avec le code e-timbre</label></li>
-      <li><input type="checkbox" id="pp1218-2"><label for="pp1218-2">Photocopie de la CNIE du mineur en cours de validité</label></li>
-      <li><input type="checkbox" id="pp1218-3"><label for="pp1218-3">1 photo d'identité récente 35×45 mm, fond bleu, blanc ou gris clair, de face, visage entièrement visible</label></li>
-      <li><input type="checkbox" id="pp1218-4"><label for="pp1218-4">Justificatif d'identité des parents (CNIE si marocains ; carte d'immatriculation au Maroc ou passeport valide si étrangers)</label></li>
-      <li><input type="checkbox" id="pp1218-5"><label for="pp1218-5">Si le représentant légal n'est pas le père ou la mère : justificatif de son identité et de sa qualité</label></li>
-      <li><input type="checkbox" id="pp1218-6"><label for="pp1218-6">Renouvellement : ancien passeport (ou justificatif de sa destination) ; perte/vol : déclaration établie par le représentant légal auprès de la Sûreté Nationale / Gendarmerie Royale (au Maroc) ou police / consulat-ambassade (à l'étranger)</label></li>
+      <li><input type="checkbox" id="pp1218-1"><label for="pp1218-1" data-ary="استمارة الطلب معمرة، مؤرخة و موقعة من واحد من الوالدين ولا، إلا ماكانوش، من النائب الشرعي، فيها كود التمبر">Formulaire de demande renseigné, daté et signé par l'un des parents ou, à défaut, le représentant légal, avec le code e-timbre</label></li>
+      <li><input type="checkbox" id="pp1218-2"><label for="pp1218-2" data-ary="نسخة من البطاقة الوطنية ديال القاصر و تكون صالحة">Photocopie de la CNIE du mineur en cours de validité</label></li>
+      <li><input type="checkbox" id="pp1218-3"><label for="pp1218-3" data-ary="تصويرة تعريف جديدة 35×45 ملم، الخلفية زرقة، بيضة ولا رمادية فاتحة، من قدام، و الوجه باين كامل">1 photo d'identité récente 35×45 mm, fond bleu, blanc ou gris clair, de face, visage entièrement visible</label></li>
+      <li><input type="checkbox" id="pp1218-4"><label for="pp1218-4" data-ary="وثيقة هوية الوالدين (البطاقة الوطنية إلا كانو مغاربة؛ بطاقة التسجيل بالمغرب ولا باسبور صالح إلا كانو أجانب)">Justificatif d'identité des parents (CNIE si marocains ; carte d'immatriculation au Maroc ou passeport valide si étrangers)</label></li>
+      <li><input type="checkbox" id="pp1218-5"><label for="pp1218-5" data-ary="إلا كان النائب الشرعي ماشي هو الأب ولا الأم: وثيقة كتبين هويتو و صفتو">Si le représentant légal n'est pas le père ou la mère : justificatif de son identité et de sa qualité</label></li>
+      <li><input type="checkbox" id="pp1218-6"><label for="pp1218-6" data-ary="التجديد: الباسبور القديم (ولا وثيقة كتبين فين مشا)؛ الضياع/السرقة: تصريح كيديرو النائب الشرعي عند الأمن الوطني / الدرك الملكي (ف المغرب) ولا البوليس / القنصلية-السفارة (ف الخارج)">Renouvellement : ancien passeport (ou justificatif de sa destination) ; perte/vol : déclaration établie par le représentant légal auprès de la Sûreté Nationale / Gendarmerie Royale (au Maroc) ou police / consulat-ambassade (à l'étranger)</label></li>
     </ul>
 
-    <h3>👶 Pièces à fournir — mineurs de moins de 12 ans</h3>
+    <h3 data-ary="👶 الوثائق المطلوبة — القاصرين أقل من 12 عام">👶 Pièces à fournir — mineurs de moins de 12 ans</h3>
     <ul class="checklist" data-group="passeport-12moins">
-      <li><input type="checkbox" id="pp12m-1"><label for="pp12m-1">Formulaire de demande renseigné, daté et signé par l'un des parents ou, à défaut, le représentant légal, avec le code e-timbre</label></li>
-      <li><input type="checkbox" id="pp12m-2"><label for="pp12m-2">Extrait ou copie intégrale de l'acte de naissance (&lt; 3 mois), ou copie du livret de famille avec présentation du livret</label></li>
-      <li><input type="checkbox" id="pp12m-3"><label for="pp12m-3">Si le mineur ne réside pas avec ses parents/représentant légal : justificatif de résidence (&lt; 3 mois)</label></li>
-      <li><input type="checkbox" id="pp12m-4"><label for="pp12m-4">1 photo d'identité récente 35×45 mm, fond bleu, blanc ou gris clair, de face, visage entièrement visible</label></li>
-      <li><input type="checkbox" id="pp12m-5"><label for="pp12m-5">Justificatif d'identité des parents (CNIE si marocains ; carte d'immatriculation au Maroc ou passeport valide si étrangers)</label></li>
-      <li><input type="checkbox" id="pp12m-6"><label for="pp12m-6">Si le représentant légal n'est pas le père ou la mère : justificatif de son identité et de sa qualité</label></li>
-      <li><input type="checkbox" id="pp12m-7"><label for="pp12m-7">Renouvellement : ancien passeport (ou justificatif de sa destination) ; perte/vol : déclaration établie par le représentant légal auprès de la Sûreté Nationale / Gendarmerie Royale (au Maroc) ou police / consulat-ambassade (à l'étranger)</label></li>
+      <li><input type="checkbox" id="pp12m-1"><label for="pp12m-1" data-ary="استمارة الطلب معمرة، مؤرخة و موقعة من واحد من الوالدين ولا، إلا ماكانوش، من النائب الشرعي، فيها كود التمبر">Formulaire de demande renseigné, daté et signé par l'un des parents ou, à défaut, le représentant légal, avec le code e-timbre</label></li>
+      <li><input type="checkbox" id="pp12m-2"><label for="pp12m-2" data-ary="رسم الولادة ولا نسخة كاملة منو (ماتفوتش 3 شهور)، ولا نسخة من دفتر الحالة المدنية مع تقديم الدفتر">Extrait ou copie intégrale de l'acte de naissance (&lt; 3 mois), ou copie du livret de famille avec présentation du livret</label></li>
+      <li><input type="checkbox" id="pp12m-3"><label for="pp12m-3" data-ary="إلا كان القاصر ماساكنش مع الوالدين/النائب الشرعي: شهادة الإقامة (ماتفوتش 3 شهور)">Si le mineur ne réside pas avec ses parents/représentant légal : justificatif de résidence (&lt; 3 mois)</label></li>
+      <li><input type="checkbox" id="pp12m-4"><label for="pp12m-4" data-ary="تصويرة تعريف جديدة 35×45 ملم، الخلفية زرقة، بيضة ولا رمادية فاتحة، من قدام، و الوجه باين كامل">1 photo d'identité récente 35×45 mm, fond bleu, blanc ou gris clair, de face, visage entièrement visible</label></li>
+      <li><input type="checkbox" id="pp12m-5"><label for="pp12m-5" data-ary="وثيقة هوية الوالدين (البطاقة الوطنية إلا كانو مغاربة؛ بطاقة التسجيل بالمغرب ولا باسبور صالح إلا كانو أجانب)">Justificatif d'identité des parents (CNIE si marocains ; carte d'immatriculation au Maroc ou passeport valide si étrangers)</label></li>
+      <li><input type="checkbox" id="pp12m-6"><label for="pp12m-6" data-ary="إلا كان النائب الشرعي ماشي هو الأب ولا الأم: وثيقة كتبين هويتو و صفتو">Si le représentant légal n'est pas le père ou la mère : justificatif de son identité et de sa qualité</label></li>
+      <li><input type="checkbox" id="pp12m-7"><label for="pp12m-7" data-ary="التجديد: الباسبور القديم (ولا وثيقة كتبين فين مشا)؛ الضياع/السرقة: تصريح كيديرو النائب الشرعي عند الأمن الوطني / الدرك الملكي (ف المغرب) ولا البوليس / القنصلية-السفارة (ف الخارج)">Renouvellement : ancien passeport (ou justificatif de sa destination) ; perte/vol : déclaration établie par le représentant légal auprès de la Sûreté Nationale / Gendarmerie Royale (au Maroc) ou police / consulat-ambassade (à l'étranger)</label></li>
     </ul>
 
-    <div class="tip">
+    <div class="tip" data-ary="&lt;strong&gt;💡 نصيحة للتصويرة:&lt;/strong&gt; تصويرة متاخدة عند &lt;strong&gt;أزوزية، سيدي غانم&lt;/strong&gt; (مراكش) — جودة و ثمن مزيانين لفورما الباسبور (35×45 ملم). واخا هكاك تأكد بلي الخلفية موحدة (زرقة، بيضة ولا رمادية فاتحة) و بلا ظلال.">
       <strong>💡 Astuce photo :</strong> photo prise chez <strong>Azzouzia, Sidi Ghanem</strong> (Marrakech) — bon rapport qualité/prix pour le format passeport (35×45 mm). Vérifie quand même que le fond est bien uni (bleu, blanc ou gris clair) et sans ombre.
     </div>
 
-    <h3>📷 Normes des photos d'identité</h3>
+    <h3 data-ary="📷 معايير تصاور التعريف">📷 Normes des photos d'identité</h3>
     <ul class="plain">
-      <li>Qualité : photo parfaitement nette, sans tache ni marque d'encre</li>
-      <li>Luminosité / contraste / couleurs : bien exposée, sans flash ni yeux rouges, sans ombre sur le visage, tonalité de peau fidèle</li>
-      <li>Arrière-plan : uni, bleu ciel ou gris clair, sans ombre</li>
-      <li>Regard et position de la tête : visage centré, tête droite face à l'objectif, regard fixant l'objectif</li>
-      <li>Expression : visage dégagé, expression neutre (bouche fermée, sans sourire), yeux normalement ouverts</li>
-      <li>Lunettes : verres blancs uniquement, non teintés, sans reflet, montures fines ; le port n'est pas obligatoire</li>
-      <li>Couvre-chefs : décoratifs interdits (chapeau, casquette…) ; le voile est toléré si tout le visage, du menton au haut du front, reste visible</li>
-      <li>Jeunes enfants : photographiés seuls, de face — expression neutre ou regard caméra non exigés à cet âge</li>
+      <li data-ary="الجودة: تصويرة صافية بزاف، بلا بقع و بلا علامات ديال المداد">Qualité : photo parfaitement nette, sans tache ni marque d'encre</li>
+      <li data-ary="الإضاءة / التباين / الألوان: مضوية مزيان، بلا فلاش و بلا عينين حمر، بلا ظلال على الوجه، و لون الجلد طبيعي">Luminosité / contraste / couleurs : bien exposée, sans flash ni yeux rouges, sans ombre sur le visage, tonalité de peau fidèle</li>
+      <li data-ary="الخلفية: موحدة، زرقة سماوية ولا رمادية فاتحة، بلا ظلال">Arrière-plan : uni, bleu ciel ou gris clair, sans ombre</li>
+      <li data-ary="النظرة و وضعية الراس: الوجه ف الوسط، الراس مستقيمة ف مواجهة الكاميرا، و العينين شايفين للكاميرا">Regard et position de la tête : visage centré, tête droite face à l'objectif, regard fixant l'objectif</li>
+      <li data-ary="التعبير: الوجه مكشوف، تعبير محايد (الفم مسدود، بلا ضحك)، و العينين محلولين عادي">Expression : visage dégagé, expression neutre (bouche fermée, sans sourire), yeux normalement ouverts</li>
+      <li data-ary="النظارات: غير الزاج الأبيض، ماشي مصبوغ، بلا انعكاس، و الإطار رقيق؛ لبسها ماشي إجباري">Lunettes : verres blancs uniquement, non teintés, sans reflet, montures fines ; le port n'est pas obligatoire</li>
+      <li data-ary="غطاء الراس: الزينة ممنوعة (شابو، كاسكيط…)؛ الحجاب مسموح إلا بقا الوجه كامل باين، من الذقن حتى لأعلى الجبهة">Couvre-chefs : décoratifs interdits (chapeau, casquette…) ; le voile est toléré si tout le visage, du menton au haut du front, reste visible</li>
+      <li data-ary="الدراري الصغار: كيتصورو بوحدهم، من قدام — التعبير المحايد ولا النظر للكاميرا ماشي إجباريين ف هاد السن">Jeunes enfants : photographiés seuls, de face — expression neutre ou regard caméra non exigés à cet âge</li>
     </ul>
 
     <div style="border:1px solid var(--border); border-radius:10px; overflow:hidden; margin-top:0.75rem;">
@@ -456,70 +490,215 @@
       <a href="assets/normes-photos-passeport.pdf" download>📥 Télécharger le PDF</a>
     </div>
 
-    <h3>Liens officiels</h3>
+    <h3 data-ary="الروابط الرسمية">Liens officiels</h3>
     <div class="links-row">
       <a href="https://www.passeport.ma/FormDemande/FormDemande" target="_blank" rel="noopener">📝 Formulaire de demande</a>
       <a href="https://www.passeport.ma/Home/PiecesAuMaroc" target="_blank" rel="noopener">📋 Pièces à fournir (officiel)</a>
       <a href="https://etf.tax.gov.ma/etimfisc" target="_blank" rel="noopener">💳 e-timbre fiscal (paiement du timbre)</a>
       <a href="https://www.passeport.ma/SuiviDemande/SuiviDemande" target="_blank" rel="noopener">🔍 Suivi de la demande</a>
       <a href="https://www.passeport.ma" target="_blank" rel="noopener">🌐 Portail passeport.ma</a>
+      <a href="https://ar.wikipedia.org/wiki/%D8%AC%D9%88%D8%A7%D8%B2_%D8%B3%D9%81%D8%B1_%D9%85%D8%BA%D8%B1%D8%A8%D9%8A" target="_blank" rel="noopener">📖 ويكيپيديا — جواز السفر المغربي</a>
+      <a href="https://ar.wikipedia.org/wiki/%D9%85%D8%AA%D8%B7%D9%84%D8%A8%D8%A7%D8%AA_%D8%A7%D9%84%D8%AD%D8%B5%D9%88%D9%84_%D8%B9%D9%84%D9%89_%D8%AA%D8%A3%D8%B4%D9%8A%D8%B1%D8%A9_%D9%84%D9%85%D9%88%D8%A7%D8%B7%D9%86%D9%8A_%D8%A7%D9%84%D9%85%D8%BA%D8%B1%D8%A8" target="_blank" rel="noopener">📖 ويكيپيديا — متطلبات التأشيرة للمغاربة</a>
+      <a href="https://fr.wikipedia.org/wiki/Passeport_marocain" target="_blank" rel="noopener">📖 Wikipédia — Passeport marocain</a>
     </div>
 
-    <h3>⚖️ Textes législatifs et réglementaires</h3>
-    <p class="subtitle">Source : rubrique juridique de passeport.ma.</p>
+    <div class="tip" data-ary="&lt;strong&gt;🛂 للأجانب اللي باغيين يزورو المغرب:&lt;/strong&gt; هاد القسم كامل خاص بالمغاربة اللي مسافرين للخارج. إلا كان شي حد أجنبي بغا يجي للمغرب، خاصو يشوف &lt;a href=&quot;https://www.acces-maroc.ma/#/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;acces-maroc.ma&lt;/a&gt; — كيقوليك واش خاصك eVisa حسب الجنسية، بلد الإقامة، نوع الباسبور و سبب السفر."><strong>🛂 Pour les étrangers qui veulent visiter le Maroc :</strong> toute cette section concerne les Marocains qui voyagent à l'étranger. Dans l'autre sens, un ressortissant étranger doit passer par <a href="https://www.acces-maroc.ma/#/" target="_blank" rel="noopener">acces-maroc.ma</a> — le service indique s'il faut un eVisa selon la nationalité, le pays de résidence, le type de passeport et le motif du voyage.</div>
 
-    <h4 style="margin:0.8rem 0 0.4rem; font-size:0.85rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.02em;">Passeport biométrique</h4>
+    <h3 data-ary="🌍 السفر بالباسبور المغربي">🌍 Voyager avec le passeport marocain</h3>
+    <p class="subtitle" data-ary="الدول و الأقاليم اللي تقدر تدخلهم بلا فيزا، ولا بفيزا ف الوصول، ولا بفيزا أونلاين. الباسبور المغربي مصنف &lt;strong&gt;67 عالميا&lt;/strong&gt; ف مؤشر هينلي. العدد كيتبدل حسب المصدر و التاريخ: اللائحة اللي تحت فيها 84 حسب &lt;a href=&quot;https://fr.wikipedia.org/wiki/Passeport_marocain&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;ويكيپيديا (فرنسية)&lt;/a&gt;، ولكن &lt;a href=&quot;https://ar.wikipedia.org/wiki/%D9%85%D8%AA%D8%B7%D9%84%D8%A8%D8%A7%D8%AA_%D8%A7%D9%84%D8%AD%D8%B5%D9%88%D9%84_%D8%B9%D9%84%D9%89_%D8%AA%D8%A3%D8%B4%D9%8A%D8%B1%D8%A9_%D9%84%D9%85%D9%88%D8%A7%D8%B7%D9%86%D9%8A_%D8%A7%D9%84%D9%85%D8%BA%D8%B1%D8%A8&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;ويكيپيديا (عربية)&lt;/a&gt; كتهضر على 73 دولة ف 2025. تأكد عند السفارة المعنية قبل ما تحجز.">Pays et territoires accessibles sans visa, avec visa à l'arrivée ou avec visa en ligne. Le passeport marocain est classé <strong>67<sup>e</sup> mondial</strong> à l'indice Henley. Le décompte varie selon la source et la date : la liste ci-dessous en recense 84 d'après <a href="https://fr.wikipedia.org/wiki/Passeport_marocain" target="_blank" rel="noopener">Wikipédia (fr)</a>, alors que <a href="https://ar.wikipedia.org/wiki/%D9%85%D8%AA%D8%B7%D9%84%D8%A8%D8%A7%D8%AA_%D8%A7%D9%84%D8%AD%D8%B5%D9%88%D9%84_%D8%B9%D9%84%D9%89_%D8%AA%D8%A3%D8%B4%D9%8A%D8%B1%D8%A9_%D9%84%D9%85%D9%88%D8%A7%D8%B7%D9%86%D9%8A_%D8%A7%D9%84%D9%85%D8%BA%D8%B1%D8%A8" target="_blank" rel="noopener">Wikipédia (ar)</a> avance 73 pays pour 2025. À revérifier auprès de l'ambassade concernée avant de réserver.</p>
+    <figure style="margin:0.75rem 0 0; border:1px solid var(--border); border-radius:10px; padding:0.75rem; background:var(--bg);">
+      <img src="assets/visa-requirements-moroccan-citizens.svg" alt="Pays et territoires accessibles sans visa ou avec visa à l&#x27;arrivée pour les titulaires d&#x27;un passeport marocain ordinaire." style="display:block; width:100%; height:auto;" loading="lazy">
+      <figcaption style="margin-top:0.75rem;">
+        <p style="margin:0 0 0.6rem; font-size:0.88rem;" data-ary="الدول والمناطق التي يمكن دخولها بدون تأشيرة أو بتأشيرة عند الوصول لحاملي جوازات السفر المغربية العادية.">Pays et territoires accessibles sans visa ou avec visa à l&#x27;arrivée pour les titulaires d&#x27;un passeport marocain ordinaire.</p>
+        <ul style="list-style:none; margin:0; padding:0; display:grid; gap:0.35rem; font-size:0.85rem;">
+          <li style="display:flex; align-items:center; gap:0.5rem;" data-ary="&lt;span style=&quot;display:inline-block; width:0.9rem; height:0.9rem; border-radius:3px; border:1px solid var(--border); background:#002377; flex:0 0 auto;&quot;&gt;&lt;/span&gt;&lt;span&gt;المغرب&lt;/span&gt;"><span style="display:inline-block; width:0.9rem; height:0.9rem; border-radius:3px; border:1px solid var(--border); background:#002377; flex:0 0 auto;"></span><span>Maroc</span> <span style="color:var(--text-muted); font-size:0.8rem;">المغرب</span></li>
+          <li style="display:flex; align-items:center; gap:0.5rem;" data-ary="&lt;span style=&quot;display:inline-block; width:0.9rem; height:0.9rem; border-radius:3px; border:1px solid var(--border); background:#22b14c; flex:0 0 auto;&quot;&gt;&lt;/span&gt;&lt;span&gt;الدخول بدون تأشيرة&lt;/span&gt;"><span style="display:inline-block; width:0.9rem; height:0.9rem; border-radius:3px; border:1px solid var(--border); background:#22b14c; flex:0 0 auto;"></span><span>Entrée sans visa</span> <span style="color:var(--text-muted); font-size:0.8rem;">الدخول بدون تأشيرة</span></li>
+          <li style="display:flex; align-items:center; gap:0.5rem;" data-ary="&lt;span style=&quot;display:inline-block; width:0.9rem; height:0.9rem; border-radius:3px; border:1px solid var(--border); background:#b5e61d; flex:0 0 auto;&quot;&gt;&lt;/span&gt;&lt;span&gt;تأشيرة عند الوصول&lt;/span&gt;"><span style="display:inline-block; width:0.9rem; height:0.9rem; border-radius:3px; border:1px solid var(--border); background:#b5e61d; flex:0 0 auto;"></span><span>Visa à l&#x27;arrivée</span> <span style="color:var(--text-muted); font-size:0.8rem;">تأشيرة عند الوصول</span></li>
+          <li style="display:flex; align-items:center; gap:0.5rem;" data-ary="&lt;span style=&quot;display:inline-block; width:0.9rem; height:0.9rem; border-radius:3px; border:1px solid var(--border); background:#61c7a1; flex:0 0 auto;&quot;&gt;&lt;/span&gt;&lt;span&gt;تأشيرة إلكترونية&lt;/span&gt;"><span style="display:inline-block; width:0.9rem; height:0.9rem; border-radius:3px; border:1px solid var(--border); background:#61c7a1; flex:0 0 auto;"></span><span>Visa électronique (e-visa)</span> <span style="color:var(--text-muted); font-size:0.8rem;">تأشيرة إلكترونية</span></li>
+          <li style="display:flex; align-items:center; gap:0.5rem;" data-ary="&lt;span style=&quot;display:inline-block; width:0.9rem; height:0.9rem; border-radius:3px; border:1px solid var(--border); background:#79d343; flex:0 0 auto;&quot;&gt;&lt;/span&gt;&lt;span&gt;تأشيرة متاحة عند الوصول أو عبر الإنترنت&lt;/span&gt;"><span style="display:inline-block; width:0.9rem; height:0.9rem; border-radius:3px; border:1px solid var(--border); background:#79d343; flex:0 0 auto;"></span><span>Visa disponible à l&#x27;arrivée ou en ligne</span> <span style="color:var(--text-muted); font-size:0.8rem;">تأشيرة متاحة عند الوصول أو عبر الإنترنت</span></li>
+          <li style="display:flex; align-items:center; gap:0.5rem;" data-ary="&lt;span style=&quot;display:inline-block; width:0.9rem; height:0.9rem; border-radius:3px; border:1px solid var(--border); background:#c0c0c0; flex:0 0 auto;&quot;&gt;&lt;/span&gt;&lt;span&gt;تأشيرة مطلوبة&lt;/span&gt;"><span style="display:inline-block; width:0.9rem; height:0.9rem; border-radius:3px; border:1px solid var(--border); background:#c0c0c0; flex:0 0 auto;"></span><span>Visa requis</span> <span style="color:var(--text-muted); font-size:0.8rem;">تأشيرة مطلوبة</span></li>
+        </ul>
+        <p style="margin:0.75rem 0 0; font-size:0.78rem; color:var(--text-muted);" data-ary="الخريطة و اللائحة: &lt;a href=&quot;https://ar.wikipedia.org/wiki/%D9%85%D8%AA%D8%B7%D9%84%D8%A8%D8%A7%D8%AA_%D8%A7%D9%84%D8%AD%D8%B5%D9%88%D9%84_%D8%B9%D9%84%D9%89_%D8%AA%D8%A3%D8%B4%D9%8A%D8%B1%D8%A9_%D9%84%D9%85%D9%88%D8%A7%D8%B7%D9%86%D9%8A_%D8%A7%D9%84%D9%85%D8%BA%D8%B1%D8%A8&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;ويكيپيديا — متطلبات التأشيرة لمواطني المغرب&lt;/a&gt; و &lt;a href=&quot;https://ar.wikipedia.org/wiki/%D8%AC%D9%88%D8%A7%D8%B2_%D8%B3%D9%81%D8%B1_%D9%85%D8%BA%D8%B1%D8%A8%D9%8A&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;ويكيپيديا — جواز سفر مغربي&lt;/a&gt;. الملف الأصلي من &lt;a href=&quot;https://commons.wikimedia.org/wiki/File:Visa_requirements_for_Moroccan_citizens_141024.svg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Eaaoulad&lt;/a&gt; على ويكيميديا كومنز، برخصة &lt;a href=&quot;https://creativecommons.org/licenses/by-sa/4.0/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;CC BY-SA 4.0&lt;/a&gt; — محين ف 14 أكتوبر 2024.">
+          Sources : <a href="https://ar.wikipedia.org/wiki/%D9%85%D8%AA%D8%B7%D9%84%D8%A8%D8%A7%D8%AA_%D8%A7%D9%84%D8%AD%D8%B5%D9%88%D9%84_%D8%B9%D9%84%D9%89_%D8%AA%D8%A3%D8%B4%D9%8A%D8%B1%D8%A9_%D9%84%D9%85%D9%88%D8%A7%D8%B7%D9%86%D9%8A_%D8%A7%D9%84%D9%85%D8%BA%D8%B1%D8%A8" target="_blank" rel="noopener">Wikipédia (ar) — Exigences de visa pour les Marocains</a>, <a href="https://ar.wikipedia.org/wiki/%D8%AC%D9%88%D8%A7%D8%B2_%D8%B3%D9%81%D8%B1_%D9%85%D8%BA%D8%B1%D8%A8%D9%8A" target="_blank" rel="noopener">Wikipédia (ar) — Passeport marocain</a> et <a href="https://fr.wikipedia.org/wiki/Passeport_marocain" target="_blank" rel="noopener">Wikipédia (fr) — Passeport marocain</a>. Fichier original par <a href="https://commons.wikimedia.org/wiki/File:Visa_requirements_for_Moroccan_citizens_141024.svg" target="_blank" rel="noopener">Eaaoulad</a> sur Wikimedia Commons, sous licence <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a> — mise à jour du 14 octobre 2024.
+        </p>
+      </figcaption>
+    </figure>
+
+    <details>
+      <summary style="cursor:pointer; padding:0.5rem 0; font-size:0.92rem;" data-ary="بين اللائحة حسب القارة">Afficher la liste par continent</summary>
+      <h4 style="margin:1rem 0 0.4rem; font-size:0.85rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.02em;" data-ary="أفريقيا (33)">Afrique (33)</h4>
+      <div style="overflow-x:auto;">
+      <table class="perm">
+        <thead><tr><th data-ary="الدولة ولا الإقليم">Pays ou territoire</th><th data-ary="شروط الدخول">Conditions d'accès</th></tr></thead>
+        <tbody>
+          <tr><td data-ary="أنݣولا">Angola</td><td data-ary="الفيزا كتتسلم ف الوصول (120 USD) — شهر">Visa à l&#x27;arrivée (120 USD) — 1 mois</td></tr>
+          <tr><td data-ary="بنين">Bénin</td><td data-ary="بلا فيزا — 90 يوم">Sans visa — 90 jours</td></tr>
+          <tr><td data-ary="الرأس الأخضر">Cap-Vert</td><td data-ary="بلا فيزا — 90 يوم">Sans visa — 90 jours</td></tr>
+          <tr><td data-ary="جزر القمر">Comores</td><td data-ary="الفيزا كتتسلم ف الوصول (30 EUR) — 45 يوم">Visa à l&#x27;arrivée (30 EUR) — 45 jours</td></tr>
+          <tr><td data-ary="جمهورية الكونݣو">République du Congo</td><td data-ary="الفيزا كتتسلم ف الوصول — 30 يوم">Visa à l&#x27;arrivée — 30 jours</td></tr>
+          <tr><td data-ary="ساحل العاج">Côte d&#x27;Ivoire</td><td data-ary="بلا فيزا — 3 شهور">Sans visa — 3 mois</td></tr>
+          <tr><td data-ary="جيبوتي">Djibouti</td><td data-ary="الفيزا كتتسلم ف الوصول (30 USD) — شهر">Visa à l&#x27;arrivée (30 USD) — 1 mois</td></tr>
+          <tr><td data-ary="إثيوبيا">Éthiopie</td><td data-ary="الفيزا كتتسلم أونلاين (72 USD) — 90 يوم">Visa en ligne (72 USD) — 90 jours</td></tr>
+          <tr><td data-ary="الݣابون">Gabon</td><td data-ary="بلا فيزا — شهر">Sans visa — 1 mois</td></tr>
+          <tr><td data-ary="ݣامبيا">Gambie</td><td data-ary="بلا فيزا — 90 يوم">Sans visa — 90 jours</td></tr>
+          <tr><td data-ary="ݣينيا">Guinée</td><td data-ary="بلا فيزا — 3 شهور">Sans visa — 3 mois</td></tr>
+          <tr><td data-ary="ݣينيا بيساو">Guinée-Bissau</td><td data-ary="الفيزا كتتسلم ف الوصول — 3 شهور">Visa à l&#x27;arrivée — 3 mois</td></tr>
+          <tr><td data-ary="كينيا">Kenya</td><td data-ary="الفيزا كتتسلم ف الوصول (50 USD) — 3 شهور">Visa à l&#x27;arrivée (50 USD) — 3 mois</td></tr>
+          <tr><td data-ary="ليسوتو">Lesotho</td><td data-ary="الفيزا كتتسلم أونلاين (150 USD) — 44 يوم">Visa en ligne (150 USD) — 44 jours</td></tr>
+          <tr><td data-ary="مدغشقر">Madagascar</td><td data-ary="الفيزا كتتسلم ف الوصول (140 000 MGA) — 3 شهور">Visa à l&#x27;arrivée (140 000 MGA) — 3 mois</td></tr>
+          <tr><td data-ary="مالي">Mali</td><td data-ary="بلا فيزا — 3 شهور">Sans visa — 3 mois</td></tr>
+          <tr><td data-ary="موريس">Maurice</td><td data-ary="الفيزا كتتسلم ف الوصول — شهرين">Visa à l&#x27;arrivée — 2 mois</td></tr>
+          <tr><td data-ary="موريتانيا">Mauritanie</td><td data-ary="الفيزا كتتسلم ف الوصول — شهر">Visa à l&#x27;arrivée — 1 mois</td></tr>
+          <tr><td data-ary="موزمبيق">Mozambique</td><td data-ary="الفيزا كتتسلم ف الوصول (25 USD) — 30 يوم">Visa à l&#x27;arrivée (25 USD) — 30 jours</td></tr>
+          <tr><td data-ary="النيجر">Niger</td><td data-ary="بلا فيزا — 3 شهور">Sans visa — 3 mois</td></tr>
+          <tr><td data-ary="نيجيريا">Nigeria</td><td data-ary="الفيزا كتتسلم ف الوصول. على شكل e-visa">Visa à l&#x27;arrivée. Sous forme d&#x27;e-visa</td></tr>
+          <tr><td data-ary="أوݣندا">Ouganda</td><td data-ary="الفيزا كتتسلم ف الوصول (50 USD) — 3 شهور">Visa à l&#x27;arrivée (50 USD) — 3 mois</td></tr>
+          <tr><td data-ary="رواندا">Rwanda</td><td data-ary="الفيزا كتتسلم ف الوصول (30 USD) — شهر">Visa à l&#x27;arrivée (30 USD) — 1 mois</td></tr>
+          <tr><td data-ary="ساو تومي و برينسيپي">Sao Tomé-et-Principe</td><td data-ary="بلا فيزا — 15 يوم">Sans visa — 15 jours</td></tr>
+          <tr><td data-ary="السنيݣال">Sénégal</td><td data-ary="بلا فيزا — 3 شهور">Sans visa — 3 mois</td></tr>
+          <tr><td data-ary="سيشيل">Seychelles</td><td data-ary="الفيزا كتتسلم ف الوصول — شهر">Visa à l&#x27;arrivée — 1 mois</td></tr>
+          <tr><td data-ary="الصومال">Somalie</td><td data-ary="الفيزا كتتسلم ف الوصول (60 USD) — شهر">Visa à l&#x27;arrivée (60 USD) — 1 mois</td></tr>
+          <tr><td data-ary="أرض الصومال">Somaliland</td><td data-ary="الفيزا كتتسلم ف الوصول (30 USD) — شهر">Visa à l&#x27;arrivée (30 USD) — 1 mois</td></tr>
+          <tr><td data-ary="تنزانيا">Tanzanie</td><td data-ary="الفيزا كتتسلم ف الوصول (50–200 USD) — شهر">Visa à l&#x27;arrivée (50–200 USD) — 1 mois</td></tr>
+          <tr><td data-ary="توݣو">Togo</td><td data-ary="بلا فيزا — 3 شهور">Sans visa — 3 mois</td></tr>
+          <tr><td data-ary="تونس">Tunisie</td><td data-ary="بلا فيزا — 3 شهور">Sans visa — 3 mois</td></tr>
+          <tr><td data-ary="زامبيا">Zambie</td><td data-ary="الفيزا كتتسلم ف الوصول (50 USD) — 3 شهور">Visa à l&#x27;arrivée (50 USD) — 3 mois</td></tr>
+          <tr><td data-ary="مصر">Égypte</td><td data-ary="الفيزا كتتسلم ف الوصول — 30 يوم. غير إلا عندك فيزا صالحة و مستعملة ديال أستراليا، كندا، اليابان، نيوزيلندا، أمريكا، بريطانيا ولا شنݣن">Visa à l&#x27;arrivée — 30 jours. Uniquement avec un visa valide et déjà utilisé d&#x27;Australie, du Canada, du Japon, de Nouvelle-Zélande, des États-Unis, du Royaume-Uni ou de l&#x27;espace Schengen</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <h4 style="margin:1rem 0 0.4rem; font-size:0.85rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.02em;" data-ary="الأمريكتين (17)">Amériques (17)</h4>
+      <div style="overflow-x:auto;">
+      <table class="perm">
+        <thead><tr><th data-ary="الدولة ولا الإقليم">Pays ou territoire</th><th data-ary="شروط الدخول">Conditions d'accès</th></tr></thead>
+        <tbody>
+          <tr><td data-ary="باربادوس">Barbade</td><td data-ary="بلا فيزا — 3 شهور">Sans visa — 3 mois</td></tr>
+          <tr><td data-ary="بليز">Belize</td><td data-ary="بلا فيزا — شهر">Sans visa — 1 mois</td></tr>
+          <tr><td data-ary="بوليفيا">Bolivie</td><td data-ary="الفيزا كتتسلم ف الوصول — 3 شهور">Visa à l&#x27;arrivée — 3 mois</td></tr>
+          <tr><td data-ary="البرازيل">Brésil</td><td data-ary="بلا فيزا — 3 شهور">Sans visa — 3 mois</td></tr>
+          <tr><td data-ary="كندا">Canada</td><td data-ary="eVisa إلا كان عندك فيزا كندية ف 10 سنين اللي فاتو ولا عندك فيزا أمريكية صالحة؛ إلا لا الفيزا العادية إجبارية">eVisa si vous avez eu un visa canadien au cours des 10 dernières années ou détenez un visa américain valide ; sinon visa classique obligatoire</td></tr>
+          <tr><td data-ary="كولومبيا">Colombie</td><td data-ary="بلا فيزا — 3 شهور">Sans visa — 3 mois</td></tr>
+          <tr><td data-ary="كوستاريكا">Costa Rica</td><td data-ary="بلا فيزا — شهر. غير إلا عندك فيزا، إقامة ولا رخصة خدمة/دراسة ديال 6 شهور على الأقل ديال أمريكا ولا كندا، صالحة 3 شهور على الأقل ملي تدخل؛ و الباسبور خاصو يبقى صالح 6 شهور من بعد الدخول">Sans visa — 1 mois. Uniquement avec un visa, une résidence ou un permis de travail/d&#x27;études d&#x27;au moins 6 mois des États-Unis ou du Canada, valide au moins 3 mois à l&#x27;entrée ; le passeport doit rester valide 6 mois après l&#x27;entrée</td></tr>
+          <tr><td data-ary="كوبا">Cuba</td><td data-ary="بلا فيزا — 30 يوم. خاصك تشري كارط سياحية قبل السفر، إلا إلا كنتي جاي من كندا">Sans visa — 30 jours. Achat d&#x27;une carte touristique avant le voyage exigé, sauf en provenance du Canada</td></tr>
+          <tr><td data-ary="دومينيكا">Dominique</td><td data-ary="بلا فيزا — 3 سيمانات">Sans visa — 3 semaines</td></tr>
+          <tr><td data-ary="الإكوادور">Équateur</td><td data-ary="بلا فيزا — 3 شهور">Sans visa — 3 mois</td></tr>
+          <tr><td data-ary="ݣرينادا">Grenade</td><td data-ary="بلا فيزا — 3 شهور">Sans visa — 3 mois</td></tr>
+          <tr><td data-ary="هايتي">Haïti</td><td data-ary="بلا فيزا — 3 شهور">Sans visa — 3 mois</td></tr>
+          <tr><td data-ary="المكسيك">Mexique</td><td data-ary="بلا فيزا — 3 شهور. غير إلا عندك فيزا صالحة ديال أمريكا، شنݣن، كندا، اليابان ولا بريطانيا">Sans visa — 3 mois. Uniquement avec un visa valide des États-Unis, de l&#x27;espace Schengen, du Canada, du Japon ou du Royaume-Uni</td></tr>
+          <tr><td data-ary="نيكاراݣوا">Nicaragua</td><td data-ary="الفيزا كتتسلم ف الوصول (10 USD) — 90 يوم">Visa à l&#x27;arrivée (10 USD) — 90 jours</td></tr>
+          <tr><td data-ary="جمهورية الدومينيكان">République dominicaine</td><td data-ary="بلا فيزا — شهرين. إلا عندك فيزا صالحة ديال أمريكا، كندا، بريطانيا ولا شنݣن؛ إلا لا كارط سياحية ب 10 دولار">Sans visa — 2 mois. Avec un visa valide des États-Unis, du Canada, du Royaume-Uni ou de l&#x27;espace Schengen ; sinon carte touristique à 10 USD</td></tr>
+          <tr><td data-ary="سانت فنسنت و الݣرينادين">Saint-Vincent-et-les-Grenadines</td><td data-ary="بلا فيزا — شهر">Sans visa — 1 mois</td></tr>
+          <tr><td data-ary="سورينام">Suriname</td><td data-ary="الفيزا كتتسلم أونلاين (40 USD) — 90 يوم">Visa en ligne (40 USD) — 90 jours</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <h4 style="margin:1rem 0 0.4rem; font-size:0.85rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.02em;" data-ary="آسيا (25)">Asie (25)</h4>
+      <div style="overflow-x:auto;">
+      <table class="perm">
+        <thead><tr><th data-ary="الدولة ولا الإقليم">Pays ou territoire</th><th data-ary="شروط الدخول">Conditions d'accès</th></tr></thead>
+        <tbody>
+          <tr><td data-ary="السعودية">Arabie saoudite</td><td data-ary="الفيزا كتتسلم ف الوصول (90 USD) — 365 يوم. صالحة إلا عندك فيزا صالحة و مستعملة ديال أمريكا، بريطانيا ولا شنݣن">Visa à l&#x27;arrivée (90 USD) — 365 jours. valable si vous détenez un visa valide et déjà utilisé des États-Unis, du Royaume-Uni ou de l&#x27;espace Schengen</td></tr>
+          <tr><td data-ary="أذربيجان">Azerbaïdjan</td><td data-ary="الفيزا كتتسلم أونلاين — 30 يوم">Visa en ligne — 30 jours</td></tr>
+          <tr><td data-ary="بورما">Birmanie</td><td data-ary="الفيزا كتتسلم أونلاين (50 USD) — 28 يوم">Visa en ligne (50 USD) — 28 jours</td></tr>
+          <tr><td data-ary="كمبوديا">Cambodge</td><td data-ary="الفيزا كتتسلم ف الوصول (35 USD) — 30 يوم">Visa à l&#x27;arrivée (35 USD) — 30 jours</td></tr>
+          <tr><td data-ary="كوريا الجنوبية">Corée du Sud</td><td data-ary="الفيزا كتتسلم أونلاين (9 USD) — 90 يوم. ترخيص إلكتروني للسفر (ETA)">Visa en ligne (9 USD) — 90 jours. Autorisation électronique de voyage (ETA)</td></tr>
+          <tr><td data-ary="هونݣ كونݣ">Hong Kong</td><td data-ary="بلا فيزا — شهر">Sans visa — 1 mois</td></tr>
+          <tr><td data-ary="الهند">Inde</td><td data-ary="الفيزا كتتسلم أونلاين">Visa en ligne</td></tr>
+          <tr><td data-ary="إندونيسيا">Indonésie</td><td data-ary="الفيزا كتتسلم ف الوصول (35 USD) — شهر">Visa à l&#x27;arrivée (35 USD) — 1 mois</td></tr>
+          <tr><td data-ary="إيران">Iran</td><td data-ary="الفيزا أونلاين ولا ف الوصول — شهر">Visa en ligne ou à l&#x27;arrivée — 1 mois</td></tr>
+          <tr><td data-ary="الأردن">Jordanie</td><td data-ary="الفيزا أونلاين ولا ف الوصول (gratuit) — شهرين">Visa en ligne ou à l&#x27;arrivée (gratuit) — 2 mois</td></tr>
+          <tr><td data-ary="كازاخستان">Kazakhstan</td><td data-ary="بلا فيزا — شهر">Sans visa — 1 mois</td></tr>
+          <tr><td data-ary="لاوس">Laos</td><td data-ary="الفيزا كتتسلم ف الوصول (30 USD) — شهر">Visa à l&#x27;arrivée (30 USD) — 1 mois</td></tr>
+          <tr><td data-ary="لبنان">Liban</td><td data-ary="الفيزا كتتسلم ف الوصول (2 USD) — شهر">Visa à l&#x27;arrivée (2 USD) — 1 mois</td></tr>
+          <tr><td data-ary="ماكاو">Macao</td><td data-ary="بلا فيزا — 3 شهور">Sans visa — 3 mois</td></tr>
+          <tr><td data-ary="ماليزيا">Malaisie</td><td data-ary="بلا فيزا — 3 شهور">Sans visa — 3 mois</td></tr>
+          <tr><td data-ary="المالديف">Maldives</td><td data-ary="الفيزا كتتسلم ف الوصول — شهر">Visa à l&#x27;arrivée — 1 mois</td></tr>
+          <tr><td data-ary="النيبال">Népal</td><td data-ary="الفيزا كتتسلم ف الوصول (25–100 USD) — شهر">Visa à l&#x27;arrivée (25–100 USD) — 1 mois</td></tr>
+          <tr><td data-ary="أوزبكستان">Ouzbékistan</td><td data-ary="الفيزا كتتسلم أونلاين (35 USD) — 30 يوم">Visa en ligne (35 USD) — 30 jours</td></tr>
+          <tr><td data-ary="الباكستان">Pakistan</td><td data-ary="الفيزا كتتسلم أونلاين">Visa en ligne</td></tr>
+          <tr><td data-ary="الفيليپين">Philippines</td><td data-ary="بلا فيزا — 3 سيمانات">Sans visa — 3 semaines</td></tr>
+          <tr><td data-ary="سريلانكا">Sri Lanka</td><td data-ary="الفيزا كتتسلم أونلاين (35 USD) — 30 يوم">Visa en ligne (35 USD) — 30 jours</td></tr>
+          <tr><td data-ary="سوريا">Syrie</td><td data-ary="بلا فيزا — 3 شهور">Sans visa — 3 mois</td></tr>
+          <tr><td data-ary="طاجيكستان">Tadjikistan</td><td data-ary="الفيزا كتتسلم ف الوصول — 45 يوم">Visa à l&#x27;arrivée — 45 jours</td></tr>
+          <tr><td data-ary="تيمور الشرقية">Timor oriental</td><td data-ary="الشروط ماهيش مذكورة ف المصدر">Conditions non précisées par la source</td></tr>
+          <tr><td data-ary="تركيا">Turquie</td><td data-ary="بلا فيزا — 3 شهور">Sans visa — 3 mois</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <h4 style="margin:1rem 0 0.4rem; font-size:0.85rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.02em;" data-ary="أوقيانوسيا (9)">Océanie (9)</h4>
+      <div style="overflow-x:auto;">
+      <table class="perm">
+        <thead><tr><th data-ary="الدولة ولا الإقليم">Pays ou territoire</th><th data-ary="شروط الدخول">Conditions d'accès</th></tr></thead>
+        <tbody>
+          <tr><td data-ary="ولايات ميكرونيزيا الموحدة">États fédérés de Micronésie</td><td data-ary="بلا فيزا — شهر">Sans visa — 1 mois</td></tr>
+          <tr><td data-ary="جزر كوك">Îles Cook</td><td data-ary="بلا فيزا — شهر">Sans visa — 1 mois</td></tr>
+          <tr><td data-ary="جزر مارشال">Îles Marshall</td><td data-ary="الفيزا كتتسلم ف الوصول — 3 شهور">Visa à l&#x27;arrivée — 3 mois</td></tr>
+          <tr><td data-ary="جزر پيتكيرن">Îles Pitcairn</td><td data-ary="بلا فيزا — 15 يوم">Sans visa — 15 jours</td></tr>
+          <tr><td data-ary="نيوي">Niue</td><td data-ary="بلا فيزا — شهر">Sans visa — 1 mois</td></tr>
+          <tr><td data-ary="پالاو">Palaos</td><td data-ary="الفيزا كتتسلم ف الوصول (50 USD) — شهر">Visa à l&#x27;arrivée (50 USD) — 1 mois</td></tr>
+          <tr><td data-ary="ساموا">Samoa</td><td data-ary="بلا فيزا — شهرين">Sans visa — 2 mois</td></tr>
+          <tr><td data-ary="توفالو">Tuvalu</td><td data-ary="الفيزا كتتسلم ف الوصول — شهر">Visa à l&#x27;arrivée — 1 mois</td></tr>
+          <tr><td data-ary="فانواتو">Vanuatu</td><td data-ary="بلا فيزا — شهر">Sans visa — 1 mois</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </details>
+
+    <h3 data-ary="⚖️ النصوص القانونية و التنظيمية">⚖️ Textes législatifs et réglementaires</h3>
+    <p class="subtitle" data-ary="المصدر: الركن القانوني ديال passeport.ma.">Source : rubrique juridique de passeport.ma.</p>
+
+    <h4 style="margin:0.8rem 0 0.4rem; font-size:0.85rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.02em;" data-ary="الباسبور البيومتري">Passeport biométrique</h4>
     <ul class="plain">
-      <li><a href="https://www.passeport.ma/PDF/passeport12/fran%C3%A7ais/Passeport_d%C3%A9cret.pdf" target="_blank" rel="noopener">Décret n° 2-08-310 du 23 octobre 2008 instituant le passeport biométrique</a></li>
+      <li data-ary="&lt;a href=&quot;https://www.passeport.ma/PDF/passeport12/fran%C3%A7ais/Passeport_d%C3%A9cret.pdf&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;مرسوم رقم 2-08-310 بتاريخ 23 أكتوبر 2008 المحدث للباسبور البيومتري&lt;/a&gt;"><a href="https://www.passeport.ma/PDF/passeport12/fran%C3%A7ais/Passeport_d%C3%A9cret.pdf" target="_blank" rel="noopener">Décret n° 2-08-310 du 23 octobre 2008 instituant le passeport biométrique</a></li>
     </ul>
 
-    <h4 style="margin:0.8rem 0 0.4rem; font-size:0.85rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.02em;">Carte Nationale d'Identité Électronique</h4>
+    <h4 style="margin:0.8rem 0 0.4rem; font-size:0.85rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.02em;" data-ary="البطاقة الوطنية للتعريف الإلكترونية">Carte Nationale d'Identité Électronique</h4>
     <ul class="plain">
-      <li><a href="https://www.passeport.ma/PDF/CNIE/fran%C3%A7ais/CNIE_dahir.pdf" target="_blank" rel="noopener">Dahir n° 1.20.80 du 8 août 2020 portant promulgation de la loi n° 04.20 instituant la CNIE</a></li>
-      <li><a href="https://www.passeport.ma/PDF/CNIE/fran%C3%A7ais/CNIE_d%C3%A9cret.pdf" target="_blank" rel="noopener">Décret n° 2.20.521 du 12 août 2020 pris pour l'application de la loi n° 04.20</a></li>
+      <li data-ary="&lt;a href=&quot;https://www.passeport.ma/PDF/CNIE/fran%C3%A7ais/CNIE_dahir.pdf&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;ظهير شريف رقم 1.20.80 بتاريخ 8 غشت 2020 بتنفيذ القانون رقم 04.20 المتعلق بالبطاقة الوطنية للتعريف الإلكترونية&lt;/a&gt;"><a href="https://www.passeport.ma/PDF/CNIE/fran%C3%A7ais/CNIE_dahir.pdf" target="_blank" rel="noopener">Dahir n° 1.20.80 du 8 août 2020 portant promulgation de la loi n° 04.20 instituant la CNIE</a></li>
+      <li data-ary="&lt;a href=&quot;https://www.passeport.ma/PDF/CNIE/fran%C3%A7ais/CNIE_d%C3%A9cret.pdf&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;مرسوم رقم 2.20.521 بتاريخ 12 غشت 2020 لتطبيق القانون رقم 04.20&lt;/a&gt;"><a href="https://www.passeport.ma/PDF/CNIE/fran%C3%A7ais/CNIE_d%C3%A9cret.pdf" target="_blank" rel="noopener">Décret n° 2.20.521 du 12 août 2020 pris pour l'application de la loi n° 04.20</a></li>
     </ul>
 
-    <h4 style="margin:0.8rem 0 0.4rem; font-size:0.85rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.02em;">État civil</h4>
+    <h4 style="margin:0.8rem 0 0.4rem; font-size:0.85rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.02em;" data-ary="الحالة المدنية">État civil</h4>
     <ul class="plain">
-      <li><a href="https://www.passeport.ma/PDF/Etat_civil/FR/Dahir%201_02_239.pdf" target="_blank" rel="noopener">Dahir n° 1-02-239 du 3 octobre 2002 portant promulgation de la loi n° 37-99 relative à l'état civil</a></li>
-      <li><a href="https://www.passeport.ma/PDF/Etat_civil/FR/d%C3%A9cret%202_99_665.pdf" target="_blank" rel="noopener">Décret n° 2-99-665 du 9 octobre 2002 pris pour l'application de la loi n° 37-99</a></li>
-      <li><a href="https://www.passeport.ma/PDF/Etat_civil/FR/d%C3%A9cret%202_04_331.pdf" target="_blank" rel="noopener">Décret n° 2-04-331 du 7 juin 2004 complétant le décret n° 2-02-665 relatif à la loi n° 37-99</a></li>
+      <li data-ary="&lt;a href=&quot;https://www.passeport.ma/PDF/Etat_civil/FR/Dahir%201_02_239.pdf&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;ظهير شريف رقم 1-02-239 بتاريخ 3 أكتوبر 2002 بتنفيذ القانون رقم 37-99 المتعلق بالحالة المدنية&lt;/a&gt;"><a href="https://www.passeport.ma/PDF/Etat_civil/FR/Dahir%201_02_239.pdf" target="_blank" rel="noopener">Dahir n° 1-02-239 du 3 octobre 2002 portant promulgation de la loi n° 37-99 relative à l'état civil</a></li>
+      <li data-ary="&lt;a href=&quot;https://www.passeport.ma/PDF/Etat_civil/FR/d%C3%A9cret%202_99_665.pdf&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;مرسوم رقم 2-99-665 بتاريخ 9 أكتوبر 2002 لتطبيق القانون رقم 37-99&lt;/a&gt;"><a href="https://www.passeport.ma/PDF/Etat_civil/FR/d%C3%A9cret%202_99_665.pdf" target="_blank" rel="noopener">Décret n° 2-99-665 du 9 octobre 2002 pris pour l'application de la loi n° 37-99</a></li>
+      <li data-ary="&lt;a href=&quot;https://www.passeport.ma/PDF/Etat_civil/FR/d%C3%A9cret%202_04_331.pdf&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;مرسوم رقم 2-04-331 بتاريخ 7 يونيو 2004 المتمم للمرسوم رقم 2-02-665 المتعلق بالقانون رقم 37-99&lt;/a&gt;"><a href="https://www.passeport.ma/PDF/Etat_civil/FR/d%C3%A9cret%202_04_331.pdf" target="_blank" rel="noopener">Décret n° 2-04-331 du 7 juin 2004 complétant le décret n° 2-02-665 relatif à la loi n° 37-99</a></li>
     </ul>
 
-    <h4 style="margin:0.8rem 0 0.4rem; font-size:0.85rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.02em;">Prise en charge (Kafala)</h4>
+    <h4 style="margin:0.8rem 0 0.4rem; font-size:0.85rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.02em;" data-ary="الكفالة">Prise en charge (Kafala)</h4>
     <ul class="plain">
-      <li><a href="https://www.passeport.ma/PDF/Kafala/FR/dahir.pdf" target="_blank" rel="noopener">Dahir n° 1-02-172 du 13 juin 2002 portant promulgation de la loi n° 15-01 relative à la kafala des enfants abandonnés</a></li>
-      <li><a href="https://www.passeport.ma/PDF/Kafala/FR/d%C3%A9cret.pdf" target="_blank" rel="noopener">Décret n° 2-03-600 du 7 juin 2004 portant application de l'article 16 de la loi n° 15-01</a></li>
+      <li data-ary="&lt;a href=&quot;https://www.passeport.ma/PDF/Kafala/FR/dahir.pdf&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;ظهير شريف رقم 1-02-172 بتاريخ 13 يونيو 2002 بتنفيذ القانون رقم 15-01 المتعلق بكفالة الأطفال المهملين&lt;/a&gt;"><a href="https://www.passeport.ma/PDF/Kafala/FR/dahir.pdf" target="_blank" rel="noopener">Dahir n° 1-02-172 du 13 juin 2002 portant promulgation de la loi n° 15-01 relative à la kafala des enfants abandonnés</a></li>
+      <li data-ary="&lt;a href=&quot;https://www.passeport.ma/PDF/Kafala/FR/d%C3%A9cret.pdf&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;مرسوم رقم 2-03-600 بتاريخ 7 يونيو 2004 لتطبيق المادة 16 من القانون رقم 15-01&lt;/a&gt;"><a href="https://www.passeport.ma/PDF/Kafala/FR/d%C3%A9cret.pdf" target="_blank" rel="noopener">Décret n° 2-03-600 du 7 juin 2004 portant application de l'article 16 de la loi n° 15-01</a></li>
     </ul>
   </section>
 
   <section class="card" id="banque">
-    <h2>🏦 Compte bancaire jeune — Banque Populaire</h2>
-    <p class="subtitle">Choisir l'offre <strong>#live</strong> (le "pass jeune" de la Banque Populaire, 18–25 ans).</p>
+    <h2 data-ary="🏦 حساب بنكي للشباب — البنك الشعبي">🏦 Compte bancaire jeune — Banque Populaire</h2>
+    <p class="subtitle" data-ary="ختار العرض &lt;strong&gt;#live&lt;/strong&gt; (&quot;پاس الشباب&quot; ديال البنك الشعبي، من 18 ل 25 عام).">Choisir l'offre <strong>#live</strong> (le "pass jeune" de la Banque Populaire, 18–25 ans).</p>
 
-    <h3>Ce que couvre l'offre #live</h3>
+    <h3 data-ary="شنو كيغطي العرض #live">Ce que couvre l'offre #live</h3>
     <ul class="plain">
-      <li>Compte + carte bancaire pensés pour les 18–25 ans (étudiants / jeunes actifs)</li>
-      <li>Crédit étudiant "Avenir Plus" à taux avantageux</li>
-      <li>Assurance accident individuelle, utile pendant les stages</li>
-      <li>Paiement sans contact "Speed-p@y"</li>
-      <li>Accès à des stages, coachings et formations organisés par la banque</li>
+      <li data-ary="حساب + كارطة بنكية مدايرين للشباب من 18 ل 25 عام (طلبة / شباب خدامين)">Compte + carte bancaire pensés pour les 18–25 ans (étudiants / jeunes actifs)</li>
+      <li data-ary="قرض الطلبة &quot;Avenir Plus&quot; بنسبة فائدة مناسبة">Crédit étudiant "Avenir Plus" à taux avantageux</li>
+      <li data-ary="تأمين ضد الحوادث الفردية، مفيد ف فترة الستاج">Assurance accident individuelle, utile pendant les stages</li>
+      <li data-ary="الخلاص بلا تلامس &quot;Speed-p@y&quot;">Paiement sans contact "Speed-p@y"</li>
+      <li data-ary="الوصول لستاجات، كوتشينݣ و تكوينات كينظمهم البنك">Accès à des stages, coachings et formations organisés par la banque</li>
     </ul>
 
-    <h3>Pièces à fournir à l'ouverture</h3>
+    <h3 data-ary="الوثائق المطلوبة باش تفتح الحساب">Pièces à fournir à l'ouverture</h3>
     <ul class="checklist" data-group="banque">
-      <li><input type="checkbox" id="bk-1"><label for="bk-1">CNIE en cours de validité</label></li>
-      <li><input type="checkbox" id="bk-2"><label for="bk-2">Justificatif de domicile récent (&lt; 3 mois)</label></li>
-      <li><input type="checkbox" id="bk-3"><label for="bk-3">Carte d'étudiant ou attestation de scolarité (si applicable)</label></li>
-      <li><input type="checkbox" id="bk-4"><label for="bk-4">Dépôt initial (montant variable selon agence, ~200 DH)</label></li>
+      <li><input type="checkbox" id="bk-1"><label for="bk-1" data-ary="البطاقة الوطنية صالحة">CNIE en cours de validité</label></li>
+      <li><input type="checkbox" id="bk-2"><label for="bk-2" data-ary="وثيقة السكنى حديثة (ماتفوتش 3 شهور)">Justificatif de domicile récent (&lt; 3 mois)</label></li>
+      <li><input type="checkbox" id="bk-3"><label for="bk-3" data-ary="بطاقة الطالب ولا شهادة مدرسية (إلا كان الحال)">Carte d'étudiant ou attestation de scolarité (si applicable)</label></li>
+      <li><input type="checkbox" id="bk-4"><label for="bk-4" data-ary="الإيداع الأول (المبلغ كيتبدل حسب الوكالة، تقريبا 200 درهم)">Dépôt initial (montant variable selon agence, ~200 DH)</label></li>
     </ul>
 
-    <div class="tip"><strong>💡 Astuce :</strong> demande explicitement l'offre <strong>#live</strong> au conseiller — sinon on te proposera par défaut un compte standard sans les avantages jeunes. L'ouverture est aussi possible en ligne.</div>
+    <div class="tip" data-ary="&lt;strong&gt;💡 نصيحة:&lt;/strong&gt; طلب العرض &lt;strong&gt;#live&lt;/strong&gt; بصراحة من المستشار — إلا لا غادي يقترحو عليك حساب عادي بلا امتيازات الشباب. الفتح ممكن حتى أونلاين."><strong>💡 Astuce :</strong> demande explicitement l'offre <strong>#live</strong> au conseiller — sinon on te proposera par défaut un compte standard sans les avantages jeunes. L'ouverture est aussi possible en ligne.</div>
   </section>
 
   <section class="card" id="permis">
-    <h2>🚗 Permis de conduire (A, B, C)</h2>
-    <p class="subtitle">Catégories, âges minimums et démarche via une auto-école agréée + NARSA.</p>
+    <h2 data-ary="🚗 رخصة السياقة (A, B, C)">🚗 Permis de conduire (A, B, C)</h2>
+    <p class="subtitle" data-ary="الأصناف، السن الأدنى و المسطرة عبر مدرسة تعليم السياقة معتمدة + نارسا.">Catégories, âges minimums et démarche via une auto-école agréée + NARSA.</p>
 
     <table class="perm">
       <thead>
@@ -532,14 +711,14 @@
       </tbody>
     </table>
 
-    <h3>Étapes</h3>
+    <h3 data-ary="المراحل">Étapes</h3>
     <ul class="checklist" data-group="permis">
-      <li><input type="checkbox" id="pm-1"><label for="pm-1">Inscription dans une auto-école agréée (elle monte le dossier NARSA)</label></li>
-      <li><input type="checkbox" id="pm-2"><label for="pm-2">Formation théorique + code de la route</label></li>
-      <li><input type="checkbox" id="pm-3"><label for="pm-3">Examen théorique (code)</label></li>
-      <li><input type="checkbox" id="pm-4"><label for="pm-4">Formation pratique de conduite</label></li>
-      <li><input type="checkbox" id="pm-5"><label for="pm-5">Examen pratique de conduite</label></li>
-      <li><input type="checkbox" id="pm-6"><label for="pm-6">Retrait du permis</label></li>
+      <li><input type="checkbox" id="pm-1"><label for="pm-1" data-ary="التسجيل ف مدرسة تعليم السياقة معتمدة (هي اللي كتحضر ملف نارسا)">Inscription dans une auto-école agréée (elle monte le dossier NARSA)</label></li>
+      <li><input type="checkbox" id="pm-2"><label for="pm-2" data-ary="التكوين النظري + الكود">Formation théorique + code de la route</label></li>
+      <li><input type="checkbox" id="pm-3"><label for="pm-3" data-ary="امتحان الكود">Examen théorique (code)</label></li>
+      <li><input type="checkbox" id="pm-4"><label for="pm-4" data-ary="التكوين التطبيقي ديال السياقة">Formation pratique de conduite</label></li>
+      <li><input type="checkbox" id="pm-5"><label for="pm-5" data-ary="امتحان السياقة">Examen pratique de conduite</label></li>
+      <li><input type="checkbox" id="pm-6"><label for="pm-6" data-ary="سحب البيرمي">Retrait du permis</label></li>
     </ul>
 
     <div class="links-row">
@@ -549,58 +728,58 @@
   </section>
 
   <section class="card" id="assurance">
-    <h2>🛡️ Assurance — généralités</h2>
-    <p class="subtitle">L'essentiel à savoir, notamment pour l'assurance auto.</p>
+    <h2 data-ary="🛡️ التأمين — معلومات عامة">🛡️ Assurance — généralités</h2>
+    <p class="subtitle" data-ary="الأساسيات اللي خاصك تعرف، خصوصا ف تأمين الطوموبيل.">L'essentiel à savoir, notamment pour l'assurance auto.</p>
 
-    <h3>Ce qui est obligatoire</h3>
+    <h3 data-ary="شنو هو إجباري">Ce qui est obligatoire</h3>
     <ul class="plain">
-      <li>La <strong>Responsabilité Civile (RC)</strong> est obligatoire par la loi pour tout véhicule à moteur (Loi 17-99, Code des assurances)</li>
-      <li>Elle couvre les dommages causés à des <strong>tiers</strong> (piétons, autres conducteurs, passagers) — pas ton propre véhicule ni tes propres blessures</li>
-      <li>Rouler sans assurance = délit : amende de 500 à 5 000 DH + peine de prison possible (1 à 6 mois)</li>
+      <li data-ary="&lt;strong&gt;المسؤولية المدنية (RC)&lt;/strong&gt; إجبارية بالقانون لكل عربة بموطور (القانون 17-99، مدونة التأمينات)">La <strong>Responsabilité Civile (RC)</strong> est obligatoire par la loi pour tout véhicule à moteur (Loi 17-99, Code des assurances)</li>
+      <li data-ary="كتغطي الأضرار اللي كتوقع &lt;strong&gt;للغير&lt;/strong&gt; (الراجلين، السائقين الآخرين، الركاب) — ماشي الطوموبيل ديالك ولا الجروح ديالك">Elle couvre les dommages causés à des <strong>tiers</strong> (piétons, autres conducteurs, passagers) — pas ton propre véhicule ni tes propres blessures</li>
+      <li data-ary="السياقة بلا تأمين = جنحة: غرامة من 500 حتى 5000 درهم + إمكانية الحبس (من شهر ل 6 شهور)">Rouler sans assurance = délit : amende de 500 à 5 000 DH + peine de prison possible (1 à 6 mois)</li>
     </ul>
 
-    <h3>Garanties complémentaires courantes</h3>
+    <h3 data-ary="الضمانات الإضافية المتداولة">Garanties complémentaires courantes</h3>
     <ul class="plain">
-      <li><strong>Dommages tous accidents</strong> — couvre ton propre véhicule, responsable ou non</li>
-      <li><strong>Incendie</strong> et <strong>Vol</strong></li>
-      <li><strong>Personnes transportées</strong> — indemnise les passagers même si tu es responsable de l'accident</li>
-      <li><strong>Bris de glace</strong>, <strong>assistance/dépannage</strong></li>
+      <li data-ary="&lt;strong&gt;الأضرار ف جميع الحوادث&lt;/strong&gt; — كتغطي الطوموبيل ديالك، سواء كنتي مسؤول ولا لا"><strong>Dommages tous accidents</strong> — couvre ton propre véhicule, responsable ou non</li>
+      <li data-ary="&lt;strong&gt;الحريق&lt;/strong&gt; و &lt;strong&gt;السرقة&lt;/strong&gt;"><strong>Incendie</strong> et <strong>Vol</strong></li>
+      <li data-ary="&lt;strong&gt;الأشخاص المنقولين&lt;/strong&gt; — كتعوض الركاب حتى إلا كنتي نتا المسؤول على الحادثة"><strong>Personnes transportées</strong> — indemnise les passagers même si tu es responsable de l'accident</li>
+      <li data-ary="&lt;strong&gt;تكسار الزاج&lt;/strong&gt;، &lt;strong&gt;المساعدة/الدپانّاج&lt;/strong&gt;"><strong>Bris de glace</strong>, <strong>assistance/dépannage</strong></li>
     </ul>
 
-    <div class="tip"><strong>💡 Astuce :</strong> compare plusieurs assureurs (courtiers en ligne type comparateurs) avant de signer — le tarif de la RC seule varie peu, mais les garanties complémentaires et franchises varient beaucoup d'un assureur à l'autre.</div>
+    <div class="tip" data-ary="&lt;strong&gt;💡 نصيحة:&lt;/strong&gt; قارن بين بزاف ديال شركات التأمين (مواقع المقارنة أونلاين) قبل ما توقع — ثمن المسؤولية المدنية بوحدها ماكيتبدلش بزاف، ولكن الضمانات الإضافية و الفرانشيز كيتبدلو بزاف من شركة لشركة."><strong>💡 Astuce :</strong> compare plusieurs assureurs (courtiers en ligne type comparateurs) avant de signer — le tarif de la RC seule varie peu, mais les garanties complémentaires et franchises varient beaucoup d'un assureur à l'autre.</div>
   </section>
 
   <section class="card" id="portails">
-    <h2>🌐 Portails numériques utiles</h2>
-    <p class="subtitle">Plateformes officielles de digitalisation des démarches administratives au Maroc.</p>
+    <h2 data-ary="🌐 المواقع الرقمية المفيدة">🌐 Portails numériques utiles</h2>
+    <p class="subtitle" data-ary="منصات رسمية لرقمنة الإجراءات الإدارية ف المغرب.">Plateformes officielles de digitalisation des démarches administratives au Maroc.</p>
 
-    <h3>Idarati.ma</h3>
+    <h3 data-ary="Idarati.ma">Idarati.ma</h3>
     <ul class="plain">
-      <li>Portail National des Procédures et des Formalités Administratives, lancé le 21 avril 2021</li>
-      <li>Référence officielle qui recense les démarches à effectuer auprès des administrations, établissements publics et collectivités territoriales</li>
-      <li>Développé par le Ministère de l'Intérieur, le Ministère de l'Économie et des Finances, le Ministère de l'Industrie et du Numérique, l'ADD et l'ANRT, dans le cadre de la loi 55.19 sur la simplification des procédures administratives</li>
-      <li>Centre d'appel : 3737 (ou 0537679906 depuis l'étranger)</li>
+      <li data-ary="البوابة الوطنية للمساطر و الإجراءات الإدارية، تطلقات ف 21 أبريل 2021">Portail National des Procédures et des Formalités Administratives, lancé le 21 avril 2021</li>
+      <li data-ary="مرجع رسمي كيجمع الإجراءات اللي خاصك تدير عند الإدارات، المؤسسات العمومية و الجماعات الترابية">Référence officielle qui recense les démarches à effectuer auprès des administrations, établissements publics et collectivités territoriales</li>
+      <li data-ary="طورو وزارة الداخلية، وزارة الاقتصاد و المالية، وزارة الصناعة و الرقمنة، وكالة التنمية الرقمية (ADD) و الوكالة الوطنية لتقنين المواصلات (ANRT)، ف إطار القانون 55.19 ديال تبسيط المساطر الإدارية">Développé par le Ministère de l'Intérieur, le Ministère de l'Économie et des Finances, le Ministère de l'Industrie et du Numérique, l'ADD et l'ANRT, dans le cadre de la loi 55.19 sur la simplification des procédures administratives</li>
+      <li data-ary="مركز النداء: 3737 (ولا 0537679906 من الخارج)">Centre d'appel : 3737 (ou 0537679906 depuis l'étranger)</li>
     </ul>
 
-    <h3>Wraqi.ma</h3>
+    <h3 data-ary="Wraqi.ma">Wraqi.ma</h3>
     <ul class="plain">
-      <li>Coffre-fort numérique / portefeuille administratif électronique, dans le cadre de la stratégie #DigitalMorocco2030</li>
-      <li>Services : vérification d'identité numérique via « Mon e-ID », signature électronique (simple, avancée, qualifiée), certification et légalisation de documents à distance, attestations de résidence, vérification de documents en temps réel</li>
-      <li>Agréé CNDP (n° A-W-497/2024), conforme aux lois 53-05 et 43-20 sur la signature électronique</li>
-      <li>Accès web ou application mobile (iOS/Android) avec la CNIE et l'application Mon Identité Numérique</li>
+      <li data-ary="خزانة رقمية / محفظة إدارية إلكترونية، ف إطار استراتيجية #DigitalMorocco2030">Coffre-fort numérique / portefeuille administratif électronique, dans le cadre de la stratégie #DigitalMorocco2030</li>
+      <li data-ary="الخدمات: التحقق من الهوية الرقمية عبر «Mon e-ID»، التوقيع الإلكتروني (بسيط، متقدم، مؤهل)، تصحيح الإمضاء و الإشهاد على الوثائق عن بعد، شهادات السكنى، و التحقق من الوثائق ف الوقت الحقيقي">Services : vérification d'identité numérique via « Mon e-ID », signature électronique (simple, avancée, qualifiée), certification et légalisation de documents à distance, attestations de résidence, vérification de documents en temps réel</li>
+      <li data-ary="معتمد من CNDP (رقم A-W-497/2024)، و متوافق مع القانونين 53-05 و 43-20 ديال التوقيع الإلكتروني">Agréé CNDP (n° A-W-497/2024), conforme aux lois 53-05 et 43-20 sur la signature électronique</li>
+      <li data-ary="الولوج عبر الويب ولا تطبيق الموبايل (iOS/Android) بالبطاقة الوطنية و تطبيق «هويتي الرقمية»">Accès web ou application mobile (iOS/Android) avec la CNIE et l'application Mon Identité Numérique</li>
     </ul>
 
-    <p class="subtitle" style="margin:0.4rem 0 0;"><strong>FAQ Wraqi (points utiles) :</strong></p>
+    <p class="subtitle" style="margin:0.4rem 0 0;" data-ary="&lt;strong&gt;الأسئلة الشائعة ديال Wraqi (نقط مفيدة):&lt;/strong&gt;"><strong>FAQ Wraqi (points utiles) :</strong></p>
     <ul class="plain">
-      <li>Inscription avec la CNIE puis identifiants temporaires (à changer à la 1ère connexion) ; connexion sécurisée ensuite via l'appli « Mon Identité Numérique » (reconnaissance faciale ou code PIN)</li>
-      <li>100 % en ligne, accessible partout, sans besoin de se déplacer en agence</li>
-      <li>Signature électronique : renseigner les infos, uploader le document, payer, signer — plusieurs signataires possibles, chacun notifié ; document signé téléchargeable et envoyé par e-mail immédiatement</li>
-      <li>Service de prépaiement de signatures : rechargeable par carte, utilisable sur tous les services de signature, sans date d'expiration, tarifs dégressifs au volume</li>
-      <li>Attestation de résidence délivrée instantanément (adresse CNIE ou autre avec justificatif)</li>
-      <li>Vérification de l'authenticité d'un document : par référence ou en téléversant le document</li>
-      <li>Si une administration refuse un document Wraqi : demander un refus écrit, signaler sur <a href="https://chikaya.ma/" target="_blank" rel="noopener">Chikaya.ma</a> (portail national des réclamations), et prévenir l'équipe Wraqi</li>
-      <li>Support : chat sur la plateforme, lun–ven 8h–20h, sam–dim 9h–18h (GMT+1)</li>
-      <li>Comptes entreprises : création via le Registre de Commerce, forfaits, gestion des mandataires et du solde de signatures</li>
+      <li data-ary="التسجيل بالبطاقة الوطنية و من بعد كيعطيوك كود مؤقت (خاصك تبدلو ف أول دخول)؛ من بعد الدخول كيولي آمن عبر تطبيق «هويتي الرقمية» (التعرف على الوجه ولا كود PIN)">Inscription avec la CNIE puis identifiants temporaires (à changer à la 1ère connexion) ; connexion sécurisée ensuite via l'appli « Mon Identité Numérique » (reconnaissance faciale ou code PIN)</li>
+      <li data-ary="100% أونلاين، متاح ف كل بلاصة، بلا ما تمشي للوكالة">100 % en ligne, accessible partout, sans besoin de se déplacer en agence</li>
+      <li data-ary="التوقيع الإلكتروني: تعمر المعلومات، ترفع الوثيقة، تخلص، و توقع — ممكن يكونو بزاف ديال الموقعين، و كل واحد كيوصلو إشعار؛ الوثيقة الموقعة كتقدر تحملها و كتوصلك ف الإيمايل دغيا">Signature électronique : renseigner les infos, uploader le document, payer, signer — plusieurs signataires possibles, chacun notifié ; document signé téléchargeable et envoyé par e-mail immédiatement</li>
+      <li data-ary="خدمة الخلاص المسبق للتوقيعات: كتعمرها بالكارطة، صالحة ف جميع خدمات التوقيع، بلا تاريخ انتهاء، و الثمن كينقص كل ما زاد العدد">Service de prépaiement de signatures : rechargeable par carte, utilisable sur tous les services de signature, sans date d'expiration, tarifs dégressifs au volume</li>
+      <li data-ary="شهادة السكنى كتتسلم ف الحين (العنوان ديال البطاقة الوطنية ولا عنوان آخر بوثيقة)">Attestation de résidence délivrée instantanément (adresse CNIE ou autre avec justificatif)</li>
+      <li data-ary="التحقق من صحة الوثيقة: بالمرجع ولا برفع الوثيقة">Vérification de l'authenticité d'un document : par référence ou en téléversant le document</li>
+      <li data-ary="إلا رفضات شي إدارة وثيقة ديال Wraqi: طلب رفض مكتوب، صيفط شكاية ف &lt;a href=&quot;https://chikaya.ma/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Chikaya.ma&lt;/a&gt; (البوابة الوطنية للشكايات)، و خبر الفريق ديال Wraqi">Si une administration refuse un document Wraqi : demander un refus écrit, signaler sur <a href="https://chikaya.ma/" target="_blank" rel="noopener">Chikaya.ma</a> (portail national des réclamations), et prévenir l'équipe Wraqi</li>
+      <li data-ary="الدعم: الشات ف المنصة، من الاثنين للجمعة 8:00–20:00، و السبت و الأحد 9:00–18:00 (GMT+1)">Support : chat sur la plateforme, lun–ven 8h–20h, sam–dim 9h–18h (GMT+1)</li>
+      <li data-ary="حسابات الشركات: الإنشاء عبر السجل التجاري، صيغ اشتراك، تدبير الوكلاء و رصيد التوقيعات">Comptes entreprises : création via le Registre de Commerce, forfaits, gestion des mandataires et du solde de signatures</li>
     </ul>
 
     <div class="links-row">
@@ -610,30 +789,76 @@
       <a href="https://www.mmsp.gov.ma/" target="_blank" rel="noopener">🏛️ mmsp.gov.ma — Ministère de la Transition Numérique</a>
     </div>
 
-    <h3>Consulat.ma</h3>
+    <h3 data-ary="Consulat.ma">Consulat.ma</h3>
     <ul class="plain">
-      <li>Portail officiel des services consulaires du Royaume du Maroc, destiné aux Marocains résidant à l'étranger (MRE) et aux étrangers souhaitant se rendre au Maroc</li>
-      <li>Rubrique « documents individuels » : CNIE, passeport biométrique, immatriculation consulaire, laissez-passer, légalisation de documents, casier judiciaire</li>
-      <li>Autres services : état civil (naissance, mariage, divorce, décès), livret de famille, informations sur les visas</li>
+      <li data-ary="البوابة الرسمية للخدمات القنصلية ديال المملكة المغربية، موجهة لمغاربة العالم و للأجانب اللي بغاو يجيو للمغرب">Portail officiel des services consulaires du Royaume du Maroc, destiné aux Marocains résidant à l'étranger (MRE) et aux étrangers souhaitant se rendre au Maroc</li>
+      <li data-ary="ركن «الوثائق الفردية»: البطاقة الوطنية، الباسبور البيومتري، التسجيل القنصلي، جواز المرور، تصحيح الإمضاء، و السجل العدلي">Rubrique « documents individuels » : CNIE, passeport biométrique, immatriculation consulaire, laissez-passer, légalisation de documents, casier judiciaire</li>
+      <li data-ary="خدمات أخرى: الحالة المدنية (الولادة، الزواج، الطلاق، الوفاة)، دفتر الحالة المدنية، و معلومات على الفيزا">Autres services : état civil (naissance, mariage, divorce, décès), livret de famille, informations sur les visas</li>
     </ul>
 
-    <h3>Watiqa.ma</h3>
+    <h3 data-ary="Watiqa.ma">Watiqa.ma</h3>
     <ul class="plain">
-      <li>Commande en ligne de documents d'état civil, envoyés par courrier recommandé à l'adresse choisie</li>
-      <li>Permet d'obtenir : copie intégrale ou extrait de l'acte de naissance (عقد الازدياد), et l'attestation d'immatriculation consulaire pour les MRE</li>
-      <li>Fonctionnement en 4 étapes : demande en ligne, paiement des frais d'envoi par carte, suivi du dossier, réception par la poste</li>
+      <li data-ary="طلب وثائق الحالة المدنية أونلاين، و كتوصلك برسالة مضمونة ف العنوان اللي ختاريتي">Commande en ligne de documents d'état civil, envoyés par courrier recommandé à l'adresse choisie</li>
+      <li data-ary="كتخليك تاخد: نسخة كاملة ولا موجز من عقد الازدياد، و شهادة التسجيل القنصلي لمغاربة العالم">Permet d'obtenir : copie intégrale ou extrait de l'acte de naissance (عقد الازدياد), et l'attestation d'immatriculation consulaire pour les MRE</li>
+      <li data-ary="كتخدم ب 4 مراحل: الطلب أونلاين، خلاص صوايرالإرسال بالكارطة، تتبع الملف، و التوصل بالبريد">Fonctionnement en 4 étapes : demande en ligne, paiement des frais d'envoi par carte, suivi du dossier, réception par la poste</li>
     </ul>
 
-    <h3>Al Ahwal Al Madania (alhalalmadania.ma)</h3>
+    <h3 data-ary="الحالة المدنية (alhalalmadania.ma)">Al Ahwal Al Madania (alhalalmadania.ma)</h3>
     <ul class="plain">
-      <li>Portail officiel de l'état civil marocain (Ministère de l'Intérieur) : informations sur les lois et procédures, demandes de documents administratifs, déclarations préalables (naissance, mariage, divorce, décès)</li>
-      <li>Une page <a href="https://www.alhalalmadania.ma/Generales/Publications" target="_blank" rel="noopener">Publications</a> propose des documents officiels à télécharger</li>
+      <li data-ary="البوابة الرسمية ديال الحالة المدنية المغربية (وزارة الداخلية): معلومات على القوانين و المساطر، طلبات الوثائق الإدارية، و التصريحات المسبقة (الولادة، الزواج، الطلاق، الوفاة)">Portail officiel de l'état civil marocain (Ministère de l'Intérieur) : informations sur les lois et procédures, demandes de documents administratifs, déclarations préalables (naissance, mariage, divorce, décès)</li>
+      <li data-ary="كاينة صفحة &lt;a href=&quot;https://www.alhalalmadania.ma/Generales/Publications&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;المنشورات&lt;/a&gt; فيها وثائق رسمية تقدر تحملها">Une page <a href="https://www.alhalalmadania.ma/Generales/Publications" target="_blank" rel="noopener">Publications</a> propose des documents officiels à télécharger</li>
     </ul>
 
-    <h3>Accès Maroc</h3>
+    <h3 data-ary="📄 الوثائق الرسمية ديال الحالة المدنية (PDF)">📄 Documents officiels de l'état civil (PDF)</h3>
+    <p class="subtitle" data-ary="دوريات و نصوص متحملة من صفحة المنشورات ديال alhalalmadania.ma و محفوظة هنا (نسخة احتياطية).">Circulaires et textes téléchargés depuis la page Publications d'alhalalmadania.ma et archivés ici (copie de sauvegarde).</p>
+    <details>
+      <summary style="cursor:pointer; padding:0.5rem 0; font-size:0.92rem;" data-ary="بين 22 وثيقة">Afficher les 22 documents</summary>
+      <h4 style="margin:0.9rem 0 0.4rem; font-size:0.85rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.02em;" data-ary="القوانين و النصوص الأساسية">Lois et textes de base</h4>
+      <ul class="plain">
+        <li><a href="assets/alhalalmadania/%D8%A7%D9%84%D9%82%D8%A7%D9%86%D9%88%D9%86%20%D8%A7%D9%84%D8%A3%D8%B3%D8%A7%D8%B3%D9%8A%20%D9%84%D9%84%D8%AD%D8%A7%D9%84%D8%A9%20%D8%A7%D9%84%D9%85%D8%AF%D9%86%D9%8A%D8%A9.pdf" target="_blank" rel="noopener" dir="rtl">القانون الأساسي للحالة المدنية</a> <span style="color:var(--text-muted); font-size:0.85rem;">(423 Ko)</span></li>
+        <li><a href="assets/alhalalmadania/%D8%A7%D9%84%D9%85%D8%B1%D8%B3%D9%88%D9%85%20%D8%A7%D9%84%D8%AA%D8%B7%D8%A8%D9%8A%D9%82%D9%8A%20%D9%84%D9%82%D8%A7%D9%86%D9%88%D9%86%20%D8%A7%D9%84%D8%AD%D8%A7%D9%84%D8%A9%20%D8%A7%D9%84%D9%85%D8%AF%D9%86%D9%8A%D8%A9.pdf" target="_blank" rel="noopener" dir="rtl">المرسوم التطبيقي لقانون الحالة المدنية</a> <span style="color:var(--text-muted); font-size:0.85rem;">(369 Ko)</span></li>
+        <li><a href="assets/alhalalmadania/%D8%A5%D9%84%D8%B2%D8%A7%D9%85%D9%8A%D8%A9%20%D8%A7%D9%84%D8%AA%D8%B9%D9%84%D9%8A%D9%85%20%D9%84%D9%82%D8%A7%D9%86%D9%88%D9%86%2013%20%D9%86%D9%88%D9%86%D8%A8%D8%B11963.pdf" target="_blank" rel="noopener" dir="rtl">إلزامية التعليم لقانون 13 نونبر1963</a> <span style="color:var(--text-muted); font-size:0.85rem;">(276 Ko)</span></li>
+        <li><a href="assets/alhalalmadania/%D8%AF%D9%88%D8%B1%D9%8A%D8%A9%20%D8%AD%D9%88%D9%84%20%D9%85%D8%B1%D8%A7%D9%82%D8%A8%D8%A9%20%D8%A3%D8%B9%D9%85%D8%A7%D9%84%20%D8%B6%D8%A8%D8%A7%D8%B7%20%D8%A7%D9%84%D8%AD%D8%A7%D9%84%D8%A9%20%D8%A7%D9%84%D9%85%D8%AF%D9%86%D9%8A%D8%A9.pdf" target="_blank" rel="noopener" dir="rtl">دورية حول مراقبة أعمال ضباط الحالة المدنية</a> <span style="color:var(--text-muted); font-size:0.85rem;">(581 Ko)</span></li>
+      </ul>
+      <h4 style="margin:0.9rem 0 0.4rem; font-size:0.85rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.02em;" data-ary="الأسماء الشخصية و العائلية">Noms et prénoms</h4>
+      <ul class="plain">
+        <li><a href="assets/alhalalmadania/%D8%A7%D8%AE%D8%AA%D9%8A%D8%A7%D8%B1%20%D8%A7%D9%84%D8%A3%D8%B3%D9%85%D8%A7%D8%A1%20%D8%A7%D9%84%D8%B4%D8%AE%D8%B5%D9%8A%D8%A9%202010.pdf" target="_blank" rel="noopener" dir="rtl">اختيار الأسماء الشخصية 2010</a> <span style="color:var(--text-muted); font-size:0.85rem;">(614 Ko)</span></li>
+        <li><a href="assets/alhalalmadania/%D8%A5%D8%AF%D8%AE%D8%A7%D9%84%20%D9%88%D9%83%D8%AA%D8%A7%D8%A8%D8%A9%20%D8%A7%D9%84%D8%A3%D8%B3%D9%85%D8%A7%D8%A1%20%D8%A8%D8%A7%D9%84%D8%A3%D8%AD%D8%B1%D9%81%20%D8%A7%D9%84%D9%84%D8%A7%D8%AA%D9%8A%D9%86%D9%8A%D8%A9.pdf" target="_blank" rel="noopener" dir="rtl">إدخال وكتابة الأسماء بالأحرف اللاتينية</a> <span style="color:var(--text-muted); font-size:0.85rem;">(272 Ko)</span></li>
+        <li><a href="assets/alhalalmadania/%D8%A7%D9%84%D9%85%D8%B3%D8%B7%D8%B1%D8%A9%20%D8%A7%D9%84%D8%AC%D8%AF%D9%8A%D8%AF%D8%A9%20%D9%84%D8%AA%D9%86%D9%81%D9%8A%D8%B0%20%D9%85%D8%B1%D8%A7%D8%B3%D9%85%20%D8%A7%D8%B3%D8%AA%D8%A8%D8%AF%D8%A7%D9%84%20%D8%A7%D9%84%D8%A3%D8%B3%D9%85%D8%A7%D8%A1%20%D8%A7%D9%84%D8%B9%D8%A7%D8%A6%D9%84%D9%8A%D8%A9.pdf" target="_blank" rel="noopener" dir="rtl">المسطرة الجديدة لتنفيذ مراسم استبدال الأسماء العائلية</a> <span style="color:var(--text-muted); font-size:0.85rem;">(432 Ko)</span></li>
+        <li><a href="assets/alhalalmadania/%D8%AF%D9%88%D8%B1%D9%8A%D8%A9%20%D8%AD%D9%88%D9%84%20%D8%A5%D8%B9%D8%B7%D8%A7%D8%A1%20%D8%A7%D9%84%D8%A7%D8%B3%D9%85%20%D8%A7%D9%84%D8%B9%D8%A7%D8%A6%D9%84%D9%8A%20%D9%84%D9%84%D8%A3%D9%85%20%D9%84%D8%A7%D8%A8%D9%86%D9%87%D8%A7%20%D8%A7%D9%84%D9%85%D8%AC%D9%87%D9%88%D9%84%20%D8%A7%D9%84%D8%A3%D8%A8.pdf" target="_blank" rel="noopener" dir="rtl">دورية حول إعطاء الاسم العائلي للأم لابنها المجهول الأب</a> <span style="color:var(--text-muted); font-size:0.85rem;">(754 Ko)</span></li>
+      </ul>
+      <h4 style="margin:0.9rem 0 0.4rem; font-size:0.85rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.02em;" data-ary="الرسوم و السجلات">Actes et registres</h4>
+      <ul class="plain">
+        <li><a href="assets/alhalalmadania/%D8%AA%D8%B3%D9%84%D9%8A%D9%85%20%D9%86%D8%B3%D8%AE%20%D8%B1%D8%B3%D9%88%D9%85%20%D8%A7%D9%84%D8%AD%D8%A7%D9%84%D8%A9%20%D8%A7%D9%84%D9%85%D8%AF%D9%86%D9%8A%D8%A9%D9%80%202008.pdf" target="_blank" rel="noopener" dir="rtl">تسليم نسخ رسوم الحالة المدنيةـ 2008</a> <span style="color:var(--text-muted); font-size:0.85rem;">(233 Ko)</span></li>
+        <li><a href="assets/alhalalmadania/%D8%AA%D8%AD%D8%B1%D9%8A%D8%B1%20%D9%86%D8%B3%D8%AE%20%D8%B1%D8%B3%D9%88%D9%85%20%D8%A7%D9%84%D8%AD%D8%A7%D9%84%D8%A9%20%D8%A7%D9%84%D9%85%D8%AF%D9%86%D9%8A%D8%A9%20%D8%A8%D8%A7%D9%84%D9%84%D8%BA%D8%A9%20%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9%20%D9%88%20%D8%A7%D9%84%D8%A3%D8%AD%D8%B1%D9%81%20%D8%A7%D9%84%D9%84%D8%A7%D8%AA%D9%8A%D9%86%D9%8A%D8%A9.pdf" target="_blank" rel="noopener" dir="rtl">تحرير نسخ رسوم الحالة المدنية باللغة العربية و الأحرف اللاتينية</a> <span style="color:var(--text-muted); font-size:0.85rem;">(275 Ko)</span></li>
+        <li><a href="assets/alhalalmadania/%D8%A5%D8%B6%D8%A7%D9%81%D8%A9%20%D9%88%D8%B5%D9%84%D8%A9%20%D8%AA%D9%83%D9%85%D9%8A%D9%84%D9%8A%D8%A9%20%D9%84%D8%B7%D8%B1%D8%A9%20%D8%B1%D8%B3%D9%85%20%D9%88%D9%84%D8%A7%D8%AF%D8%A91.pdf" target="_blank" rel="noopener" dir="rtl">إضافة وصلة تكميلية لطرة رسم ولادة1</a> <span style="color:var(--text-muted); font-size:0.85rem;">(260 Ko)</span></li>
+        <li><a href="assets/alhalalmadania/%D8%A8%D9%8A%D8%A7%D9%86%D9%8A%20%D8%A7%D9%84%D9%8A%D9%88%D9%85%20%D9%88%D8%A7%D9%84%D8%B4%D9%87%D8%B1%20%D8%A8%D8%AA%D8%A7%D8%B1%D9%8A%D8%AE%20%D8%A7%D9%84%D9%88%D9%84%D8%A7%D8%AF%D8%A9%202010.pdf" target="_blank" rel="noopener" dir="rtl">بياني اليوم والشهر بتاريخ الولادة 2010</a> <span style="color:var(--text-muted); font-size:0.85rem;">(435 Ko)</span></li>
+        <li><a href="assets/alhalalmadania/%D9%88%D8%B6%D8%B9%D9%8A%D8%A9%20%D8%B3%D8%AC%D9%84%D8%A7%D8%AA%20%D8%AD%20%D9%85%20%D8%B9%D9%84%D9%89%20%D8%B6%D9%88%D8%A1%20%D8%A7%D9%84%D8%AA%D9%82%D8%B3%D9%8A%D9%85%20%D8%A7%D9%84%D8%A5%D8%AF%D8%A7%D8%B1%D9%8A%202009.pdf" target="_blank" rel="noopener" dir="rtl">وضعية سجلات ح م على ضوء التقسيم الإداري 2009</a> <span style="color:var(--text-muted); font-size:0.85rem;">(261 Ko)</span></li>
+        <li><a href="assets/alhalalmadania/%D8%A7%D9%84%D8%A5%D8%B1%D8%B3%D8%A7%D9%84%20%D8%A7%D9%84%D8%A5%D9%84%D9%83%D8%AA%D8%B1%D9%88%D9%86%D9%8A%20%D9%84%D8%A5%D8%AD%D8%B5%D8%A7%D8%A6%D9%8A%D8%A7%D8%AA%20%D8%A7%D9%84%D8%AD%D8%A7%D9%84%D8%A9%20%D8%A7%D9%84%D9%85%D8%AF%D9%86%D9%8A%D8%A9.pdf" target="_blank" rel="noopener" dir="rtl">الإرسال الإلكتروني لإحصائيات الحالة المدنية</a> <span style="color:var(--text-muted); font-size:0.85rem;">(1273 Ko)</span></li>
+      </ul>
+      <h4 style="margin:0.9rem 0 0.4rem; font-size:0.85rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.02em;" data-ary="مغاربة العالم و الأجانب">Marocains résidant à l&#x27;étranger et étrangers</h4>
+      <ul class="plain">
+        <li><a href="assets/alhalalmadania/-2011-%20%D8%AD%D9%88%D9%84%20%D9%85%D8%B1%D8%A7%D8%B3%D9%84%D8%A7%D8%AA%20%D8%A7%D9%84%D9%85%D8%BA%D8%A7%D8%B1%D8%A8%D8%A9%20%D8%A7%D9%84%D9%85%D9%82%D9%8A%D9%85%D9%8A%D9%86%20%D8%A8%D8%A7%D9%84%D8%AE%D8%A7%D8%B1%D8%AC.pdf" target="_blank" rel="noopener" dir="rtl">-2011- حول مراسلات المغاربة المقيمين بالخارج</a> <span style="color:var(--text-muted); font-size:0.85rem;">(803 Ko)</span></li>
+        <li><a href="assets/alhalalmadania/%D8%A7%D9%84%D8%A7%D9%87%D8%AA%D9%85%D9%85%D8%A7%D9%85%20%D8%A8%D9%82%D8%B6%D8%A7%D9%8A%D8%A7%20%20%D8%A7%D9%84%D8%AD%D8%A7%D9%84%D8%A9%20%D8%A7%D9%84%D9%85%D8%AF%D9%86%D9%8A%D8%A9%20%D9%84%D9%84%D8%AC%D8%A7%D9%84%D9%8A%D8%A9%20%D8%A7%D9%84%D9%85%D8%BA%D8%B1%D8%A8%D9%8A%D8%A9%20%D8%A8%D8%A7%D9%84%D8%AE%D8%A7%D8%B1%D8%AC.pdf" target="_blank" rel="noopener" dir="rtl">الاهتممام بقضايا  الحالة المدنية للجالية المغربية بالخارج</a> <span style="color:var(--text-muted); font-size:0.85rem;">(413 Ko)</span></li>
+        <li><a href="assets/alhalalmadania/%D8%AA%D8%B3%D9%84%D9%8A%D9%85%20%D9%88%D8%AB%D8%A7%D8%A6%D9%82%20%D8%A7%D9%84%D8%AD%D8%A7%D9%84%D8%A9%20%D8%A7%D9%84%D9%85%D8%AF%D9%86%D9%8A%D8%A9%20%D9%85%D9%86%20%D8%A3%D8%AC%D9%84%20%D8%A7%D9%84%D8%A7%D8%AF%D9%84%D8%A7%D8%A1%20%D8%A8%D9%87%D8%A7%20%D8%A8%D8%A7%D9%84%D8%AE%D8%A7%D8%B1%D8%AC.pdf" target="_blank" rel="noopener" dir="rtl">تسليم وثائق الحالة المدنية من أجل الادلاء بها بالخارج</a> <span style="color:var(--text-muted); font-size:0.85rem;">(579 Ko)</span></li>
+        <li><a href="assets/alhalalmadania/%D8%AF%D9%88%D8%B1%D9%8A%D8%A9%20%D8%AD%D9%88%D9%84%20%D8%AA%D8%B3%D8%AC%D9%8A%D9%84%20%D8%A7%D9%84%D9%85%D9%88%D8%A7%D9%84%D9%8A%D8%AF%20%D9%85%D9%86%20%D8%A3%D9%85%20%D9%85%D8%BA%D8%B1%D8%A8%D9%8A%D8%A9%20%D9%88%D8%A3%D8%A8%20%D8%A3%D8%AC%D9%86%D8%A8%D9%8A%203.pdf" target="_blank" rel="noopener" dir="rtl">دورية حول تسجيل المواليد من أم مغربية وأب أجنبي 3</a> <span style="color:var(--text-muted); font-size:0.85rem;">(520 Ko)</span></li>
+        <li><a href="assets/alhalalmadania/%D8%AD%D9%88%D9%84%20%D8%AA%D8%B3%D8%AC%D9%8A%D9%84%20%D9%88%D9%81%D8%A7%D8%A9%20%D8%A7%D9%84%D8%A3%D8%AC%D8%A7%D9%86%D8%A8%20%D8%A7%D9%84%D9%87%D8%A7%D9%84%D9%83%D9%8A%D9%86%20%D8%A8%D8%A7%D9%84%D9%85%D8%BA%D8%B1%D8%A8%20%D8%A8%D8%B3%D8%AC%D9%84%D8%A7%D8%AA%20%D8%A7%D9%84%D8%AD%D8%A7%D9%84%D8%A9%20%D8%A7%D9%84%D9%85%D8%AF%D9%86%D9%8A%D8%A9.pdf" target="_blank" rel="noopener" dir="rtl">حول تسجيل وفاة الأجانب الهالكين بالمغرب بسجلات الحالة المدنية</a> <span style="color:var(--text-muted); font-size:0.85rem;">(183 Ko)</span></li>
+      </ul>
+      <h4 style="margin:0.9rem 0 0.4rem; font-size:0.85rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.02em;" data-ary="الزواج">Mariage</h4>
+      <ul class="plain">
+        <li><a href="assets/alhalalmadania/%D8%B9%D9%82%D9%88%D8%AF%20%D8%A7%D9%84%D8%B2%D9%88%D8%A7%D8%AC%20%D8%A7%D9%84%D9%85%D8%AF%D9%86%D9%8A.pdf" target="_blank" rel="noopener" dir="rtl">عقود الزواج المدني</a> <span style="color:var(--text-muted); font-size:0.85rem;">(347 Ko)</span></li>
+        <li><a href="assets/alhalalmadania/%D8%AA%D8%AD%D8%AF%D9%8A%D8%AF%20%D8%A3%D8%AC%D9%84%20%D8%AF%D8%B9%D9%88%D9%89%20%D8%B3%D9%85%D8%A7%D8%B9%20%D8%A7%D9%84%D8%B2%D9%88%D8%AC%D8%A9%202014.pdf" target="_blank" rel="noopener" dir="rtl">تحديد أجل دعوى سماع الزوجة 2014</a> <span style="color:var(--text-muted); font-size:0.85rem;">(378 Ko)</span></li>
+      </ul>
+      <h4 style="margin:0.9rem 0 0.4rem; font-size:0.85rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.02em;" data-ary="متفرقات">Divers</h4>
+      <ul class="plain">
+        <li><a href="assets/alhalalmadania/%D8%A5%D8%B4%D8%B9%D8%A7%D8%B1%20%D8%A7%D9%84%D9%86%D8%B8%D8%A7%D9%85%20%D8%A7%D9%84%D8%AC%D9%85%D8%A7%D8%B9%D9%8A%20%D9%84%D9%85%D9%86%D8%AD%20%D8%B1%D9%88%D8%A7%D8%AA%D8%A8%20%D8%A7%D9%84%D8%AA%D9%82%D8%A7%D8%B9%D8%AF.pdf" target="_blank" rel="noopener" dir="rtl">إشعار النظام الجماعي لمنح رواتب التقاعد</a> <span style="color:var(--text-muted); font-size:0.85rem;">(288 Ko)</span></li>
+      </ul>
+    </details>
+
+    <h3 data-ary="Accès Maroc">Accès Maroc</h3>
     <ul class="plain">
-      <li>Vérificateur d'éligibilité au eVisa pour se rendre au Maroc, selon la nationalité, le pays de résidence, le type de passeport et le motif du voyage</li>
-      <li>Renvoie vers les portails officiels consulaires, diplomatiques et touristiques du Maroc</li>
+      <li data-ary="أداة كتشوف واش خاصك eVisa باش تجي للمغرب، حسب الجنسية، بلد الإقامة، نوع الباسبور و سبب السفر">Vérificateur d'éligibilité au eVisa pour se rendre au Maroc, selon la nationalité, le pays de résidence, le type de passeport et le motif du voyage</li>
+      <li data-ary="كيوجهك للمواقع الرسمية القنصلية، الدبلوماسية و السياحية ديال المغرب">Renvoie vers les portails officiels consulaires, diplomatiques et touristiques du Maroc</li>
     </ul>
 
     <div class="links-row">
@@ -645,17 +870,27 @@
       <a href="https://www.acces-maroc.ma/" target="_blank" rel="noopener">🛂 acces-maroc.ma (eVisa)</a>
     </div>
 
-    <h3>Géolocalisation des services publics</h3>
+    <h3 data-ary="تحديد موقع المصالح العمومية">Géolocalisation des services publics</h3>
     <ul class="plain">
-      <li><strong>maps.service-public.ma</strong> — portail du Ministère de la Transition Numérique pour géolocaliser une administration, chercher les services publics à proximité, calculer un itinéraire et consulter les coordonnées de chaque administration</li>
+      <li data-ary="&lt;strong&gt;maps.service-public.ma&lt;/strong&gt; — بوابة ديال وزارة الانتقال الرقمي باش تلقى موقع إدارة، تقلب على المصالح العمومية القريبة منك، تحسب الطريق و تشوف معطيات الاتصال ديال كل إدارة"><strong>maps.service-public.ma</strong> — portail du Ministère de la Transition Numérique pour géolocaliser une administration, chercher les services publics à proximité, calculer un itinéraire et consulter les coordonnées de chaque administration</li>
     </ul>
 
-    <h3>Autres liens utiles</h3>
+    <h3 data-ary="روابط أخرى مفيدة">Autres liens utiles</h3>
     <ul class="plain">
-      <li><strong>sahara.ma</strong> — portail d'actualités sur les provinces du Sud du Maroc (politique, économie, société, développement régional)</li>
+      <li data-ary="&lt;strong&gt;sahara.ma&lt;/strong&gt; — بوابة إخبارية على الأقاليم الجنوبية ديال المغرب (السياسة، الاقتصاد، المجتمع، التنمية الجهوية)"><strong>sahara.ma</strong> — portail d'actualités sur les provinces du Sud du Maroc (politique, économie, société, développement régional)</li>
+    </ul>
+
+    <h3 data-ary="البوابات الحكومية العامة">Portails gouvernementaux généraux</h3>
+    <ul class="plain">
+      <li data-ary="&lt;strong&gt;sgg.gov.ma&lt;/strong&gt; — الأمانة العامة للحكومة: الجريدة الرسمية، النصوص التشريعية و التنظيمية، و مشاريع القوانين"><strong>sgg.gov.ma</strong> — Secrétariat Général du Gouvernement : Bulletin Officiel, textes législatifs et réglementaires, projets de loi</li>
+      <li data-ary="&lt;strong&gt;maroc.ma&lt;/strong&gt; — البوابة الوطنية الرسمية للمملكة المغربية (أخبار، مؤسسات، خدمات رقمية)"><strong>maroc.ma</strong> — portail national officiel du Royaume du Maroc (actualités, institutions, services numériques)</li>
+      <li data-ary="&lt;strong&gt;maroc.ma/fr/services-numeriques&lt;/strong&gt; — منصة كتجمع الخدمات الرقمية ديال الإدارات، مصنفة حسب البروفيل (عموم الناس، الشركات و المهنيين، الطلبة، الموظفين، المستثمرين، الشباب، المتقاعدين، مغاربة العالم، السياح). فيها مثلا ONCF، CNOPS، مكتب الصرف (SMART)، المكتب الرقمي للضبط ديال وكالة التنمية الرقمية، منح الدراسة بالخارج، و طلبات السجل التجاري"><strong>maroc.ma/fr/services-numeriques</strong> — hub qui regroupe les services numériques des administrations, classés par profil (grand public, entreprises et professionnels, étudiants, fonctionnaires, investisseurs, jeunes, retraités, MRE, touristes). On y trouve par ex. l'ONCF, la CNOPS, l'Office des Changes (SMART), le bureau d'ordre digital de l'ADD, les bourses d'études internationales, et les demandes de registre de commerce</li>
     </ul>
 
     <div class="links-row">
+      <a href="https://www.sgg.gov.ma/" target="_blank" rel="noopener">⚖️ sgg.gov.ma</a>
+      <a href="https://maroc.ma/" target="_blank" rel="noopener">🇲🇦 maroc.ma</a>
+      <a href="https://maroc.ma/fr/services-numeriques" target="_blank" rel="noopener">🧩 maroc.ma — hub des services numériques</a>
       <a href="http://maps.service-public.ma/" target="_blank" rel="noopener">🗺️ maps.service-public.ma</a>
       <a href="https://sahara.ma/" target="_blank" rel="noopener">📰 sahara.ma</a>
     </div>
@@ -664,7 +899,7 @@
 </main>
 
 <footer>
-  <p>Notes personnelles, à vérifier sur les portails officiels avant toute démarche (les délais, tarifs et procédures peuvent changer). Dernière mise à jour : 26 août 2026.</p>
+  <p data-ary="ملاحظات شخصية، خاصك تأكد منها ف المواقع الرسمية قبل ما تبدا أي إجراء (المدد، الأثمنة و المساطر ممكن يتبدلو). آخر تحديث: 26 غشت 2026.">Notes personnelles, à vérifier sur les portails officiels avant toute démarche (les délais, tarifs et procédures peuvent changer). Dernière mise à jour : 26 août 2026.</p>
 </footer>
 
 <script>
@@ -679,6 +914,36 @@
       } catch (e) {}
     });
   });
+
+  (function () {
+    var buttons = document.querySelectorAll('.lang-switch button');
+    var nodes = document.querySelectorAll('[data-ary]');
+
+    nodes.forEach(function (el) { el.dataset.fr = el.innerHTML; });
+
+    function apply(lang) {
+      var ary = lang === 'ary';
+      nodes.forEach(function (el) {
+        el.innerHTML = ary ? el.dataset.ary : el.dataset.fr;
+      });
+      document.documentElement.lang = ary ? 'ary' : 'fr';
+      document.body.dir = ary ? 'rtl' : 'ltr';
+      buttons.forEach(function (b) {
+        b.setAttribute('aria-pressed', String(b.dataset.lang === lang));
+      });
+    }
+
+    buttons.forEach(function (b) {
+      b.addEventListener('click', function () {
+        apply(b.dataset.lang);
+        try { localStorage.setItem('lang', b.dataset.lang); } catch (e) {}
+      });
+    });
+
+    var saved;
+    try { saved = localStorage.getItem('lang'); } catch (e) {}
+    if (saved === 'ary') apply('ary');
+  })();
 </script>
 
 </body>
