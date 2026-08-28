@@ -272,35 +272,50 @@
 
     <h3>Où faire la demande</h3>
     <ul class="plain">
-      <li>Pré-demande en ligne sur <a href="https://www.cnie.ma" target="_blank" rel="noopener">cnie.ma</a> (formulaire + prise de rendez-vous)</li>
+      <li>Choisir « 1ère demande » ou « renouvellement » et prendre rendez-vous sur <a href="https://www.cnie.ma/request-type" target="_blank" rel="noopener">cnie.ma/request-type</a></li>
       <li>Dépôt du dossier à l'arrondissement / annexe administrative ou au caïdat de ton lieu de résidence</li>
       <li>Retrait au même guichet une fois la carte prête (SMS de notification) — le statut du dossier peut aussi être suivi en ligne avec le numéro de rendez-vous</li>
     </ul>
 
-    <h3>Pièces à fournir</h3>
-    <ul class="checklist" data-group="cin">
-      <li><input type="checkbox" id="cin-1"><label for="cin-1">Shahada iqama / attestation de résidence (police en ville, gendarmerie royale en zone rurale), ou attestation d'immatriculation consulaire pour les MRE — validité &lt; 3 mois</label></li>
-      <li><input type="checkbox" id="cin-2"><label for="cin-2">4 photos d'identité couleur récentes, de face, fond clair (gris ou bleu clair), format 4,5 × 3,5 cm, sans lunettes teintées</label></li>
-      <li><input type="checkbox" id="cin-3"><label for="cin-3">Timbre fiscal : 75 DH (12 ans et +) ou 50 DH (moins de 12 ans)</label></li>
-      <li><input type="checkbox" id="cin-4"><label for="cin-4">Ancienne CNIE (si renouvellement)</label></li>
-      <li><input type="checkbox" id="cin-5"><label for="cin-5">1ère demande (18 ans) ou remplacement de l'ancienne carte papier : copie de la page du livret de famille + le livret, ou acte de naissance / copie intégrale de l'état civil (validité &lt; 3 mois)</label></li>
+    <h3>🆕 Première demande — pièces à fournir</h3>
+    <ul class="checklist" data-group="cin-first">
+      <li><input type="checkbox" id="cinf-1"><label for="cinf-1">Attestation de résidence (police en ville ; gendarmerie royale en zone rurale, ou autorité administrative locale à défaut), ou attestation d'immatriculation consulaire avec adresse pour les MRE</label></li>
+      <li><input type="checkbox" id="cinf-2"><label for="cinf-2">4 photos d'identité de moins de 6 mois, conformes aux normes officielles</label></li>
+      <li><input type="checkbox" id="cinf-3"><label for="cinf-3">Timbre fiscal : 75 DH (12 ans et +) ou 50 DH (moins de 12 ans)</label></li>
+      <li><input type="checkbox" id="cinf-4"><label for="cinf-4">Copie de la page du livret de famille + le livret, ou copie intégrale de l'état civil, ou acte de naissance (en arabe et en latin, validité &lt; 3 mois pour ces deux dernières)</label></li>
+      <li><input type="checkbox" id="cinf-5"><label for="cinf-5">Étrangers naturalisés : copie certifiée conforme du document accordant la nationalité marocaine ; en cas de doute sur la nationalité, certificat de nationalité</label></li>
+      <li><input type="checkbox" id="cinf-6"><label for="cinf-6">Mineur : présence obligatoire de l'enfant, accompagné du représentant légal (CNIE du représentant + justificatif de sa qualité)</label></li>
     </ul>
 
-    <h3>Cas particuliers</h3>
+    <h3>🔄 Renouvellement — pièces à fournir</h3>
+    <ul class="checklist" data-group="cin-renew">
+      <li><input type="checkbox" id="cinr-1"><label for="cinr-1">Attestation de résidence (police en ville ; gendarmerie royale en zone rurale, ou autorité administrative locale à défaut), ou attestation d'immatriculation consulaire avec adresse pour les MRE</label></li>
+      <li><input type="checkbox" id="cinr-2"><label for="cinr-2">4 photos d'identité de moins de 6 mois, conformes aux normes officielles</label></li>
+      <li><input type="checkbox" id="cinr-3"><label for="cinr-3">Timbre fiscal : 75 DH (12 ans et +) ou 50 DH (moins de 12 ans)</label></li>
+      <li><input type="checkbox" id="cinr-4"><label for="cinr-4">Restitution de l'ancienne CNIE</label></li>
+      <li><input type="checkbox" id="cinr-5"><label for="cinr-5">Carte perdue, volée ou détériorée : déclaration sur l'honneur (par le titulaire ou son représentant légal pour un mineur)</label></li>
+      <li><input type="checkbox" id="cinr-6"><label for="cinr-6">Changement de nom, prénom, date/lieu de naissance ou filiation : pièces administratives ou judiciaires justifiant le changement</label></li>
+      <li><input type="checkbox" id="cinr-7"><label for="cinr-7">Mineur : présence obligatoire de l'enfant, accompagné du représentant légal (CNIE du représentant + justificatif de sa qualité)</label></li>
+    </ul>
+    <p class="subtitle" style="margin-top:-0.4rem;">Un renouvellement délivre une carte valable 10 ans (12 ans et +) ou jusqu'à 7 ans au maximum, expirant à 12 ans, pour les enfants de moins de 12 ans.</p>
+
+    <h3>Mention optionnelle « épouse / veuve / veuf »</h3>
     <ul class="plain">
-      <li>Carte perdue, volée ou détériorée : déclaration sur l'honneur à rédiger sur place</li>
-      <li>Changement de nom, prénom, date/lieu de naissance ou filiation : pièces administratives ou judiciaires justifiant le changement</li>
-      <li>Mineur de plus de 12 ans qui demande un passeport biométrique : la CNIE peut être établie dans les mêmes conditions que pour un majeur</li>
-      <li>Mentions optionnelles sur la carte (facultatives, sur présentation d'un justificatif) : statut « épouse / veuve / veuf », ou groupe sanguin (sur attestation du centre régional de transfusion sanguine)</li>
+      <li>Copie conforme du contrat de mariage</li>
+      <li>Copie de l'acte de décès du conjoint (le cas échéant)</li>
+      <li>Copie de l'acte de naissance du conjoint, en arabe et en latin</li>
     </ul>
 
     <div class="tip">
-      <strong>💡 Conseils pour éviter un refus :</strong> photos récentes et conformes aux normes • documents à jour (attestation de résidence &lt; 3 mois) • informations du rendez-vous en ligne identiques à celles des documents • nom et date de naissance conformes à l'acte de naissance. Si l'ancienne carte est expirée ou proche de l'expiration, la procédure est simplifiée — présente-la simplement au dépôt du dossier.
+      <strong>💡 Conseils pour éviter un refus :</strong> photos récentes (&lt; 6 mois) et conformes aux normes • documents à jour (attestation de résidence &lt; 3 mois) • informations du rendez-vous en ligne identiques à celles des documents • nom et date de naissance conformes à l'acte de naissance. Si l'ancienne carte est expirée ou proche de l'expiration, la procédure est simplifiée — présente-la simplement au dépôt du dossier.
     </div>
 
     <h3>Liens utiles</h3>
     <div class="links-row">
       <a href="https://www.cnie.ma/" target="_blank" rel="noopener">🌐 cnie.ma — portail officiel CNIE</a>
+      <a href="https://www.cnie.ma/static/procedure" target="_blank" rel="noopener">📋 Procédure officielle (1ère demande / renouvellement)</a>
+      <a href="https://www.cnie.ma/static/procedure/normes-photographies" target="_blank" rel="noopener">📷 Normes des photos d'identité</a>
+      <a href="https://www.cnie.ma/request-type" target="_blank" rel="noopener">📅 Prendre rendez-vous</a>
       <a href="https://www.identitenumerique.ma/about.html" target="_blank" rel="noopener">🪪 Mon Identité Numérique</a>
       <a href="https://www.identitenumerique.ma/faq.html" target="_blank" rel="noopener">❓ FAQ identité numérique</a>
       <a href="https://fr.wikipedia.org/wiki/Carte_d%27identit%C3%A9_nationale_au_Maroc" target="_blank" rel="noopener">📖 Wikipédia — CNIE</a>
