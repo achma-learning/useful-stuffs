@@ -254,6 +254,7 @@
   <a href="#banque">🏦 Compte bancaire</a>
   <a href="#permis">🚗 Permis de conduire</a>
   <a href="#assurance">🛡️ Assurance</a>
+  <a href="#portails">🌐 Portails numériques</a>
 </nav>
 
 <main>
@@ -263,28 +264,88 @@
     <p class="subtitle">Première demande ou renouvellement de la carte nationale d'identité électronique.</p>
 
     <div class="facts">
-      <div class="fact"><strong>10 ans</strong>Durée de validité (adulte)</div>
-      <div class="fact"><strong>4–8 semaines</strong>Délai moyen (jusqu'à 12 en été)</div>
-      <div class="fact"><strong>Gratuit / payant</strong>Gratuit à échéance normale, frais si perte/anticipé</div>
+      <div class="fact"><strong>16 ans</strong>Âge à partir duquel la CNIE est obligatoire</div>
+      <div class="fact"><strong>10 ans / 7 ans</strong>Validité (12 ans et + / moins de 12 ans)</div>
+      <div class="fact"><strong>75 DH / 50 DH</strong>Timbre (12 ans et + / moins de 12 ans)</div>
+      <div class="fact"><strong>7–15 jours</strong>Délai (7–10 j grandes villes, 10–15 j zones rurales)</div>
     </div>
 
     <h3>Où faire la demande</h3>
     <ul class="plain">
-      <li>Pré-demande en ligne sur <a href="https://www.cnie.ma" target="_blank" rel="noopener">cnie.ma</a> (formulaire + prise de rendez-vous)</li>
+      <li>Choisir « 1ère demande » ou « renouvellement » et prendre rendez-vous sur <a href="https://www.cnie.ma/request-type" target="_blank" rel="noopener">cnie.ma/request-type</a></li>
       <li>Dépôt du dossier à l'arrondissement / annexe administrative ou au caïdat de ton lieu de résidence</li>
-      <li>Retrait au même guichet une fois la carte prête (SMS de notification)</li>
+      <li>Retrait au même guichet une fois la carte prête (SMS de notification) — le statut du dossier peut aussi être suivi en ligne avec le numéro de rendez-vous</li>
     </ul>
 
-    <h3>Pièces à fournir</h3>
-    <ul class="checklist" data-group="cin">
-      <li><input type="checkbox" id="cin-1"><label for="cin-1">Formulaire de pré-demande (rempli en ligne sur cnie.ma)</label></li>
-      <li><input type="checkbox" id="cin-2"><label for="cin-2">Ancienne CIN/CNIE (si renouvellement)</label></li>
-      <li><input type="checkbox" id="cin-3"><label for="cin-3">Acte de naissance récent (extrait des registres de l'état civil)</label></li>
-      <li><input type="checkbox" id="cin-4"><label for="cin-4">2 photos d'identité conformes, fond blanc</label></li>
-      <li><input type="checkbox" id="cin-5"><label for="cin-5">Justificatif de domicile récent (facture eau/électricité &lt; 3 mois)</label></li>
+    <h3>🆕 Première demande — pièces à fournir</h3>
+    <ul class="checklist" data-group="cin-first">
+      <li><input type="checkbox" id="cinf-1"><label for="cinf-1">Attestation de résidence (police en ville ; gendarmerie royale en zone rurale, ou autorité administrative locale à défaut), ou attestation d'immatriculation consulaire avec adresse pour les MRE</label></li>
+      <li><input type="checkbox" id="cinf-2"><label for="cinf-2">4 photos d'identité de moins de 6 mois, conformes aux normes officielles</label></li>
+      <li><input type="checkbox" id="cinf-3"><label for="cinf-3">Timbre fiscal : 75 DH (12 ans et +) ou 50 DH (moins de 12 ans)</label></li>
+      <li><input type="checkbox" id="cinf-4"><label for="cinf-4">Copie de la page du livret de famille + le livret, ou copie intégrale de l'état civil, ou acte de naissance (en arabe et en latin, validité &lt; 3 mois pour ces deux dernières)</label></li>
+      <li><input type="checkbox" id="cinf-5"><label for="cinf-5">Étrangers naturalisés : copie certifiée conforme du document accordant la nationalité marocaine ; en cas de doute sur la nationalité, certificat de nationalité</label></li>
+      <li><input type="checkbox" id="cinf-6"><label for="cinf-6">Mineur : présence obligatoire de l'enfant, accompagné du représentant légal (CNIE du représentant + justificatif de sa qualité)</label></li>
     </ul>
 
-    <div class="tip"><strong>💡 Astuce :</strong> si l'ancienne carte est expirée ou proche de l'expiration, la procédure est simplifiée — présente-la simplement au dépôt du dossier.</div>
+    <h3>🔄 Renouvellement — pièces à fournir</h3>
+    <ul class="checklist" data-group="cin-renew">
+      <li><input type="checkbox" id="cinr-1"><label for="cinr-1">Attestation de résidence (police en ville ; gendarmerie royale en zone rurale, ou autorité administrative locale à défaut), ou attestation d'immatriculation consulaire avec adresse pour les MRE</label></li>
+      <li><input type="checkbox" id="cinr-2"><label for="cinr-2">4 photos d'identité de moins de 6 mois, conformes aux normes officielles</label></li>
+      <li><input type="checkbox" id="cinr-3"><label for="cinr-3">Timbre fiscal : 75 DH (12 ans et +) ou 50 DH (moins de 12 ans)</label></li>
+      <li><input type="checkbox" id="cinr-4"><label for="cinr-4">Restitution de l'ancienne CNIE</label></li>
+      <li><input type="checkbox" id="cinr-5"><label for="cinr-5">Carte perdue, volée ou détériorée : déclaration sur l'honneur (par le titulaire ou son représentant légal pour un mineur)</label></li>
+      <li><input type="checkbox" id="cinr-6"><label for="cinr-6">Changement de nom, prénom, date/lieu de naissance ou filiation : pièces administratives ou judiciaires justifiant le changement</label></li>
+      <li><input type="checkbox" id="cinr-7"><label for="cinr-7">Mineur : présence obligatoire de l'enfant, accompagné du représentant légal (CNIE du représentant + justificatif de sa qualité)</label></li>
+    </ul>
+    <p class="subtitle" style="margin-top:-0.4rem;">Un renouvellement délivre une carte valable 10 ans (12 ans et +) ou jusqu'à 7 ans au maximum, expirant à 12 ans, pour les enfants de moins de 12 ans.</p>
+
+    <h3>Mention optionnelle « épouse / veuve / veuf »</h3>
+    <ul class="plain">
+      <li>Copie conforme du contrat de mariage</li>
+      <li>Copie de l'acte de décès du conjoint (le cas échéant)</li>
+      <li>Copie de l'acte de naissance du conjoint, en arabe et en latin</li>
+    </ul>
+
+    <div class="tip">
+      <strong>💡 Conseils pour éviter un refus :</strong> photos récentes (&lt; 6 mois) et conformes aux normes • documents à jour (attestation de résidence &lt; 3 mois) • informations du rendez-vous en ligne identiques à celles des documents • nom et date de naissance conformes à l'acte de naissance. Si l'ancienne carte est expirée ou proche de l'expiration, la procédure est simplifiée — présente-la simplement au dépôt du dossier.
+    </div>
+
+    <h3>📷 Normes des photos d'identité</h3>
+    <ul class="plain">
+      <li>Taille : 35 × 45 mm (hors cadre) ; distance menton – haut du crâne entre 29 et 34 mm ; visage centré, nez sur l'axe</li>
+      <li>Qualité : photo nette, sans tache ni trace d'encre</li>
+      <li>Éclairage / couleurs : photo en couleur, sans flash direct ni yeux rouges, sans ombre sur le visage ou le fond</li>
+      <li>Fond : couleur unie et claire (gris clair ou bleu clair)</li>
+      <li>Couvre-chef : interdit, sauf le voile s'il laisse le visage entièrement dégagé, du menton au haut du front</li>
+      <li>Position de la tête : droite, visage face à l'objectif</li>
+      <li>Cadrage et expression : personne seule, sans objet à côté, expression neutre, bouche fermée</li>
+      <li>Visage et yeux : entièrement découverts, yeux ouverts</li>
+      <li>Lunettes : verres non teintés, non réfléchissants, monture fine</li>
+    </ul>
+
+    <div style="border:1px solid var(--border); border-radius:10px; overflow:hidden; margin-top:0.75rem;">
+      <iframe src="assets/normes-photos-cin.pdf" title="Normes des photos d'identité pour la CNIE" width="100%" height="600" style="display:block; border:0;">
+        Ton navigateur n'affiche pas les PDF intégrés.
+      </iframe>
+    </div>
+    <div class="links-row">
+      <a href="assets/normes-photos-cin.pdf" target="_blank" rel="noopener">👁️ Voir le PDF en plein écran</a>
+      <a href="assets/normes-photos-cin.pdf" download>📥 Télécharger le PDF</a>
+    </div>
+
+    <h3>Liens utiles</h3>
+    <div class="links-row">
+      <a href="https://www.cnie.ma/" target="_blank" rel="noopener">🌐 cnie.ma — portail officiel CNIE</a>
+      <a href="https://www.cnie.ma/static/procedure" target="_blank" rel="noopener">📋 Procédure officielle (1ère demande / renouvellement)</a>
+      <a href="https://www.cnie.ma/static/procedure/normes-photographies" target="_blank" rel="noopener">📷 Normes des photos d'identité (page officielle)</a>
+      <a href="https://www.cnie.ma/request-type" target="_blank" rel="noopener">📅 Prendre rendez-vous</a>
+      <a href="https://www.cnie.ma/static/faq" target="_blank" rel="noopener">❓ FAQ officielle CNIE</a>
+      <a href="https://www.identitenumerique.ma/about.html" target="_blank" rel="noopener">🪪 Mon Identité Numérique</a>
+      <a href="https://www.identitenumerique.ma/faq.html" target="_blank" rel="noopener">❓ FAQ identité numérique</a>
+      <a href="https://fr.wikipedia.org/wiki/Carte_d%27identit%C3%A9_nationale_au_Maroc" target="_blank" rel="noopener">📖 Wikipédia — CNIE</a>
+      <a href="https://www.moroccanpapers.com/category/dmarches-administratives" target="_blank" rel="noopener">🇫🇷 Guide CNIE depuis la France (Moroccan Papers)</a>
+      <a href="https://rdv.consulat.ma/" target="_blank" rel="noopener">📅 Prise de RDV consulat (pour MRE)</a>
+    </div>
   </section>
 
   <section class="card" id="passeport">
@@ -294,21 +355,105 @@
     <div class="facts">
       <div class="fact"><strong>500 DH</strong>Adulte</div>
       <div class="fact"><strong>100 DH</strong>Enfant &lt; 12 ans</div>
+      <div class="fact"><strong>5 ans</strong>Durée de validité</div>
       <div class="fact"><strong>4–8 semaines</strong>Délai moyen de fabrication</div>
     </div>
 
-    <h3>Pièces à fournir</h3>
-    <ul class="checklist" data-group="passeport">
-      <li><input type="checkbox" id="pp-1"><label for="pp-1">Formulaire de demande rempli et signé (voir lien ci-dessous)</label></li>
-      <li><input type="checkbox" id="pp-2"><label for="pp-2">Photocopie de la CNIE en cours de validité</label></li>
-      <li><input type="checkbox" id="pp-3"><label for="pp-3">1 photo d'identité 35×45 mm, fond blanc uni, tête nue</label></li>
-      <li><input type="checkbox" id="pp-4"><label for="pp-4">Code e-timbre (16 chiffres) payé sur le portail des timbres fiscaux</label></li>
-      <li><input type="checkbox" id="pp-5"><label for="pp-5">Ancien passeport (en cas de renouvellement)</label></li>
-      <li><input type="checkbox" id="pp-6"><label for="pp-6">Pour un mineur : livret de famille / acte de naissance + pièce d'identité du parent</label></li>
+    <h3>Conditions de délivrance</h3>
+    <ul class="plain">
+      <li>Délivré sans condition d'âge à tout citoyen marocain qui en fait la demande, sauf décision judiciaire contraire</li>
+      <li>Pour un mineur ou un majeur sous tutelle : demande faite par l'un des parents ou, à défaut, le représentant légal</li>
+      <li>Validité : 5 ans. À chaque renouvellement, il faut racheter un e-timbre (500 DH) — même procédure et même tarif qu'une première demande</li>
+      <li>12 à 18 ans et adultes : passeport établi sur la base de la CNIE en cours de validité</li>
+      <li>Moins de 12 ans sans CNIE valide : passeport établi sur la base de l'extrait d'acte de naissance</li>
+      <li>Renouvellement : le nouveau passeport n'est remis qu'après annulation de l'ancien</li>
+    </ul>
+
+    <h3>🚨 Passeport provisoire (urgence)</h3>
+    <ul class="plain">
+      <li>Délivré à titre exceptionnel quand le passeport biométrique ne peut être attendu : motif humanitaire, médical, professionnel, scolaire, ou toute nécessité impérieuse et imprévisible dûment justifiée</li>
+      <li>Demande faite par l'intéressé ou, pour un mineur ou un majeur sous tutelle, par son représentant légal</li>
+      <li>12 à 18 ans et adultes : établi sur la base de la CNIE en cours de validité</li>
+      <li>Moins de 12 ans sans CNIE : établi sur la base de l'extrait d'acte de naissance ou de la copie intégrale de l'état civil</li>
+      <li>Non recevable si un passeport provisoire a déjà été obtenu au cours des 5 dernières années</li>
+      <li>Renouvellement : le nouveau passeport n'est remis qu'après annulation de l'ancien</li>
+    </ul>
+
+    <h3>Étapes de la demande</h3>
+    <ol class="plain" style="padding-left:1.4rem;">
+      <li>Acheter le e-timbre en ligne (500 DH, code à 16 chiffres) — obligatoire avant de remplir le formulaire, y compris à chaque renouvellement (le passeport n'est valable que 5 ans)</li>
+      <li>Remplir le formulaire de demande de passeport (daté, signé, code e-timbre renseigné)</li>
+      <li>Réunir les pièces à fournir selon ton profil (voir listes ci-dessous) et déposer le dossier</li>
+      <li>Suivre l'avancement du dossier en ligne avec le numéro de dossier ou tes informations personnelles</li>
+    </ol>
+    <div class="links-row">
+      <a href="https://etf.tax.gov.ma/etimfisc" target="_blank" rel="noopener">💳 1. Acheter le e-timbre (500 DH)</a>
+      <a href="https://www.passeport.ma/FormDemande/FormDemande" target="_blank" rel="noopener">📝 2. Remplir le formulaire de demande</a>
+      <a href="https://www.passeport.ma/SuiviDemande/SuiviDemande" target="_blank" rel="noopener">🔍 4. Suivre ma demande</a>
+    </div>
+
+    <h3>🧑 Pièces à fournir — majeurs</h3>
+    <ul class="checklist" data-group="passeport-majeur">
+      <li><input type="checkbox" id="ppm-1"><label for="ppm-1">Formulaire de demande renseigné, daté et signé par le demandeur, avec le code e-timbre (16 chiffres)</label></li>
+      <li><input type="checkbox" id="ppm-2"><label for="ppm-2">Photocopie de la CNIE en cours de validité</label></li>
+      <li><input type="checkbox" id="ppm-3"><label for="ppm-3">1 photo d'identité récente 35×45 mm, fond bleu, blanc ou gris clair, de face, visage entièrement visible</label></li>
+      <li><input type="checkbox" id="ppm-4"><label for="ppm-4">Renouvellement : ancien passeport (ou justificatif de sa destination) ; perte/vol : déclaration établie auprès de la Sûreté Nationale / Gendarmerie Royale (au Maroc) ou police / consulat-ambassade (à l'étranger), mentionnant le numéro de l'ancien passeport</label></li>
+    </ul>
+
+    <h3>🧑‍🦯 Pièces à fournir — majeurs sous tutelle</h3>
+    <ul class="checklist" data-group="passeport-tutelle">
+      <li><input type="checkbox" id="ppt-1"><label for="ppt-1">Formulaire de demande renseigné, daté et signé par l'un des parents ou, à défaut, le représentant légal, avec le code e-timbre</label></li>
+      <li><input type="checkbox" id="ppt-2"><label for="ppt-2">Photocopie de la CNIE du demandeur en cours de validité</label></li>
+      <li><input type="checkbox" id="ppt-3"><label for="ppt-3">Justificatif de l'identité et de la qualité du représentant légal</label></li>
+      <li><input type="checkbox" id="ppt-4"><label for="ppt-4">1 photo d'identité récente 35×45 mm, fond bleu, blanc ou gris clair, de face, visage entièrement visible</label></li>
+      <li><input type="checkbox" id="ppt-5"><label for="ppt-5">Renouvellement : ancien passeport (ou justificatif de sa destination) ; perte/vol : déclaration établie par le représentant légal auprès de la Sûreté Nationale / Gendarmerie Royale (au Maroc) ou police / consulat-ambassade (à l'étranger)</label></li>
+    </ul>
+
+    <h3>🧒 Pièces à fournir — mineurs de 12 à 18 ans</h3>
+    <ul class="checklist" data-group="passeport-12-18">
+      <li><input type="checkbox" id="pp1218-1"><label for="pp1218-1">Formulaire de demande renseigné, daté et signé par l'un des parents ou, à défaut, le représentant légal, avec le code e-timbre</label></li>
+      <li><input type="checkbox" id="pp1218-2"><label for="pp1218-2">Photocopie de la CNIE du mineur en cours de validité</label></li>
+      <li><input type="checkbox" id="pp1218-3"><label for="pp1218-3">1 photo d'identité récente 35×45 mm, fond bleu, blanc ou gris clair, de face, visage entièrement visible</label></li>
+      <li><input type="checkbox" id="pp1218-4"><label for="pp1218-4">Justificatif d'identité des parents (CNIE si marocains ; carte d'immatriculation au Maroc ou passeport valide si étrangers)</label></li>
+      <li><input type="checkbox" id="pp1218-5"><label for="pp1218-5">Si le représentant légal n'est pas le père ou la mère : justificatif de son identité et de sa qualité</label></li>
+      <li><input type="checkbox" id="pp1218-6"><label for="pp1218-6">Renouvellement : ancien passeport (ou justificatif de sa destination) ; perte/vol : déclaration établie par le représentant légal auprès de la Sûreté Nationale / Gendarmerie Royale (au Maroc) ou police / consulat-ambassade (à l'étranger)</label></li>
+    </ul>
+
+    <h3>👶 Pièces à fournir — mineurs de moins de 12 ans</h3>
+    <ul class="checklist" data-group="passeport-12moins">
+      <li><input type="checkbox" id="pp12m-1"><label for="pp12m-1">Formulaire de demande renseigné, daté et signé par l'un des parents ou, à défaut, le représentant légal, avec le code e-timbre</label></li>
+      <li><input type="checkbox" id="pp12m-2"><label for="pp12m-2">Extrait ou copie intégrale de l'acte de naissance (&lt; 3 mois), ou copie du livret de famille avec présentation du livret</label></li>
+      <li><input type="checkbox" id="pp12m-3"><label for="pp12m-3">Si le mineur ne réside pas avec ses parents/représentant légal : justificatif de résidence (&lt; 3 mois)</label></li>
+      <li><input type="checkbox" id="pp12m-4"><label for="pp12m-4">1 photo d'identité récente 35×45 mm, fond bleu, blanc ou gris clair, de face, visage entièrement visible</label></li>
+      <li><input type="checkbox" id="pp12m-5"><label for="pp12m-5">Justificatif d'identité des parents (CNIE si marocains ; carte d'immatriculation au Maroc ou passeport valide si étrangers)</label></li>
+      <li><input type="checkbox" id="pp12m-6"><label for="pp12m-6">Si le représentant légal n'est pas le père ou la mère : justificatif de son identité et de sa qualité</label></li>
+      <li><input type="checkbox" id="pp12m-7"><label for="pp12m-7">Renouvellement : ancien passeport (ou justificatif de sa destination) ; perte/vol : déclaration établie par le représentant légal auprès de la Sûreté Nationale / Gendarmerie Royale (au Maroc) ou police / consulat-ambassade (à l'étranger)</label></li>
     </ul>
 
     <div class="tip">
-      <strong>💡 Astuce photo :</strong> photo prise chez <strong>Azzouzia, Sidi Ghanem</strong> (Marrakech) — bon rapport qualité/prix pour le format passeport (35×45 mm, fond blanc). Vérifie quand même que le fond est bien uni et sans ombre.
+      <strong>💡 Astuce photo :</strong> photo prise chez <strong>Azzouzia, Sidi Ghanem</strong> (Marrakech) — bon rapport qualité/prix pour le format passeport (35×45 mm). Vérifie quand même que le fond est bien uni (bleu, blanc ou gris clair) et sans ombre.
+    </div>
+
+    <h3>📷 Normes des photos d'identité</h3>
+    <ul class="plain">
+      <li>Qualité : photo parfaitement nette, sans tache ni marque d'encre</li>
+      <li>Luminosité / contraste / couleurs : bien exposée, sans flash ni yeux rouges, sans ombre sur le visage, tonalité de peau fidèle</li>
+      <li>Arrière-plan : uni, bleu ciel ou gris clair, sans ombre</li>
+      <li>Regard et position de la tête : visage centré, tête droite face à l'objectif, regard fixant l'objectif</li>
+      <li>Expression : visage dégagé, expression neutre (bouche fermée, sans sourire), yeux normalement ouverts</li>
+      <li>Lunettes : verres blancs uniquement, non teintés, sans reflet, montures fines ; le port n'est pas obligatoire</li>
+      <li>Couvre-chefs : décoratifs interdits (chapeau, casquette…) ; le voile est toléré si tout le visage, du menton au haut du front, reste visible</li>
+      <li>Jeunes enfants : photographiés seuls, de face — expression neutre ou regard caméra non exigés à cet âge</li>
+    </ul>
+
+    <div style="border:1px solid var(--border); border-radius:10px; overflow:hidden; margin-top:0.75rem;">
+      <iframe src="assets/normes-photos-passeport.pdf" title="Normes des photos d'identité pour le passeport" width="100%" height="600" style="display:block; border:0;">
+        Ton navigateur n'affiche pas les PDF intégrés.
+      </iframe>
+    </div>
+    <div class="links-row">
+      <a href="assets/normes-photos-passeport.pdf" target="_blank" rel="noopener">👁️ Voir le PDF en plein écran</a>
+      <a href="assets/normes-photos-passeport.pdf" download>📥 Télécharger le PDF</a>
     </div>
 
     <h3>Liens officiels</h3>
@@ -316,8 +461,36 @@
       <a href="https://www.passeport.ma/FormDemande/FormDemande" target="_blank" rel="noopener">📝 Formulaire de demande</a>
       <a href="https://www.passeport.ma/Home/PiecesAuMaroc" target="_blank" rel="noopener">📋 Pièces à fournir (officiel)</a>
       <a href="https://etf.tax.gov.ma/etimfisc" target="_blank" rel="noopener">💳 e-timbre fiscal (paiement du timbre)</a>
+      <a href="https://www.passeport.ma/SuiviDemande/SuiviDemande" target="_blank" rel="noopener">🔍 Suivi de la demande</a>
       <a href="https://www.passeport.ma" target="_blank" rel="noopener">🌐 Portail passeport.ma</a>
     </div>
+
+    <h3>⚖️ Textes législatifs et réglementaires</h3>
+    <p class="subtitle">Source : rubrique juridique de passeport.ma.</p>
+
+    <h4 style="margin:0.8rem 0 0.4rem; font-size:0.85rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.02em;">Passeport biométrique</h4>
+    <ul class="plain">
+      <li><a href="https://www.passeport.ma/PDF/passeport12/fran%C3%A7ais/Passeport_d%C3%A9cret.pdf" target="_blank" rel="noopener">Décret n° 2-08-310 du 23 octobre 2008 instituant le passeport biométrique</a></li>
+    </ul>
+
+    <h4 style="margin:0.8rem 0 0.4rem; font-size:0.85rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.02em;">Carte Nationale d'Identité Électronique</h4>
+    <ul class="plain">
+      <li><a href="https://www.passeport.ma/PDF/CNIE/fran%C3%A7ais/CNIE_dahir.pdf" target="_blank" rel="noopener">Dahir n° 1.20.80 du 8 août 2020 portant promulgation de la loi n° 04.20 instituant la CNIE</a></li>
+      <li><a href="https://www.passeport.ma/PDF/CNIE/fran%C3%A7ais/CNIE_d%C3%A9cret.pdf" target="_blank" rel="noopener">Décret n° 2.20.521 du 12 août 2020 pris pour l'application de la loi n° 04.20</a></li>
+    </ul>
+
+    <h4 style="margin:0.8rem 0 0.4rem; font-size:0.85rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.02em;">État civil</h4>
+    <ul class="plain">
+      <li><a href="https://www.passeport.ma/PDF/Etat_civil/FR/Dahir%201_02_239.pdf" target="_blank" rel="noopener">Dahir n° 1-02-239 du 3 octobre 2002 portant promulgation de la loi n° 37-99 relative à l'état civil</a></li>
+      <li><a href="https://www.passeport.ma/PDF/Etat_civil/FR/d%C3%A9cret%202_99_665.pdf" target="_blank" rel="noopener">Décret n° 2-99-665 du 9 octobre 2002 pris pour l'application de la loi n° 37-99</a></li>
+      <li><a href="https://www.passeport.ma/PDF/Etat_civil/FR/d%C3%A9cret%202_04_331.pdf" target="_blank" rel="noopener">Décret n° 2-04-331 du 7 juin 2004 complétant le décret n° 2-02-665 relatif à la loi n° 37-99</a></li>
+    </ul>
+
+    <h4 style="margin:0.8rem 0 0.4rem; font-size:0.85rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.02em;">Prise en charge (Kafala)</h4>
+    <ul class="plain">
+      <li><a href="https://www.passeport.ma/PDF/Kafala/FR/dahir.pdf" target="_blank" rel="noopener">Dahir n° 1-02-172 du 13 juin 2002 portant promulgation de la loi n° 15-01 relative à la kafala des enfants abandonnés</a></li>
+      <li><a href="https://www.passeport.ma/PDF/Kafala/FR/d%C3%A9cret.pdf" target="_blank" rel="noopener">Décret n° 2-03-600 du 7 juin 2004 portant application de l'article 16 de la loi n° 15-01</a></li>
+    </ul>
   </section>
 
   <section class="card" id="banque">
@@ -395,6 +568,97 @@
     </ul>
 
     <div class="tip"><strong>💡 Astuce :</strong> compare plusieurs assureurs (courtiers en ligne type comparateurs) avant de signer — le tarif de la RC seule varie peu, mais les garanties complémentaires et franchises varient beaucoup d'un assureur à l'autre.</div>
+  </section>
+
+  <section class="card" id="portails">
+    <h2>🌐 Portails numériques utiles</h2>
+    <p class="subtitle">Plateformes officielles de digitalisation des démarches administratives au Maroc.</p>
+
+    <h3>Idarati.ma</h3>
+    <ul class="plain">
+      <li>Portail National des Procédures et des Formalités Administratives, lancé le 21 avril 2021</li>
+      <li>Référence officielle qui recense les démarches à effectuer auprès des administrations, établissements publics et collectivités territoriales</li>
+      <li>Développé par le Ministère de l'Intérieur, le Ministère de l'Économie et des Finances, le Ministère de l'Industrie et du Numérique, l'ADD et l'ANRT, dans le cadre de la loi 55.19 sur la simplification des procédures administratives</li>
+      <li>Centre d'appel : 3737 (ou 0537679906 depuis l'étranger)</li>
+    </ul>
+
+    <h3>Wraqi.ma</h3>
+    <ul class="plain">
+      <li>Coffre-fort numérique / portefeuille administratif électronique, dans le cadre de la stratégie #DigitalMorocco2030</li>
+      <li>Services : vérification d'identité numérique via « Mon e-ID », signature électronique (simple, avancée, qualifiée), certification et légalisation de documents à distance, attestations de résidence, vérification de documents en temps réel</li>
+      <li>Agréé CNDP (n° A-W-497/2024), conforme aux lois 53-05 et 43-20 sur la signature électronique</li>
+      <li>Accès web ou application mobile (iOS/Android) avec la CNIE et l'application Mon Identité Numérique</li>
+    </ul>
+
+    <p class="subtitle" style="margin:0.4rem 0 0;"><strong>FAQ Wraqi (points utiles) :</strong></p>
+    <ul class="plain">
+      <li>Inscription avec la CNIE puis identifiants temporaires (à changer à la 1ère connexion) ; connexion sécurisée ensuite via l'appli « Mon Identité Numérique » (reconnaissance faciale ou code PIN)</li>
+      <li>100 % en ligne, accessible partout, sans besoin de se déplacer en agence</li>
+      <li>Signature électronique : renseigner les infos, uploader le document, payer, signer — plusieurs signataires possibles, chacun notifié ; document signé téléchargeable et envoyé par e-mail immédiatement</li>
+      <li>Service de prépaiement de signatures : rechargeable par carte, utilisable sur tous les services de signature, sans date d'expiration, tarifs dégressifs au volume</li>
+      <li>Attestation de résidence délivrée instantanément (adresse CNIE ou autre avec justificatif)</li>
+      <li>Vérification de l'authenticité d'un document : par référence ou en téléversant le document</li>
+      <li>Si une administration refuse un document Wraqi : demander un refus écrit, signaler sur <a href="https://chikaya.ma/" target="_blank" rel="noopener">Chikaya.ma</a> (portail national des réclamations), et prévenir l'équipe Wraqi</li>
+      <li>Support : chat sur la plateforme, lun–ven 8h–20h, sam–dim 9h–18h (GMT+1)</li>
+      <li>Comptes entreprises : création via le Registre de Commerce, forfaits, gestion des mandataires et du solde de signatures</li>
+    </ul>
+
+    <div class="links-row">
+      <a href="https://idarati.ma/" target="_blank" rel="noopener">🌐 idarati.ma</a>
+      <a href="https://wraqi.ma" target="_blank" rel="noopener">🌐 wraqi.ma</a>
+      <a href="https://wraqi.ma/home/faq?culture=fr" target="_blank" rel="noopener">❓ FAQ wraqi.ma</a>
+      <a href="https://www.mmsp.gov.ma/" target="_blank" rel="noopener">🏛️ mmsp.gov.ma — Ministère de la Transition Numérique</a>
+    </div>
+
+    <h3>Consulat.ma</h3>
+    <ul class="plain">
+      <li>Portail officiel des services consulaires du Royaume du Maroc, destiné aux Marocains résidant à l'étranger (MRE) et aux étrangers souhaitant se rendre au Maroc</li>
+      <li>Rubrique « documents individuels » : CNIE, passeport biométrique, immatriculation consulaire, laissez-passer, légalisation de documents, casier judiciaire</li>
+      <li>Autres services : état civil (naissance, mariage, divorce, décès), livret de famille, informations sur les visas</li>
+    </ul>
+
+    <h3>Watiqa.ma</h3>
+    <ul class="plain">
+      <li>Commande en ligne de documents d'état civil, envoyés par courrier recommandé à l'adresse choisie</li>
+      <li>Permet d'obtenir : copie intégrale ou extrait de l'acte de naissance (عقد الازدياد), et l'attestation d'immatriculation consulaire pour les MRE</li>
+      <li>Fonctionnement en 4 étapes : demande en ligne, paiement des frais d'envoi par carte, suivi du dossier, réception par la poste</li>
+    </ul>
+
+    <h3>Al Ahwal Al Madania (alhalalmadania.ma)</h3>
+    <ul class="plain">
+      <li>Portail officiel de l'état civil marocain (Ministère de l'Intérieur) : informations sur les lois et procédures, demandes de documents administratifs, déclarations préalables (naissance, mariage, divorce, décès)</li>
+      <li>Une page <a href="https://www.alhalalmadania.ma/Generales/Publications" target="_blank" rel="noopener">Publications</a> propose des documents officiels à télécharger</li>
+    </ul>
+
+    <h3>Accès Maroc</h3>
+    <ul class="plain">
+      <li>Vérificateur d'éligibilité au eVisa pour se rendre au Maroc, selon la nationalité, le pays de résidence, le type de passeport et le motif du voyage</li>
+      <li>Renvoie vers les portails officiels consulaires, diplomatiques et touristiques du Maroc</li>
+    </ul>
+
+    <div class="links-row">
+      <a href="https://www.consulat.ma/" target="_blank" rel="noopener">🌐 consulat.ma</a>
+      <a href="https://www.consulat.ma/fr/documents-individuels" target="_blank" rel="noopener">📋 Documents individuels (consulat.ma)</a>
+      <a href="https://www.watiqa.ma/" target="_blank" rel="noopener">📮 watiqa.ma</a>
+      <a href="https://www.alhalalmadania.ma/" target="_blank" rel="noopener">🌐 alhalalmadania.ma</a>
+      <a href="https://www.alhalalmadania.ma/Generales/Publications" target="_blank" rel="noopener">📄 Publications état civil</a>
+      <a href="https://www.acces-maroc.ma/" target="_blank" rel="noopener">🛂 acces-maroc.ma (eVisa)</a>
+    </div>
+
+    <h3>Géolocalisation des services publics</h3>
+    <ul class="plain">
+      <li><strong>maps.service-public.ma</strong> — portail du Ministère de la Transition Numérique pour géolocaliser une administration, chercher les services publics à proximité, calculer un itinéraire et consulter les coordonnées de chaque administration</li>
+    </ul>
+
+    <h3>Autres liens utiles</h3>
+    <ul class="plain">
+      <li><strong>sahara.ma</strong> — portail d'actualités sur les provinces du Sud du Maroc (politique, économie, société, développement régional)</li>
+    </ul>
+
+    <div class="links-row">
+      <a href="http://maps.service-public.ma/" target="_blank" rel="noopener">🗺️ maps.service-public.ma</a>
+      <a href="https://sahara.ma/" target="_blank" rel="noopener">📰 sahara.ma</a>
+    </div>
   </section>
 
 </main>
