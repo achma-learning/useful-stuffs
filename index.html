@@ -377,18 +377,57 @@
       <li>Renouvellement : le nouveau passeport n'est remis qu'après annulation de l'ancien</li>
     </ul>
 
-    <h3>Pièces à fournir</h3>
-    <ul class="checklist" data-group="passeport">
-      <li><input type="checkbox" id="pp-1"><label for="pp-1">Formulaire de demande rempli et signé (voir lien ci-dessous)</label></li>
-      <li><input type="checkbox" id="pp-2"><label for="pp-2">Photocopie de la CNIE en cours de validité (12 ans et +)</label></li>
-      <li><input type="checkbox" id="pp-3"><label for="pp-3">1 photo d'identité 35×45 mm, fond uni bleu ciel ou gris clair, visage dégagé (voile toléré si le visage reste entièrement visible)</label></li>
-      <li><input type="checkbox" id="pp-4"><label for="pp-4">Code e-timbre (16 chiffres) payé sur le portail des timbres fiscaux</label></li>
-      <li><input type="checkbox" id="pp-5"><label for="pp-5">Ancien passeport (en cas de renouvellement, à annuler avant remise du nouveau)</label></li>
-      <li><input type="checkbox" id="pp-6"><label for="pp-6">Moins de 12 ans sans CNIE valide : extrait d'acte de naissance + pièce d'identité du parent ou tuteur</label></li>
+    <h3>Étapes de la demande</h3>
+    <ol class="plain" style="padding-left:1.4rem;">
+      <li>Acheter le e-timbre en ligne (500 DH, code à 16 chiffres) — obligatoire avant de remplir le formulaire</li>
+      <li>Remplir le formulaire de demande de passeport (daté, signé, code e-timbre renseigné)</li>
+      <li>Réunir les pièces à fournir selon ton profil (voir listes ci-dessous) et déposer le dossier</li>
+    </ol>
+    <div class="links-row">
+      <a href="https://etf.tax.gov.ma/etimfisc" target="_blank" rel="noopener">💳 1. Acheter le e-timbre (500 DH)</a>
+      <a href="https://www.passeport.ma/FormDemande/FormDemande" target="_blank" rel="noopener">📝 2. Remplir le formulaire de demande</a>
+    </div>
+
+    <h3>🧑 Pièces à fournir — majeurs</h3>
+    <ul class="checklist" data-group="passeport-majeur">
+      <li><input type="checkbox" id="ppm-1"><label for="ppm-1">Formulaire de demande renseigné, daté et signé par le demandeur, avec le code e-timbre (16 chiffres)</label></li>
+      <li><input type="checkbox" id="ppm-2"><label for="ppm-2">Photocopie de la CNIE en cours de validité</label></li>
+      <li><input type="checkbox" id="ppm-3"><label for="ppm-3">1 photo d'identité récente 35×45 mm, fond bleu, blanc ou gris clair, de face, visage entièrement visible</label></li>
+      <li><input type="checkbox" id="ppm-4"><label for="ppm-4">Renouvellement : ancien passeport (ou justificatif de sa destination) ; perte/vol : déclaration établie auprès de la Sûreté Nationale / Gendarmerie Royale (au Maroc) ou police / consulat-ambassade (à l'étranger), mentionnant le numéro de l'ancien passeport</label></li>
+    </ul>
+
+    <h3>🧑‍🦯 Pièces à fournir — majeurs sous tutelle</h3>
+    <ul class="checklist" data-group="passeport-tutelle">
+      <li><input type="checkbox" id="ppt-1"><label for="ppt-1">Formulaire de demande renseigné, daté et signé par l'un des parents ou, à défaut, le représentant légal, avec le code e-timbre</label></li>
+      <li><input type="checkbox" id="ppt-2"><label for="ppt-2">Photocopie de la CNIE du demandeur en cours de validité</label></li>
+      <li><input type="checkbox" id="ppt-3"><label for="ppt-3">Justificatif de l'identité et de la qualité du représentant légal</label></li>
+      <li><input type="checkbox" id="ppt-4"><label for="ppt-4">1 photo d'identité récente 35×45 mm, fond bleu, blanc ou gris clair, de face, visage entièrement visible</label></li>
+      <li><input type="checkbox" id="ppt-5"><label for="ppt-5">Renouvellement : ancien passeport (ou justificatif de sa destination) ; perte/vol : déclaration établie par le représentant légal auprès de la Sûreté Nationale / Gendarmerie Royale (au Maroc) ou police / consulat-ambassade (à l'étranger)</label></li>
+    </ul>
+
+    <h3>🧒 Pièces à fournir — mineurs de 12 à 18 ans</h3>
+    <ul class="checklist" data-group="passeport-12-18">
+      <li><input type="checkbox" id="pp1218-1"><label for="pp1218-1">Formulaire de demande renseigné, daté et signé par l'un des parents ou, à défaut, le représentant légal, avec le code e-timbre</label></li>
+      <li><input type="checkbox" id="pp1218-2"><label for="pp1218-2">Photocopie de la CNIE du mineur en cours de validité</label></li>
+      <li><input type="checkbox" id="pp1218-3"><label for="pp1218-3">1 photo d'identité récente 35×45 mm, fond bleu, blanc ou gris clair, de face, visage entièrement visible</label></li>
+      <li><input type="checkbox" id="pp1218-4"><label for="pp1218-4">Justificatif d'identité des parents (CNIE si marocains ; carte d'immatriculation au Maroc ou passeport valide si étrangers)</label></li>
+      <li><input type="checkbox" id="pp1218-5"><label for="pp1218-5">Si le représentant légal n'est pas le père ou la mère : justificatif de son identité et de sa qualité</label></li>
+      <li><input type="checkbox" id="pp1218-6"><label for="pp1218-6">Renouvellement : ancien passeport (ou justificatif de sa destination) ; perte/vol : déclaration établie par le représentant légal auprès de la Sûreté Nationale / Gendarmerie Royale (au Maroc) ou police / consulat-ambassade (à l'étranger)</label></li>
+    </ul>
+
+    <h3>👶 Pièces à fournir — mineurs de moins de 12 ans</h3>
+    <ul class="checklist" data-group="passeport-12moins">
+      <li><input type="checkbox" id="pp12m-1"><label for="pp12m-1">Formulaire de demande renseigné, daté et signé par l'un des parents ou, à défaut, le représentant légal, avec le code e-timbre</label></li>
+      <li><input type="checkbox" id="pp12m-2"><label for="pp12m-2">Extrait ou copie intégrale de l'acte de naissance (&lt; 3 mois), ou copie du livret de famille avec présentation du livret</label></li>
+      <li><input type="checkbox" id="pp12m-3"><label for="pp12m-3">Si le mineur ne réside pas avec ses parents/représentant légal : justificatif de résidence (&lt; 3 mois)</label></li>
+      <li><input type="checkbox" id="pp12m-4"><label for="pp12m-4">1 photo d'identité récente 35×45 mm, fond bleu, blanc ou gris clair, de face, visage entièrement visible</label></li>
+      <li><input type="checkbox" id="pp12m-5"><label for="pp12m-5">Justificatif d'identité des parents (CNIE si marocains ; carte d'immatriculation au Maroc ou passeport valide si étrangers)</label></li>
+      <li><input type="checkbox" id="pp12m-6"><label for="pp12m-6">Si le représentant légal n'est pas le père ou la mère : justificatif de son identité et de sa qualité</label></li>
+      <li><input type="checkbox" id="pp12m-7"><label for="pp12m-7">Renouvellement : ancien passeport (ou justificatif de sa destination) ; perte/vol : déclaration établie par le représentant légal auprès de la Sûreté Nationale / Gendarmerie Royale (au Maroc) ou police / consulat-ambassade (à l'étranger)</label></li>
     </ul>
 
     <div class="tip">
-      <strong>💡 Astuce photo :</strong> photo prise chez <strong>Azzouzia, Sidi Ghanem</strong> (Marrakech) — bon rapport qualité/prix pour le format passeport (35×45 mm). Vérifie quand même que le fond est bien uni (bleu ciel ou gris clair) et sans ombre.
+      <strong>💡 Astuce photo :</strong> photo prise chez <strong>Azzouzia, Sidi Ghanem</strong> (Marrakech) — bon rapport qualité/prix pour le format passeport (35×45 mm). Vérifie quand même que le fond est bien uni (bleu, blanc ou gris clair) et sans ombre.
     </div>
 
     <h3>📷 Normes des photos d'identité</h3>
