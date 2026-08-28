@@ -33,6 +33,7 @@ _Last synced: 2026-08-28 @ d2e366d_
 - `assets/normes-photos-cin.pdf` — official ID-photo standards chart for the national ID card, embedded in an `<iframe>` in the CIN section.
 - `assets/normes-photos-passeport.pdf` — same, for the passport.
 - `assets/alhalalmadania/*.pdf` — 22 civil-status circulars and laws (Arabic), archived from alhalalmadania.ma's Publications page as a backup in case that site goes down. Linked from the Portails section. **Filenames are Arabic and contain spaces** — hrefs in the HTML are percent-encoded; if you rename a file you must re-encode its link.
+- `assets/visa-requirements-moroccan-citizens.svg` — world map of visa requirements for Moroccan passport holders, shown in a `<figure>` in the passport section. **Third-party, CC BY-SA 4.0 by "Eaaoulad"** (Wikimedia Commons). The attribution in the figcaption is a licence condition — do not remove it.
 - `quotes.md` — unrelated personal notes. Not part of the site.
 - `README.md` — one line, effectively empty. `CONTEXT.md` (this file) is the real documentation.
 
@@ -59,7 +60,7 @@ _Last synced: 2026-08-28 @ d2e366d_
 
 ## 7. Current State
 
-- **Last shipped:** Moroccan Darija translation across the whole page with a persistent FR/الدارجة toggle; the 84-country visa-free travel table for the Moroccan passport; links to the 22 archived civil-status PDFs; sgg.gov.ma and maroc.ma added to the portals section.
+- **Last shipped:** Moroccan Darija translation across the whole page with a persistent FR/الدارجة toggle; the 84-country visa-free travel table plus the archived visa-requirements world map with its official Arabic legend; links to the 22 archived civil-status PDFs; sgg.gov.ma, maroc.ma and its digital-services hub added to the portals section.
 - **Working on now:** Nothing in flight. The page is complete and verified in a browser.
 - **Next up:**
   1. Fill the gaps the Idarati chatbot was supposed to surface (it errored out) — likely candidates are casier judiciaire, carte grise, and CNSS.
