@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Démarches Utiles — Maroc</title>
+<style>
+  :root {
+    --bg: #f7f5f2;
+    --bg-card: #ffffff;
+    --text: #1f2420;
+    --text-muted: #5c655e;
+    --border: #e3e0d9;
+    --accent: #1f7a4d;
+    --accent-soft: #e5f3ea;
+    --accent-text: #14532d;
+    --tip-bg: #fff8e6;
+    --tip-border: #f0d789;
+    --tip-text: #6b5203;
+    --link: #1f7a4d;
+    --chip-bg: #eef0ec;
+    --shadow: 0 1px 2px rgba(20,20,20,0.04), 0 1px 8px rgba(20,20,20,0.04);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14171a;
+      --bg-card: #1c2024;
+      --text: #eceff1;
+      --text-muted: #a2aab1;
+      --border: #2b3136;
+      --accent: #4fd18b;
+      --accent-soft: #16321f;
+      --accent-text: #8fe6b6;
+      --tip-bg: #2a230f;
+      --tip-border: #5a4718;
+      --tip-text: #e6c766;
+      --link: #4fd18b;
+      --chip-bg: #23282c;
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 1px 8px rgba(0,0,0,0.3);
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+  }
+  a { color: var(--link); }
+
+  header {
+    padding: 2.5rem 1.25rem 1.5rem;
+    text-align: center;
+    max-width: 880px;
+    margin: 0 auto;
+  }
+  header h1 {
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+    margin: 0 0 0.5rem;
+  }
+  header p {
+    color: var(--text-muted);
+    margin: 0;
+    font-size: 0.98rem;
+  }
+
+  nav.pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    max-width: 880px;
+    margin: 1.25rem auto 0;
+    padding: 0 1.25rem;
+  }
+  nav.pills a {
+    text-decoration: none;
+    background: var(--chip-bg);
+    color: var(--text);
+    padding: 0.45rem 0.9rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    border: 1px solid var(--border);
+    white-space: nowrap;
+  }
+  nav.pills a:hover { border-color: var(--accent); color: var(--accent); }
+
+  main {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 2rem 1.25rem 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+
+  section.card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.5rem 1.5rem 1.75rem;
+    box-shadow: var(--shadow);
+    scroll-margin-top: 1rem;
+  }
+  section.card h2 {
+    margin: 0 0 0.25rem;
+    font-size: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  section.card .subtitle {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin: 0 0 1.1rem;
+  }
+
+  h3 {
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--text-muted);
+    margin: 1.3rem 0 0.6rem;
+  }
+  h3:first-of-type { margin-top: 0.5rem; }
+
+  ul.checklist {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  ul.checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.55rem;
+    padding: 0.4rem 0.5rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
+  }
+  ul.checklist li:hover { background: var(--accent-soft); }
+  ul.checklist input[type="checkbox"] {
+    margin-top: 0.2rem;
+    accent-color: var(--accent);
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+  }
+  ul.checklist label { cursor: pointer; }
+  ul.checklist input:checked + label {
+    color: var(--text-muted);
+    text-decoration: line-through;
+  }
+
+  ul.plain {
+    margin: 0;
+    padding-left: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    font-size: 0.95rem;
+  }
+
+  .facts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin: 0.9rem 0 0.3rem;
+  }
+  .fact {
+    background: var(--accent-soft);
+    color: var(--accent-text);
+    border-radius: 8px;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
+    flex: 1 1 140px;
+  }
+  .fact strong { display: block; font-size: 0.95rem; }
+
+  .tip {
+    background: var(--tip-bg);
+    border: 1px solid var(--tip-border);
+    color: var(--tip-text);
+    border-radius: 10px;
+    padding: 0.8rem 1rem;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+  }
+  .tip strong { color: inherit; }
+
+  .links-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+  .links-row a {
+    text-decoration: none;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.45rem 0.8rem;
+    font-size: 0.85rem;
+    color: var(--text);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .links-row a:hover { border-color: var(--accent); color: var(--accent); }
+
+  table.perm {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+  }
+  table.perm th, table.perm td {
+    text-align: left;
+    padding: 0.5rem 0.6rem;
+    border-bottom: 1px solid var(--border);
+  }
+  table.perm th {
+    color: var(--text-muted);
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+
+  footer {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 0 1.25rem 3rem;
+    color: var(--text-muted);
+    font-size: 0.82rem;
+    text-align: center;
+  }
+  footer a { color: var(--text-muted); }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🇲🇦 Démarches Utiles — Maroc</h1>
+  <p>Pense-bête personnel : CIN, passeport, compte bancaire, permis de conduire et assurance. Coche au fur et à mesure — tes cases sont sauvegardées dans ce navigateur.</p>
+</header>
+
+<nav class="pills">
+  <a href="#cin">🪪 CIN</a>
+  <a href="#passeport">📘 Passeport</a>
+  <a href="#banque">🏦 Compte bancaire</a>
+  <a href="#permis">🚗 Permis de conduire</a>
+  <a href="#assurance">🛡️ Assurance</a>
+</nav>
+
+<main>
+
+  <section class="card" id="cin">
+    <h2>🪪 Carte d'Identité Nationale (CNIE)</h2>
+    <p class="subtitle">Première demande ou renouvellement de la carte nationale d'identité électronique.</p>
+
+    <div class="facts">
+      <div class="fact"><strong>10 ans</strong>Durée de validité (adulte)</div>
+      <div class="fact"><strong>4–8 semaines</strong>Délai moyen (jusqu'à 12 en été)</div>
+      <div class="fact"><strong>Gratuit / payant</strong>Gratuit à échéance normale, frais si perte/anticipé</div>
+    </div>
+
+    <h3>Où faire la demande</h3>
+    <ul class="plain">
+      <li>Pré-demande en ligne sur <a href="https://www.cnie.ma" target="_blank" rel="noopener">cnie.ma</a> (formulaire + prise de rendez-vous)</li>
+      <li>Dépôt du dossier à l'arrondissement / annexe administrative ou au caïdat de ton lieu de résidence</li>
+      <li>Retrait au même guichet une fois la carte prête (SMS de notification)</li>
+    </ul>
+
+    <h3>Pièces à fournir</h3>
+    <ul class="checklist" data-group="cin">
+      <li><input type="checkbox" id="cin-1"><label for="cin-1">Formulaire de pré-demande (rempli en ligne sur cnie.ma)</label></li>
+      <li><input type="checkbox" id="cin-2"><label for="cin-2">Ancienne CIN/CNIE (si renouvellement)</label></li>
+      <li><input type="checkbox" id="cin-3"><label for="cin-3">Acte de naissance récent (extrait des registres de l'état civil)</label></li>
+      <li><input type="checkbox" id="cin-4"><label for="cin-4">2 photos d'identité conformes, fond blanc</label></li>
+      <li><input type="checkbox" id="cin-5"><label for="cin-5">Justificatif de domicile récent (facture eau/électricité &lt; 3 mois)</label></li>
+    </ul>
+
+    <div class="tip"><strong>💡 Astuce :</strong> si l'ancienne carte est expirée ou proche de l'expiration, la procédure est simplifiée — présente-la simplement au dépôt du dossier.</div>
+  </section>
+
+  <section class="card" id="passeport">
+    <h2>📘 Passeport biométrique</h2>
+    <p class="subtitle">Basé sur les notes personnelles + le guide officiel passeport.ma.</p>
+
+    <div class="facts">
+      <div class="fact"><strong>500 DH</strong>Adulte</div>
+      <div class="fact"><strong>100 DH</strong>Enfant &lt; 12 ans</div>
+      <div class="fact"><strong>4–8 semaines</strong>Délai moyen de fabrication</div>
+    </div>
+
+    <h3>Pièces à fournir</h3>
+    <ul class="checklist" data-group="passeport">
+      <li><input type="checkbox" id="pp-1"><label for="pp-1">Formulaire de demande rempli et signé (voir lien ci-dessous)</label></li>
+      <li><input type="checkbox" id="pp-2"><label for="pp-2">Photocopie de la CNIE en cours de validité</label></li>
+      <li><input type="checkbox" id="pp-3"><label for="pp-3">1 photo d'identité 35×45 mm, fond blanc uni, tête nue</label></li>
+      <li><input type="checkbox" id="pp-4"><label for="pp-4">Code e-timbre (16 chiffres) payé sur le portail des timbres fiscaux</label></li>
+      <li><input type="checkbox" id="pp-5"><label for="pp-5">Ancien passeport (en cas de renouvellement)</label></li>
+      <li><input type="checkbox" id="pp-6"><label for="pp-6">Pour un mineur : livret de famille / acte de naissance + pièce d'identité du parent</label></li>
+    </ul>
+
+    <div class="tip">
+      <strong>💡 Astuce photo :</strong> photo prise chez <strong>Azzouzia, Sidi Ghanem</strong> (Marrakech) — bon rapport qualité/prix pour le format passeport (35×45 mm, fond blanc). Vérifie quand même que le fond est bien uni et sans ombre.
+    </div>
+
+    <h3>Liens officiels</h3>
+    <div class="links-row">
+      <a href="https://www.passeport.ma/FormDemande/FormDemande" target="_blank" rel="noopener">📝 Formulaire de demande</a>
+      <a href="https://www.passeport.ma/Home/PiecesAuMaroc" target="_blank" rel="noopener">📋 Pièces à fournir (officiel)</a>
+      <a href="https://etf.tax.gov.ma/etimfisc" target="_blank" rel="noopener">💳 e-timbre fiscal (paiement du timbre)</a>
+      <a href="https://www.passeport.ma" target="_blank" rel="noopener">🌐 Portail passeport.ma</a>
+    </div>
+  </section>
+
+  <section class="card" id="banque">
+    <h2>🏦 Compte bancaire jeune — Banque Populaire</h2>
+    <p class="subtitle">Choisir l'offre <strong>#live</strong> (le "pass jeune" de la Banque Populaire, 18–25 ans).</p>
+
+    <h3>Ce que couvre l'offre #live</h3>
+    <ul class="plain">
+      <li>Compte + carte bancaire pensés pour les 18–25 ans (étudiants / jeunes actifs)</li>
+      <li>Crédit étudiant "Avenir Plus" à taux avantageux</li>
+      <li>Assurance accident individuelle, utile pendant les stages</li>
+      <li>Paiement sans contact "Speed-p@y"</li>
+      <li>Accès à des stages, coachings et formations organisés par la banque</li>
+    </ul>
+
+    <h3>Pièces à fournir à l'ouverture</h3>
+    <ul class="checklist" data-group="banque">
+      <li><input type="checkbox" id="bk-1"><label for="bk-1">CNIE en cours de validité</label></li>
+      <li><input type="checkbox" id="bk-2"><label for="bk-2">Justificatif de domicile récent (&lt; 3 mois)</label></li>
+      <li><input type="checkbox" id="bk-3"><label for="bk-3">Carte d'étudiant ou attestation de scolarité (si applicable)</label></li>
+      <li><input type="checkbox" id="bk-4"><label for="bk-4">Dépôt initial (montant variable selon agence, ~200 DH)</label></li>
+    </ul>
+
+    <div class="tip"><strong>💡 Astuce :</strong> demande explicitement l'offre <strong>#live</strong> au conseiller — sinon on te proposera par défaut un compte standard sans les avantages jeunes. L'ouverture est aussi possible en ligne.</div>
+  </section>
+
+  <section class="card" id="permis">
+    <h2>🚗 Permis de conduire (A, B, C)</h2>
+    <p class="subtitle">Catégories, âges minimums et démarche via une auto-école agréée + NARSA.</p>
+
+    <table class="perm">
+      <thead>
+        <tr><th>Catégorie</th><th>Véhicules concernés</th><th>Âge min.</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>A</td><td>Motocyclettes, sans limite de puissance</td><td>18 ans</td></tr>
+        <tr><td>B</td><td>Véhicules légers (PTAC ≤ 3 500 kg, ≤ 9 places) + remorque ≤ 750 kg</td><td>18 ans</td></tr>
+        <tr><td>C</td><td>Poids lourds, transport de marchandises (PTAC &gt; 3 500 kg)</td><td>21 ans</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Étapes</h3>
+    <ul class="checklist" data-group="permis">
+      <li><input type="checkbox" id="pm-1"><label for="pm-1">Inscription dans une auto-école agréée (elle monte le dossier NARSA)</label></li>
+      <li><input type="checkbox" id="pm-2"><label for="pm-2">Formation théorique + code de la route</label></li>
+      <li><input type="checkbox" id="pm-3"><label for="pm-3">Examen théorique (code)</label></li>
+      <li><input type="checkbox" id="pm-4"><label for="pm-4">Formation pratique de conduite</label></li>
+      <li><input type="checkbox" id="pm-5"><label for="pm-5">Examen pratique de conduite</label></li>
+      <li><input type="checkbox" id="pm-6"><label for="pm-6">Retrait du permis</label></li>
+    </ul>
+
+    <div class="links-row">
+      <a href="https://khadamat.narsa.gov.ma/fr/services/obtention-de-mon-permis-de-conduire-1ere-fois" target="_blank" rel="noopener">🌐 NARSA — 1ère demande</a>
+      <a href="https://khadamat.narsa.gov.ma/fr/services/extension-de-la-categorie-du-permis-de-conduire-aux-autres-categories" target="_blank" rel="noopener">🌐 NARSA — Extension de catégorie</a>
+    </div>
+  </section>
+
+  <section class="card" id="assurance">
+    <h2>🛡️ Assurance — généralités</h2>
+    <p class="subtitle">L'essentiel à savoir, notamment pour l'assurance auto.</p>
+
+    <h3>Ce qui est obligatoire</h3>
+    <ul class="plain">
+      <li>La <strong>Responsabilité Civile (RC)</strong> est obligatoire par la loi pour tout véhicule à moteur (Loi 17-99, Code des assurances)</li>
+      <li>Elle couvre les dommages causés à des <strong>tiers</strong> (piétons, autres conducteurs, passagers) — pas ton propre véhicule ni tes propres blessures</li>
+      <li>Rouler sans assurance = délit : amende de 500 à 5 000 DH + peine de prison possible (1 à 6 mois)</li>
+    </ul>
+
+    <h3>Garanties complémentaires courantes</h3>
+    <ul class="plain">
+      <li><strong>Dommages tous accidents</strong> — couvre ton propre véhicule, responsable ou non</li>
+      <li><strong>Incendie</strong> et <strong>Vol</strong></li>
+      <li><strong>Personnes transportées</strong> — indemnise les passagers même si tu es responsable de l'accident</li>
+      <li><strong>Bris de glace</strong>, <strong>assistance/dépannage</strong></li>
+    </ul>
+
+    <div class="tip"><strong>💡 Astuce :</strong> compare plusieurs assureurs (courtiers en ligne type comparateurs) avant de signer — le tarif de la RC seule varie peu, mais les garanties complémentaires et franchises varient beaucoup d'un assureur à l'autre.</div>
+  </section>
+
+</main>
+
+<footer>
+  <p>Notes personnelles, à vérifier sur les portails officiels avant toute démarche (les délais, tarifs et procédures peuvent changer). Dernière mise à jour : 26 août 2026.</p>
+</footer>
+
+<script>
+  document.querySelectorAll('ul.checklist input[type="checkbox"]').forEach(function (box) {
+    var key = 'checklist:' + box.id;
+    try {
+      if (localStorage.getItem(key) === '1') box.checked = true;
+    } catch (e) {}
+    box.addEventListener('change', function () {
+      try {
+        localStorage.setItem(key, box.checked ? '1' : '0');
+      } catch (e) {}
+    });
+  });
+</script>
+
+</body>
+</html>
