@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Démarches Utiles — Maroc</title>
+<link rel="icon" type="image/svg+xml" href="assets/coat-of-arms-morocco.svg">
 <style>
   :root {
     --bg: #f7f5f2;
@@ -211,6 +212,54 @@
   }
   .links-row a:hover { border-color: var(--accent); color: var(--accent); }
 
+  ul.downloads {
+    list-style: none;
+    margin: 0.6rem 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  ul.downloads li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 0.6rem 0.75rem;
+    background: var(--bg-card);
+  }
+  ul.downloads .dl-meta { flex: 1 1 14rem; min-width: 0; }
+  ul.downloads .dl-name { font-size: 0.92rem; display: block; }
+  ul.downloads .dl-desc {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    display: block;
+    margin-top: 0.15rem;
+  }
+  ul.downloads .dl-size {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    white-space: nowrap;
+  }
+  ul.downloads a.dl-btn {
+    text-decoration: none;
+    background: var(--accent);
+    color: #fff;
+    border-radius: 8px;
+    padding: 0.45rem 0.85rem;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    flex: 0 0 auto;
+  }
+  ul.downloads a.dl-btn:hover { filter: brightness(1.08); }
+  ul.downloads a.dl-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  @media (prefers-color-scheme: dark) {
+    ul.downloads a.dl-btn { color: #08130d; }
+  }
+  body[data-theme="dark"] ul.downloads a.dl-btn { color: #08130d; }
+
   table.perm {
     width: 100%;
     border-collapse: collapse;
@@ -239,6 +288,25 @@
     text-align: center;
   }
   footer a { color: var(--text-muted); }
+  .footer-emblems {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 0.6rem;
+  }
+  .footer-emblems img { height: 3rem; width: auto; }
+  .footer-emblems img:last-child {
+    height: 2.1rem;
+    border: 1px solid var(--border);
+    border-radius: 3px;
+  }
+  footer .motto {
+    font-size: 1rem;
+    color: var(--text);
+    margin: 0 0 0.9rem;
+    letter-spacing: 0.02em;
+  }
 
   .lang-switch {
     display: flex;
@@ -721,6 +789,46 @@
       <li><input type="checkbox" id="pm-6"><label for="pm-6" data-ary="سحب البيرمي">Retrait du permis</label></li>
     </ul>
 
+    <h3 data-ary="📥 وثائق للتحميل">📥 Documents à télécharger</h3>
+    <p class="subtitle" data-ary="وثائق رسمية من وزارة النقل و المجلس الأعلى للسلطة القضائية، محفوظة هنا باش تبقى موجودة حتى إلا تبدل ولا تحيد الموقع الأصلي.">Documents officiels du ministère du Transport et du Conseil Supérieur du Pouvoir Judiciaire, archivés ici pour rester accessibles si les sites d'origine changent.</p>
+    <ul class="downloads">
+      <li data-ary="&lt;div class=&quot;dl-meta&quot;&gt;&lt;strong class=&quot;dl-name&quot;&gt;مدونة السير على الطرق&lt;/strong&gt;&lt;span class=&quot;dl-desc&quot;&gt;النص الكامل بالعربية، من المجلس الأعلى للسلطة القضائية. الصيغة الرسمية بقات هي اللي تنشرات ف الجريدة الرسمية.&lt;/span&gt;&lt;/div&gt;&lt;span class=&quot;dl-size&quot;&gt;2.5 Mo&lt;/span&gt;&lt;a class=&quot;dl-btn&quot; href=&quot;assets/permis/%D9%85%D8%AF%D9%88%D9%86%D8%A9%20%D8%A7%D9%84%D8%B3%D9%8A%D8%B1%20%D8%B9%D9%84%D9%89%20%D8%A7%D9%84%D8%B7%D8%B1%D9%82%20%281%29.pdf&quot; download&gt;⬇ حمّل&lt;/a&gt;">
+        <div class="dl-meta"><strong class="dl-name">Code de la route (مدونة السير على الطرق)</strong><span class="dl-desc">Texte intégral en arabe, édité par le Conseil Supérieur du Pouvoir Judiciaire. La version officielle reste celle publiée au Bulletin officiel.</span></div>
+        <span class="dl-size">2.5 Mo</span>
+        <a class="dl-btn" href="assets/permis/%D9%85%D8%AF%D9%88%D9%86%D8%A9%20%D8%A7%D9%84%D8%B3%D9%8A%D8%B1%20%D8%B9%D9%84%D9%89%20%D8%A7%D9%84%D8%B7%D8%B1%D9%82%20%281%29.pdf" download>⬇ Télécharger</a>
+      </li>
+      <li data-ary="&lt;div class=&quot;dl-meta&quot;&gt;&lt;strong class=&quot;dl-name&quot;&gt;نموذج عقد التكوين (PDF)&lt;/strong&gt;&lt;span class=&quot;dl-desc&quot;&gt;عقد نموذجي بينك و بين مؤسسة تعليم السياقة. المدة: 6 شهور من التوقيع، و يمكن تمدد مرة وحدة ب 3 شهور ماكسيموم.&lt;/span&gt;&lt;/div&gt;&lt;span class=&quot;dl-size&quot;&gt;139 Ko&lt;/span&gt;&lt;a class=&quot;dl-btn&quot; href=&quot;assets/permis/modele-contrat-formation-072018.doc.pdf&quot; download&gt;⬇ حمّل&lt;/a&gt;">
+        <div class="dl-meta"><strong class="dl-name">Modèle de contrat de formation (PDF)</strong><span class="dl-desc">Contrat type entre le candidat et l&#x27;auto-école. Durée : 6 mois à partir de la signature, prolongeable une fois de 3 mois maximum.</span></div>
+        <span class="dl-size">139 Ko</span>
+        <a class="dl-btn" href="assets/permis/modele-contrat-formation-072018.doc.pdf" download>⬇ Télécharger</a>
+      </li>
+      <li data-ary="&lt;div class=&quot;dl-meta&quot;&gt;&lt;strong class=&quot;dl-name&quot;&gt;نموذج عقد التكوين (Word)&lt;/strong&gt;&lt;span class=&quot;dl-desc&quot;&gt;نفس العقد بصيغة .docx، إلا بغيتي تعمّرو ف الپيسي.&lt;/span&gt;&lt;/div&gt;&lt;span class=&quot;dl-size&quot;&gt;17 Ko&lt;/span&gt;&lt;a class=&quot;dl-btn&quot; href=&quot;assets/permis/modele-contrat-formation-072018.docx&quot; download&gt;⬇ حمّل&lt;/a&gt;">
+        <div class="dl-meta"><strong class="dl-name">Modèle de contrat de formation (Word)</strong><span class="dl-desc">Le même contrat au format .docx, si tu veux le remplir sur ordinateur.</span></div>
+        <span class="dl-size">17 Ko</span>
+        <a class="dl-btn" href="assets/permis/modele-contrat-formation-072018.docx" download>⬇ Télécharger</a>
+      </li>
+      <li data-ary="&lt;div class=&quot;dl-meta&quot;&gt;&lt;strong class=&quot;dl-name&quot;&gt;دليل التعليم — صنف A (الدراجات النارية)&lt;/strong&gt;&lt;span class=&quot;dl-desc&quot;&gt;دليل المدرب لتعليم سياقة الدراجات النارية. وثيقة «مشروع» من وزارة النقل.&lt;/span&gt;&lt;/div&gt;&lt;span class=&quot;dl-size&quot;&gt;1.8 Mo&lt;/span&gt;&lt;a class=&quot;dl-btn&quot; href=&quot;assets/permis/permis%20A%20-%20Projet-guide-enseignement-motocycles%20%281%29.pdf&quot; download&gt;⬇ حمّل&lt;/a&gt;">
+        <div class="dl-meta"><strong class="dl-name">Guide d&#x27;enseignement — catégorie A (motos)</strong><span class="dl-desc">Guide du moniteur pour l&#x27;enseignement de la conduite des motocycles. Document de projet du ministère du Transport.</span></div>
+        <span class="dl-size">1.8 Mo</span>
+        <a class="dl-btn" href="assets/permis/permis%20A%20-%20Projet-guide-enseignement-motocycles%20%281%29.pdf" download>⬇ Télécharger</a>
+      </li>
+      <li data-ary="&lt;div class=&quot;dl-meta&quot;&gt;&lt;strong class=&quot;dl-name&quot;&gt;دليل التعليم — صنف B (المركبات الخفيفة)&lt;/strong&gt;&lt;span class=&quot;dl-desc&quot;&gt;دليل المدرب لتعليم سياقة المركبات الخفيفة. وثيقة «مشروع» من وزارة النقل.&lt;/span&gt;&lt;/div&gt;&lt;span class=&quot;dl-size&quot;&gt;1.8 Mo&lt;/span&gt;&lt;a class=&quot;dl-btn&quot; href=&quot;assets/permis/permis%20b%20-%20Guide-enseignement-conduite%20%281%29.pdf&quot; download&gt;⬇ حمّل&lt;/a&gt;">
+        <div class="dl-meta"><strong class="dl-name">Guide d&#x27;enseignement — catégorie B (véhicules légers)</strong><span class="dl-desc">Guide du moniteur pour l&#x27;enseignement de la conduite des véhicules légers. Document de projet du ministère du Transport.</span></div>
+        <span class="dl-size">1.8 Mo</span>
+        <a class="dl-btn" href="assets/permis/permis%20b%20-%20Guide-enseignement-conduite%20%281%29.pdf" download>⬇ Télécharger</a>
+      </li>
+      <li data-ary="&lt;div class=&quot;dl-meta&quot;&gt;&lt;strong class=&quot;dl-name&quot;&gt;دليل التعليم — صنف C و E(C) (نقل البضائع)&lt;/strong&gt;&lt;span class=&quot;dl-desc&quot;&gt;دليل المدرب لسياقة مركبات نقل البضائع.&lt;/span&gt;&lt;/div&gt;&lt;span class=&quot;dl-size&quot;&gt;2.1 Mo&lt;/span&gt;&lt;a class=&quot;dl-btn&quot; href=&quot;assets/permis/permis%20C%20-%20Projet-guide-enseignement-transport-marchandises%20%281%29.pdf&quot; download&gt;⬇ حمّل&lt;/a&gt;">
+        <div class="dl-meta"><strong class="dl-name">Guide d&#x27;enseignement — catégories C et E(C) (marchandises)</strong><span class="dl-desc">Guide du moniteur pour la conduite des véhicules de transport de marchandises.</span></div>
+        <span class="dl-size">2.1 Mo</span>
+        <a class="dl-btn" href="assets/permis/permis%20C%20-%20Projet-guide-enseignement-transport-marchandises%20%281%29.pdf" download>⬇ Télécharger</a>
+      </li>
+      <li data-ary="&lt;div class=&quot;dl-meta&quot;&gt;&lt;strong class=&quot;dl-name&quot;&gt;دليل التعليم — صنف D و E(D) (نقل الأشخاص)&lt;/strong&gt;&lt;span class=&quot;dl-desc&quot;&gt;دليل المدرب لسياقة مركبات النقل الجماعي للأشخاص.&lt;/span&gt;&lt;/div&gt;&lt;span class=&quot;dl-size&quot;&gt;2.0 Mo&lt;/span&gt;&lt;a class=&quot;dl-btn&quot; href=&quot;assets/permis/Permis%20D%20-%20Projet-guide-enseignement-transport-personnes%20%281%29.pdf&quot; download&gt;⬇ حمّل&lt;/a&gt;">
+        <div class="dl-meta"><strong class="dl-name">Guide d&#x27;enseignement — catégories D et E(D) (transport de personnes)</strong><span class="dl-desc">Guide du moniteur pour la conduite des véhicules de transport collectif de personnes.</span></div>
+        <span class="dl-size">2.0 Mo</span>
+        <a class="dl-btn" href="assets/permis/Permis%20D%20-%20Projet-guide-enseignement-transport-personnes%20%281%29.pdf" download>⬇ Télécharger</a>
+      </li>
+    </ul>
+
     <div class="links-row">
       <a href="https://khadamat.narsa.gov.ma/fr/services/obtention-de-mon-permis-de-conduire-1ere-fois" target="_blank" rel="noopener">🌐 NARSA — 1ère demande</a>
       <a href="https://khadamat.narsa.gov.ma/fr/services/extension-de-la-categorie-du-permis-de-conduire-aux-autres-categories" target="_blank" rel="noopener">🌐 NARSA — Extension de catégorie</a>
@@ -747,6 +855,15 @@
     </ul>
 
     <div class="tip" data-ary="&lt;strong&gt;💡 نصيحة:&lt;/strong&gt; قارن بين بزاف ديال شركات التأمين (مواقع المقارنة أونلاين) قبل ما توقع — ثمن المسؤولية المدنية بوحدها ماكيتبدلش بزاف، ولكن الضمانات الإضافية و الفرانشيز كيتبدلو بزاف من شركة لشركة."><strong>💡 Astuce :</strong> compare plusieurs assureurs (courtiers en ligne type comparateurs) avant de signer — le tarif de la RC seule varie peu, mais les garanties complémentaires et franchises varient beaucoup d'un assureur à l'autre.</div>
+
+    <h3 data-ary="📥 وثيقة للتحميل">📥 Document à télécharger</h3>
+    <ul class="downloads">
+      <li data-ary="&lt;div class=&quot;dl-meta&quot;&gt;&lt;strong class=&quot;dl-name&quot;&gt;الشروط العامة — تأمين الطوموبيل (مثال)&lt;/strong&gt;&lt;span class=&quot;dl-desc&quot;&gt;الشروط العامة ديال عقد تأمين متعدد المخاطر عند شركة خاصة (Sanlam). مفيد باش تشوف شنو كيحتوي العقد؛ ماشي شروط رسمية ولا موحدة.&lt;/span&gt;&lt;/div&gt;&lt;span class=&quot;dl-size&quot;&gt;388 Ko&lt;/span&gt;&lt;a class=&quot;dl-btn&quot; href=&quot;assets/permis/CG_Assur_Auto_Moto%20%281%29.pdf&quot; download&gt;⬇ حمّل&lt;/a&gt;">
+        <div class="dl-meta"><strong class="dl-name">Conditions générales — assurance auto (exemple)</strong><span class="dl-desc">Conditions générales d&#x27;un contrat multirisque automobile d&#x27;un assureur privé (Sanlam). Utile comme exemple de ce que contient un contrat ; ce ne sont pas des conditions officielles ni universelles.</span></div>
+        <span class="dl-size">388 Ko</span>
+        <a class="dl-btn" href="assets/permis/CG_Assur_Auto_Moto%20%281%29.pdf" download>⬇ Télécharger</a>
+      </li>
+    </ul>
   </section>
 
   <section class="card" id="portails">
@@ -899,6 +1016,11 @@
 </main>
 
 <footer>
+  <div class="footer-emblems">
+    <img src="assets/coat-of-arms-morocco.svg" alt="Armoiries du Royaume du Maroc" width="64" height="66" loading="lazy">
+    <img src="assets/flag-morocco.svg" alt="Drapeau du Maroc" width="72" height="48" loading="lazy">
+  </div>
+  <p class="motto" lang="ar" dir="rtl">الله، الوطن، الملك</p>
   <p data-ary="ملاحظات شخصية، خاصك تأكد منها ف المواقع الرسمية قبل ما تبدا أي إجراء (المدد، الأثمنة و المساطر ممكن يتبدلو). آخر تحديث: 26 غشت 2026.">Notes personnelles, à vérifier sur les portails officiels avant toute démarche (les délais, tarifs et procédures peuvent changer). Dernière mise à jour : 26 août 2026.</p>
 </footer>
 

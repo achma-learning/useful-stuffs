@@ -34,6 +34,8 @@ _Last synced: 2026-08-28 @ 544bb86_
 - `assets/normes-photos-passeport.pdf` — same, for the passport.
 - `assets/alhalalmadania/*.pdf` — 22 civil-status circulars and laws (Arabic), archived from alhalalmadania.ma's Publications page as a backup in case that site goes down. Linked from the Portails section. **Filenames are Arabic and contain spaces** — hrefs in the HTML are percent-encoded; if you rename a file you must re-encode its link.
 - `assets/visa-requirements-moroccan-citizens.svg` — world map of visa requirements for Moroccan passport holders, shown in a `<figure>` in the passport section. **Third-party, CC BY-SA 4.0 by "Eaaoulad"** (Wikimedia Commons). The attribution in the figcaption is a licence condition — do not remove it.
+- `assets/permis/` — driving-licence documents behind the download buttons: the Highway Code, the model training contract (PDF + .docx), and the ministry's instructor guides for categories A, B, C/E(C), D/E(D). The Sanlam insurance PDF in this folder is deliberately surfaced in the **Assurance** section, not Permis — it is a private insurer's sample, not an official document. Filenames contain spaces, parentheses and Arabic; hrefs are percent-encoded.
+- `assets/coat-of-arms-morocco.svg`, `assets/flag-morocco.svg` — state emblems used as the favicon and in the footer. Both public domain (Wikimedia Commons), no attribution required.
 - `quotes.md` — unrelated personal notes. Not part of the site.
 - `README.md` — one line, effectively empty. `CONTEXT.md` (this file) is the real documentation.
 
@@ -54,7 +56,7 @@ _Last synced: 2026-08-28 @ 544bb86_
   - `innerHTML` is used deliberately here because translations contain markup. This is safe **only** because every value is author-written and static. Never feed user input into a `data-ary`.
 - **RTL is applied by setting `document.body.dir`**, with a few `[dir="rtl"]` CSS overrides for list padding and table alignment. If you add a new layout that relies on `padding-left` or `text-align: left`, check it in Darija mode or it will look wrong.
 - **Arabic PDF filenames.** `assets/alhalalmadania/` filenames are Arabic with spaces. The links are percent-encoded in the HTML. Don't "tidy up" these filenames without regenerating the links — and note one file has a double space in its name that is load-bearing for the current link.
-- **`assets/alhalalmadania/q`** is a stray 1-byte file (just a newline) from an accidental commit. Harmless, and safe to delete, but it isn't referenced by anything — don't be confused by it.
+- **`assets/alhalalmadania/q`** and **`assets/permis/delete`** are stray 1-byte files (just a newline), created as placeholders so the folders could be made through GitHub's web UI. Harmless and unreferenced — don't be confused by them.
 - **Two different photo-background rules coexist, and that's correct.** The passport *pieces-à-fournir* text says the background may be blue, white, or light gray; the separate official photo-norms chart only shows blue/gray. Both are quoted from their own official source. Don't "fix" the inconsistency by picking one.
 - **Some source sites block automated fetching** (idarati.ma, alhalalmadania.ma, and cnie.ma's FAQ returned 503/403 to tooling). Content from those was taken from user-pasted text or search results. If you're asked to re-verify a fact and the fetch fails, say so rather than guessing.
 
