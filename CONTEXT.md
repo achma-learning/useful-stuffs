@@ -1,0 +1,76 @@
+# useful-stuffs — AI Context File
+_Last synced: 2026-08-28 @ d2e366d_
+
+## 1. What This Is (Plain English)
+
+- **In one sentence:** A single web page that explains, step by step, how to get the Moroccan documents a young person actually needs — national ID card, passport, bank account, driving licence, car insurance — with tickable checklists and links to the official government sites.
+- **Why it exists:** Moroccan admin info is scattered across a dozen government portals, half of which are slow or block you, and each one tells you a different version of the required documents. This collects the real requirements in one place, sourced from the official pages, so you don't have to re-research it every time or show up at the counter missing a paper.
+- **Who uses it:** Just the owner, for now. It's a personal pense-bête (memory aid). No accounts, no backend, nothing private in it — but it's public on GitHub, so don't put personal document numbers in it.
+- **Vibe:** Polished personal tool. It's one hand-written HTML file with no build step, but the content is carefully sourced and it's been checked in a real browser.
+
+## 2. How To Run It
+
+- **Setup once:** Nothing. No install, no dependencies, no env file.
+- **Run dev:** Open `index.html` in a browser. That's it.
+  - If you need the PDFs to display in the embedded viewers, serve it over HTTP instead of `file://`:
+    ```
+    python3 -m http.server 8899
+    # then open http://localhost:8899/index.html
+    ```
+- **Build / deploy:** No build. It's static — push to `main` and it's deployable as-is to GitHub Pages or any static host.
+- **Required env vars:** None. There is no `.env.example` and the page makes no API calls.
+
+## 3. Tech Stack
+
+- **Language + runtime:** Plain HTML5, CSS, and vanilla JavaScript (ES5-style, runs in any browser). No runtime, no package manager — there is no `package.json`, no lockfile, no `.nvmrc`.
+- **Framework / key libraries:** None. Zero dependencies, on purpose.
+- **What kind of project:** A single-file static web page plus a folder of PDF assets.
+- **External services:** None at runtime. The page only *links out* to Moroccan government portals (cnie.ma, passeport.ma, idarati.ma, wraqi.ma, consulat.ma, watiqa.ma, alhalalmadania.ma, sgg.gov.ma, maroc.ma, and others). Nothing is fetched or posted.
+
+## 4. Code Map (The Important Files Only)
+
+- `index.html` — **the whole app.** ~924 lines: a `<style>` block (~263 lines), the content markup, and a `<script>` block (~42 lines) at the bottom. This is the only file you ever need to edit for content.
+- `assets/normes-photos-cin.pdf` — official ID-photo standards chart for the national ID card, embedded in an `<iframe>` in the CIN section.
+- `assets/normes-photos-passeport.pdf` — same, for the passport.
+- `assets/alhalalmadania/*.pdf` — 22 civil-status circulars and laws (Arabic), archived from alhalalmadania.ma's Publications page as a backup in case that site goes down. Linked from the Portails section. **Filenames are Arabic and contain spaces** — hrefs in the HTML are percent-encoded; if you rename a file you must re-encode its link.
+- `quotes.md` — unrelated personal notes. Not part of the site.
+- `README.md` — one line, effectively empty. `CONTEXT.md` (this file) is the real documentation.
+
+## 5. Rules For Editing This Code
+
+- **Keep it zero-dependency and single-file.** No npm, no build step, no framework, no CDN scripts. If a change needs a bundler, it's the wrong change.
+- **Every new piece of visible text needs a `data-ary` attribute** with its Moroccan Darija translation, or the language toggle will leave it in French when the user switches. See §6.
+- **Only add facts you can point to a source for.** Every number on this page (fees, validity periods, delays, document lists) came from an official portal or the cited Wikipedia article. Don't fill gaps from memory — mark them unknown instead.
+- **Every external link gets `target="_blank" rel="noopener"`.**
+- **Checkbox `id`s must stay unique and stable.** They're the localStorage keys for saved progress (`checklist:<id>`). Renaming an id silently wipes that item's saved state.
+- **Don't put personal data in here** — no document numbers, no addresses. The repo is public.
+
+## 6. Fragile Bits & Landmines
+
+- **The translation system is attribute-based and easy to half-break.** At load, the script snapshots every `[data-ary]` element's `innerHTML` into `dataset.fr`, then swaps `innerHTML` between the two on toggle. Consequences:
+  - A `data-ary` value must contain the **full inner HTML** of its element, including any `<a>` or `<strong>` tags. If you translate only the text, the links vanish in Darija mode.
+  - Never nest one `data-ary` element inside another — the outer swap will clobber the inner one's snapshot.
+  - `innerHTML` is used deliberately here because translations contain markup. This is safe **only** because every value is author-written and static. Never feed user input into a `data-ary`.
+- **RTL is applied by setting `document.body.dir`**, with a few `[dir="rtl"]` CSS overrides for list padding and table alignment. If you add a new layout that relies on `padding-left` or `text-align: left`, check it in Darija mode or it will look wrong.
+- **Arabic PDF filenames.** `assets/alhalalmadania/` filenames are Arabic with spaces. The links are percent-encoded in the HTML. Don't "tidy up" these filenames without regenerating the links — and note one file has a double space in its name that is load-bearing for the current link.
+- **`assets/alhalalmadania/q`** is a stray 1-byte file (just a newline) from an accidental commit. Harmless, and safe to delete, but it isn't referenced by anything — don't be confused by it.
+- **Two different photo-background rules coexist, and that's correct.** The passport *pieces-à-fournir* text says the background may be blue, white, or light gray; the separate official photo-norms chart only shows blue/gray. Both are quoted from their own official source. Don't "fix" the inconsistency by picking one.
+- **Some source sites block automated fetching** (idarati.ma, alhalalmadania.ma, and cnie.ma's FAQ returned 503/403 to tooling). Content from those was taken from user-pasted text or search results. If you're asked to re-verify a fact and the fetch fails, say so rather than guessing.
+
+## 7. Current State
+
+- **Last shipped:** Moroccan Darija translation across the whole page with a persistent FR/الدارجة toggle; the 84-country visa-free travel table for the Moroccan passport; links to the 22 archived civil-status PDFs; sgg.gov.ma and maroc.ma added to the portals section.
+- **Working on now:** Nothing in flight. The page is complete and verified in a browser.
+- **Next up:**
+  1. Fill the gaps the Idarati chatbot was supposed to surface (it errored out) — likely candidates are casier judiciaire, carte grise, and CNSS.
+  2. Possibly archive backup copies of the passeport.ma legal-text PDFs the way the alhalalmadania ones were archived.
+
+## 8. Update Protocol (Verbatim)
+
+> **For the AI Assistant:** When asked to "Update CONTEXT.md":
+> 1. Re-run Phase 0 — check for new `GEMINI.md` / `CLAUDE.md` / `.github/` files.
+> 2. Re-scan the tree, manifests, and `.github/workflows/` for drift.
+> 3. Read our recent conversation for new decisions, fragile bits discovered, or shifted goals.
+> 4. Refresh the `_Last synced_` line with today's date and current commit SHA.
+> 5. Rewrite — do not append. One clean source of truth. Preserve still-true content, revise the rest.
+> 6. Keep §1 and §2 in plain English. Keep the file under ~350 lines.
