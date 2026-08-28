@@ -1,5 +1,5 @@
 # useful-stuffs — AI Context File
-_Last synced: 2026-08-28 @ d2e366d_
+_Last synced: 2026-08-28 @ 544bb86_
 
 ## 1. What This Is (Plain English)
 
