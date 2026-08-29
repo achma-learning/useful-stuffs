@@ -1,9 +1,9 @@
 # useful-stuffs — AI Context File
-_Last synced: 2026-08-29 @ dbc17cb_
+_Last synced: 2026-08-29 @ 6c458e8_
 
 ## 1. What This Is (Plain English)
 
-- **In one sentence:** A single web page that explains, step by step, how to get the Moroccan documents and civic obligations a young person actually needs — national ID card, passport, bank account, savings/investment, driving licence, car and health insurance, voter registration, military service — with tickable checklists and links to the official government sites.
+- **In one sentence:** A single web page that explains, step by step, how to get the Moroccan documents, money moves, and civic obligations a young person (16–30) actually needs — national ID card, a youth discount app, passport, bank account, savings/investment, self-employment status, driving licence, car and health insurance, a national population registration, criminal record, car registration, utility contracts, complaint portal, voter registration, military service — with tickable checklists and links to the official government sites.
 - **Why it exists:** Moroccan admin info is scattered across a dozen government portals, half of which are slow or block you, and each one tells you a different version of the required documents. This collects the real requirements in one place, sourced from the official pages, so you don't have to re-research it every time or show up at the counter missing a paper.
 - **Who uses it:** Just the owner, for now. It's a personal pense-bête (memory aid). No accounts, no backend, nothing private in it — but it's public on GitHub, so don't put personal document numbers in it.
 - **Vibe:** Polished personal tool. It's one hand-written HTML file with no build step, but the content is carefully sourced and it's been checked in a real browser.
@@ -25,11 +25,11 @@ _Last synced: 2026-08-29 @ dbc17cb_
 - **Language + runtime:** Plain HTML5, CSS, and vanilla JavaScript (ES5-style, runs in any browser). No runtime, no package manager — there is no `package.json`, no lockfile, no `.nvmrc`.
 - **Framework / key libraries:** None. Zero dependencies, on purpose.
 - **What kind of project:** A single-file static web page plus a folder of PDF assets.
-- **External services:** None at runtime. The page only *links out* to Moroccan government and financial portals (cnie.ma, passeport.ma, idarati.ma, wraqi.ma, consulat.ma, watiqa.ma, alhalalmadania.ma, sgg.gov.ma, maroc.ma, cnss.ma, cnops.org.ma, listeselectorales.ma, tajnid.ma, recrutement.far.ma, casablanca-bourse.com, ammc.ma, bkam.ma, albaridbank.ma, groupebcp.com, tamwilcom.ma, and others). Nothing is fetched or posted.
+- **External services:** None at runtime. The page only *links out* to Moroccan government and financial portals (cnie.ma, passeport.ma, idarati.ma, wraqi.ma, consulat.ma, watiqa.ma, alhalalmadania.ma, sgg.gov.ma, maroc.ma, cnss.ma, cnops.org.ma, listeselectorales.ma, tajnid.ma, recrutement.far.ma, casablanca-bourse.com, ammc.ma, bkam.ma, albaridbank.ma, groupebcp.com, tamwilcom.ma, passjeunes.ma, ae.gov.ma, rn.ae.gov.ma, rnp.ma, rsu.ma, chikaya.ma, lydec.co.ma, redal.ma, amendis.ma, onee.ma, and others). Nothing is fetched or posted.
 
 ## 4. Code Map (The Important Files Only)
 
-- `index.html` — **the whole app.** ~1445 lines: a `<style>` block (~263 lines), the content markup (13 sections), and a `<script>` block (~42 lines) at the bottom. This is the only file you ever need to edit for content.
+- `index.html` — **the whole app.** ~1620 lines: a `<style>` block (~263 lines), the content markup (18 sections), and a `<script>` block (~42 lines) at the bottom. This is the only file you ever need to edit for content.
 - `assets/normes-photos-cin.pdf` — official ID-photo standards chart for the national ID card, embedded in an `<iframe>` in the CIN section.
 - `assets/normes-photos-passeport.pdf` — same, for the passport.
 - `assets/alhalalmadania/*.pdf` — 22 civil-status circulars and laws (Arabic), archived from alhalalmadania.ma's Publications page as a backup in case that site goes down. Linked from the Portails section. **Filenames are Arabic and contain spaces** — hrefs in the HTML are percent-encoded; if you rename a file you must re-encode its link.
@@ -64,17 +64,16 @@ _Last synced: 2026-08-29 @ dbc17cb_
 
 ## 7. Current State
 
-- **Last shipped:** Four new sections aimed at 16–25 year-olds, inserted between the existing ones (all sourced per §5, all with Darija `data-ary` translations):
-  - **`#epargne` (Épargne et investissement)**, after `#banque` — youth/national savings accounts (Al Barid Bank *Tawfir Al Ghad*, CEN, compte sur carnet incl. Banque Populaire and CIH's *Iskane*), compte-titres + PEA + OPCVM on the Bourse de Casablanca (BCP's own "Bourse en ligne" included), Intelaka/Forsa financing, and a crypto section framed as a **legal-risk warning, not a recommendation** (still effectively banned pending bill 42.25 as of 2026).
-  - **`#sante` (AMO, CNSS, CNOPS)**, after `#assurance` — who manages what (CNSS = privé, CNOPS = public, a CNOPS/CNSS merger law adopted late 2025 with the effective timeline still unclear), the AMO Étudiants scheme (400 DH/12 mois, CNOPS-managed), and first-job affiliation.
-  - **`#electoral` (Listes électorales)** and **`#tajnid` (Service militaire — Tajnid)**, both after `#cartegrise` — voter registration via listeselectorales.ma (conditions, the annual and *date-shifting* registration window, SMS verification via 2727), and the tajnid.ma military census under loi 44-18 (19–25 ans, 12 mois, 20-day census deadline), with recrutement.far.ma also linked as the FAR's own recruitment portal.
-  - Nav pills, footer "last updated" date, and CONTEXT.md's own code map/external-services list were all updated to match.
-- **Working on now:** Nothing in flight. The four new sections have been checked with Python's `html.parser` (no structural errors) and a headless-Chrome screenshot of the nav bar and CIN section; the Darija translations have not been proofread by a native speaker.
+- **Last shipped (two batches, same day):** Nine new sections total, aimed at 16–30 year-olds, inserted between the existing ones (all sourced per §5, all with Darija `data-ary` translations). Current section order: `cin` → `passjeunes` → `passeport` → `banque` → `epargne` → `autoentrepreneur` → `permis` → `assurance` → `sante` → `rnp` → `casier` → `cartegrise` → `utilities` → `chikaya` → `electoral` → `tajnid` → `francais` → `portails`.
+  - **Batch 1:** `#epargne` (savings/investment: youth/national savings accounts, compte-titres + PEA + OPCVM, Intelaka/Forsa, crypto framed as a legal-risk warning); `#sante` (AMO/CNSS/CNOPS, AMO Étudiants); `#electoral` (voter registration via listeselectorales.ma); `#tajnid` (military census via tajnid.ma under loi 44-18, plus recrutement.far.ma).
+  - **Batch 2** (in response to a follow-up review): `#passjeunes` (the free 16–30 discount app, legal framework since décret 2.25.153 of July 2026); `#autoentrepreneur` (self-employment status — 18+, 0.5%/1% libératoire tax, 500k/200k DH turnover ceilings, mandatory CNSS at 10.5% with a 1,200 DH/year minimum, registration on rn.ae.gov.ma); `#rnp` (Registre National de la Population / IDCS, pre-registration on rnp.ma + finalization in person, increasingly required for RSU social programs); `#utilities` (transferring water/electricity contracts when renting — which operator per city: Lydec, Redal, Amendis, RADEEMA, ONEE elsewhere — tied back to the CIN section's *attestation de résidence* requirement); `#chikaya` (promoted from a passing mention in Portails to its own section — 60-day legal response deadline, 3737 hotline).
+  - Nav pills, and CONTEXT.md's own code map/external-services list, were updated to match both batches.
+- **Working on now:** Nothing in flight. All new sections were checked with Python's `html.parser` (no structural errors) plus a section/id-balance script (18 sections, all nav-pill anchors match section ids, no duplicate checklist ids); batch 1 was also spot-checked with a headless-Chrome screenshot of the nav bar and CIN section. The Darija translations across both batches have not been proofread by a native speaker.
 - **Next up:**
-  1. Fill the gaps the Idarati chatbot was supposed to surface (it errored out) — likely candidates are casier judiciaire (already covered) and carte grise (already covered); CNSS is now covered too via `#sante` — re-check if anything else was on that original list.
-  2. Possibly archive backup copies of the passeport.ma legal-text PDFs the way the alhalalmadania ones were archived.
-  3. Have a Darija speaker proofread the `data-ary` translations added in `#epargne`, `#sante`, `#electoral` and `#tajnid` — they were written by the AI assistant mirroring the file's existing vocabulary, not verified by a native speaker.
-  4. Verify under-18 eligibility details for the youth savings accounts in `#epargne` (legal-guardian angle) — not yet confirmed against an official source.
+  1. Have a Darija speaker proofread the `data-ary` translations added across both batches (`#epargne`, `#sante`, `#electoral`, `#tajnid`, `#passjeunes`, `#autoentrepreneur`, `#rnp`, `#utilities`, `#chikaya`) — written by the AI assistant mirroring the file's existing vocabulary, not verified by a native speaker.
+  2. Verify under-18 eligibility details for the youth savings accounts in `#epargne` (legal-guardian angle) — not yet confirmed against an official source.
+  3. Fill the gaps the Idarati chatbot was supposed to surface (it errored out) — casier judiciaire, carte grise and CNSS are now all covered; re-check if anything else was on that original list.
+  4. Possibly archive backup copies of the passeport.ma legal-text PDFs the way the alhalalmadania ones were archived.
 
 ## 8. Update Protocol (Verbatim)
 
