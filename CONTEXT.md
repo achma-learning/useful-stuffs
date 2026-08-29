@@ -1,5 +1,5 @@
 # useful-stuffs — AI Context File
-_Last synced: 2026-08-28 @ 544bb86_
+_Last synced: 2026-08-29 @ dc4bbea_
 
 ## 1. What This Is (Plain English)
 
@@ -36,6 +36,7 @@ _Last synced: 2026-08-28 @ 544bb86_
 - `assets/visa-requirements-moroccan-citizens.svg` — world map of visa requirements for Moroccan passport holders, shown in a `<figure>` in the passport section. **Third-party, CC BY-SA 4.0 by "Eaaoulad"** (Wikimedia Commons). The attribution in the figcaption is a licence condition — do not remove it.
 - `assets/permis/` — driving-licence documents behind the download buttons: the Highway Code, the model training contract (PDF + .docx), and the ministry's instructor guides for categories A, B, C/E(C), D/E(D). The Sanlam insurance PDF in this folder is deliberately surfaced in the **Assurance** section, not Permis — it is a private insurer's sample, not an official document. Filenames contain spaces, parentheses and Arabic; hrefs are percent-encoded.
 - `assets/coat-of-arms-morocco.svg`, `assets/flag-morocco.svg` — state emblems used as the favicon and in the footer. Both public domain (Wikimedia Commons), no attribution required.
+- `assets/certifications-fr/` — TCF/DELF/DALF documents for the "Certifications de français" section: the Campus France/Institut français comparison leaflet, the official IFM 2026 tariff leaflet, the full bilingual 2026-2027 exam calendar, and the TCF score grid. **`depliant-ifm-2026-tarifs.pdf` was rebuilt at screen resolution** — the original download from if-maroc.org was 72MB (very high-res source images); this version is ~1.2MB and still fully legible. Don't replace it with the raw original.
 - `quotes.md` — unrelated personal notes. Not part of the site.
 - `README.md` — one line, effectively empty. `CONTEXT.md` (this file) is the real documentation.
 
@@ -62,7 +63,7 @@ _Last synced: 2026-08-28 @ 544bb86_
 
 ## 7. Current State
 
-- **Last shipped:** Moroccan Darija translation across the whole page with a persistent FR/الدارجة toggle; the 84-country visa-free travel table plus the archived visa-requirements world map with its official Arabic legend; links to the 22 archived civil-status PDFs; sgg.gov.ma, maroc.ma and its digital-services hub added to the portals section.
+- **Last shipped:** Moroccan Darija translation across the whole page with a persistent FR/الدارجة toggle; the 84-country visa-free travel table plus the archived visa-requirements world map with its official Arabic legend; links to the 22 archived civil-status PDFs; sgg.gov.ma, maroc.ma and its digital-services hub added to the portals section; a new "Certifications de français (TCF, DELF B2, DALF)" section with a TCF-vs-DELF/DALF comparison table, 2026 tariffs, the 2026-2027 exam calendar, all 14 exam centres, and 4 archived official PDFs.
 - **Working on now:** Nothing in flight. The page is complete and verified in a browser.
 - **Next up:**
   1. Fill the gaps the Idarati chatbot was supposed to surface (it errored out) — likely candidates are casier judiciaire, carte grise, and CNSS.
