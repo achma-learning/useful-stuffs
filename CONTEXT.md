@@ -1,5 +1,5 @@
 # useful-stuffs — AI Context File
-_Last synced: 2026-08-29 @ 5f7c53e_
+_Last synced: 2026-08-29 @ 1e8cdf8_
 
 ## 1. What This Is (Plain English)
 
@@ -69,6 +69,15 @@ _Last synced: 2026-08-29 @ 5f7c53e_
 - **Next up:**
   1. Fill the gaps the Idarati chatbot was supposed to surface (it errored out) — likely candidates are casier judiciaire, carte grise, and CNSS.
   2. Possibly archive backup copies of the passeport.ma legal-text PDFs the way the alhalalmadania ones were archived.
+  3. **New section idea: "Épargne & Investissement" for 16–25 year-olds.** The page currently stops at "open a bank account" — the natural next step for this age group is what to do with money once they have some. Good things to have here, ordered by risk/liquidity, each needs an official source before it goes in (per §5):
+     - **Compte épargne jeunes** — e.g. Al Barid Bank's *Tawfir Al Ghad* (18–25, free account + free debit card, 5,000 DH/day withdrawal cap) and the *Caisse d'Épargne Nationale* (flexible, up to 400,000 MAD, state-backed). Entry point, near-zero risk. Under-18 eligibility (legal-guardian angle) still needs verifying.
+     - **Bons de caisse / dépôt à terme** — fixed-rate, fixed-term, for money not needed short-term.
+     - **Compte-titres + Bourse de Casablanca** — legal minimum age 18, no mandatory minimum deposit, 6 online brokers (Attijari Intermédiation, CFG Bank, BMCE Capital Bourse, CDG Capital Bourse, BMCI Bourse, AlphaMena) at 0.4–0.8% fees.
+     - **PEA (Plan d'Épargne en Actions)** — 2M MAD ceiling, capital gains and dividends tax-exempt after 5 years; especially good for this age group given the long horizon.
+     - **OPCVM/SICAV** — diversified, lower-effort alternative to picking individual stocks.
+     - **Intelaka / Forsa** — not personal investment but self-investment: state-guaranteed loans at 2% (1.75% rural) for young project holders/auto-entrepreneurs, no personal guarantee required.
+     - **Crypto stays a warning, not a recommendation.** Effectively banned in Morocco since 2017 (Office des Changes / Bank Al-Maghrib / AMMC); a new framework (Bill 42.25) is in progress as of 2026 but not yet law.
+     - Needs a one-line disclaimer: informational, not financial advice.
 
 ## 8. Update Protocol (Verbatim)
 
