@@ -1,9 +1,9 @@
 # useful-stuffs — AI Context File
-_Last synced: 2026-08-29 @ 1e8cdf8_
+_Last synced: 2026-08-29 @ dbc17cb_
 
 ## 1. What This Is (Plain English)
 
-- **In one sentence:** A single web page that explains, step by step, how to get the Moroccan documents a young person actually needs — national ID card, passport, bank account, driving licence, car insurance — with tickable checklists and links to the official government sites.
+- **In one sentence:** A single web page that explains, step by step, how to get the Moroccan documents and civic obligations a young person actually needs — national ID card, passport, bank account, savings/investment, driving licence, car and health insurance, voter registration, military service — with tickable checklists and links to the official government sites.
 - **Why it exists:** Moroccan admin info is scattered across a dozen government portals, half of which are slow or block you, and each one tells you a different version of the required documents. This collects the real requirements in one place, sourced from the official pages, so you don't have to re-research it every time or show up at the counter missing a paper.
 - **Who uses it:** Just the owner, for now. It's a personal pense-bête (memory aid). No accounts, no backend, nothing private in it — but it's public on GitHub, so don't put personal document numbers in it.
 - **Vibe:** Polished personal tool. It's one hand-written HTML file with no build step, but the content is carefully sourced and it's been checked in a real browser.
@@ -25,11 +25,11 @@ _Last synced: 2026-08-29 @ 1e8cdf8_
 - **Language + runtime:** Plain HTML5, CSS, and vanilla JavaScript (ES5-style, runs in any browser). No runtime, no package manager — there is no `package.json`, no lockfile, no `.nvmrc`.
 - **Framework / key libraries:** None. Zero dependencies, on purpose.
 - **What kind of project:** A single-file static web page plus a folder of PDF assets.
-- **External services:** None at runtime. The page only *links out* to Moroccan government portals (cnie.ma, passeport.ma, idarati.ma, wraqi.ma, consulat.ma, watiqa.ma, alhalalmadania.ma, sgg.gov.ma, maroc.ma, and others). Nothing is fetched or posted.
+- **External services:** None at runtime. The page only *links out* to Moroccan government and financial portals (cnie.ma, passeport.ma, idarati.ma, wraqi.ma, consulat.ma, watiqa.ma, alhalalmadania.ma, sgg.gov.ma, maroc.ma, cnss.ma, cnops.org.ma, listeselectorales.ma, tajnid.ma, recrutement.far.ma, casablanca-bourse.com, ammc.ma, bkam.ma, albaridbank.ma, groupebcp.com, tamwilcom.ma, and others). Nothing is fetched or posted.
 
 ## 4. Code Map (The Important Files Only)
 
-- `index.html` — **the whole app.** ~924 lines: a `<style>` block (~263 lines), the content markup, and a `<script>` block (~42 lines) at the bottom. This is the only file you ever need to edit for content.
+- `index.html` — **the whole app.** ~1445 lines: a `<style>` block (~263 lines), the content markup (13 sections), and a `<script>` block (~42 lines) at the bottom. This is the only file you ever need to edit for content.
 - `assets/normes-photos-cin.pdf` — official ID-photo standards chart for the national ID card, embedded in an `<iframe>` in the CIN section.
 - `assets/normes-photos-passeport.pdf` — same, for the passport.
 - `assets/alhalalmadania/*.pdf` — 22 civil-status circulars and laws (Arabic), archived from alhalalmadania.ma's Publications page as a backup in case that site goes down. Linked from the Portails section. **Filenames are Arabic and contain spaces** — hrefs in the HTML are percent-encoded; if you rename a file you must re-encode its link.
@@ -64,20 +64,17 @@ _Last synced: 2026-08-29 @ 1e8cdf8_
 
 ## 7. Current State
 
-- **Last shipped:** Moroccan Darija translation across the whole page with a persistent FR/الدارجة toggle; the 84-country visa-free travel table plus the archived visa-requirements world map with its official Arabic legend; links to the 22 archived civil-status PDFs; sgg.gov.ma, maroc.ma and its digital-services hub added to the portals section; a new "Certifications de français (TCF, DELF B2, DALF)" section with a TCF-vs-DELF/DALF comparison table, 2026 tariffs, the 2026-2027 exam calendar, and 4 archived official PDFs; the 14 exam centres are now a clickable table (city -> if-maroc.org page, address -> Google Maps).
-- **Working on now:** Nothing in flight. The page is complete and verified in a browser.
+- **Last shipped:** Four new sections aimed at 16–25 year-olds, inserted between the existing ones (all sourced per §5, all with Darija `data-ary` translations):
+  - **`#epargne` (Épargne et investissement)**, after `#banque` — youth/national savings accounts (Al Barid Bank *Tawfir Al Ghad*, CEN, compte sur carnet incl. Banque Populaire and CIH's *Iskane*), compte-titres + PEA + OPCVM on the Bourse de Casablanca (BCP's own "Bourse en ligne" included), Intelaka/Forsa financing, and a crypto section framed as a **legal-risk warning, not a recommendation** (still effectively banned pending bill 42.25 as of 2026).
+  - **`#sante` (AMO, CNSS, CNOPS)**, after `#assurance` — who manages what (CNSS = privé, CNOPS = public, a CNOPS/CNSS merger law adopted late 2025 with the effective timeline still unclear), the AMO Étudiants scheme (400 DH/12 mois, CNOPS-managed), and first-job affiliation.
+  - **`#electoral` (Listes électorales)** and **`#tajnid` (Service militaire — Tajnid)**, both after `#cartegrise` — voter registration via listeselectorales.ma (conditions, the annual and *date-shifting* registration window, SMS verification via 2727), and the tajnid.ma military census under loi 44-18 (19–25 ans, 12 mois, 20-day census deadline), with recrutement.far.ma also linked as the FAR's own recruitment portal.
+  - Nav pills, footer "last updated" date, and CONTEXT.md's own code map/external-services list were all updated to match.
+- **Working on now:** Nothing in flight. The four new sections have been checked with Python's `html.parser` (no structural errors) and a headless-Chrome screenshot of the nav bar and CIN section; the Darija translations have not been proofread by a native speaker.
 - **Next up:**
-  1. Fill the gaps the Idarati chatbot was supposed to surface (it errored out) — likely candidates are casier judiciaire, carte grise, and CNSS.
+  1. Fill the gaps the Idarati chatbot was supposed to surface (it errored out) — likely candidates are casier judiciaire (already covered) and carte grise (already covered); CNSS is now covered too via `#sante` — re-check if anything else was on that original list.
   2. Possibly archive backup copies of the passeport.ma legal-text PDFs the way the alhalalmadania ones were archived.
-  3. **New section idea: "Épargne & Investissement" for 16–25 year-olds.** The page currently stops at "open a bank account" — the natural next step for this age group is what to do with money once they have some. Good things to have here, ordered by risk/liquidity, each needs an official source before it goes in (per §5):
-     - **Compte épargne jeunes** — e.g. Al Barid Bank's *Tawfir Al Ghad* (18–25, free account + free debit card, 5,000 DH/day withdrawal cap) and the *Caisse d'Épargne Nationale* (flexible, up to 400,000 MAD, state-backed). Entry point, near-zero risk. Under-18 eligibility (legal-guardian angle) still needs verifying.
-     - **Bons de caisse / dépôt à terme** — fixed-rate, fixed-term, for money not needed short-term.
-     - **Compte-titres + Bourse de Casablanca** — legal minimum age 18, no mandatory minimum deposit, 6 online brokers (Attijari Intermédiation, CFG Bank, BMCE Capital Bourse, CDG Capital Bourse, BMCI Bourse, AlphaMena) at 0.4–0.8% fees.
-     - **PEA (Plan d'Épargne en Actions)** — 2M MAD ceiling, capital gains and dividends tax-exempt after 5 years; especially good for this age group given the long horizon.
-     - **OPCVM/SICAV** — diversified, lower-effort alternative to picking individual stocks.
-     - **Intelaka / Forsa** — not personal investment but self-investment: state-guaranteed loans at 2% (1.75% rural) for young project holders/auto-entrepreneurs, no personal guarantee required.
-     - **Crypto stays a warning, not a recommendation.** Effectively banned in Morocco since 2017 (Office des Changes / Bank Al-Maghrib / AMMC); a new framework (Bill 42.25) is in progress as of 2026 but not yet law.
-     - Needs a one-line disclaimer: informational, not financial advice.
+  3. Have a Darija speaker proofread the `data-ary` translations added in `#epargne`, `#sante`, `#electoral` and `#tajnid` — they were written by the AI assistant mirroring the file's existing vocabulary, not verified by a native speaker.
+  4. Verify under-18 eligibility details for the youth savings accounts in `#epargne` (legal-guardian angle) — not yet confirmed against an official source.
 
 ## 8. Update Protocol (Verbatim)
 
