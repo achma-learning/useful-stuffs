@@ -1,5 +1,5 @@
 # useful-stuffs — AI Context File
-_Last synced: 2026-08-29 @ d450412_
+_Last synced: 2026-08-29 @ 5f7c53e_
 
 ## 1. What This Is (Plain English)
 
@@ -37,7 +37,7 @@ _Last synced: 2026-08-29 @ d450412_
 - `assets/permis/` — driving-licence documents behind the download buttons: the Highway Code, the model training contract (PDF + .docx), and the ministry's instructor guides for categories A, B, C/E(C), D/E(D). The Sanlam insurance PDF in this folder is deliberately surfaced in the **Assurance** section, not Permis — it is a private insurer's sample, not an official document. Filenames contain spaces, parentheses and Arabic; hrefs are percent-encoded.
 - `assets/coat-of-arms-morocco.svg`, `assets/flag-morocco.svg` — state emblems used as the favicon and in the footer. Both public domain (Wikimedia Commons), no attribution required.
 - `assets/certifications-fr/` — TCF/DELF/DALF documents for the "Certifications de français" section: the Campus France/Institut français comparison leaflet, the official IFM 2026 tariff leaflet, the full bilingual 2026-2027 exam calendar, and the TCF score grid. **`depliant-ifm-2026-tarifs.pdf` was rebuilt at screen resolution** — the original download from if-maroc.org was 72MB (very high-res source images); this version is ~1.2MB and still fully legible. Don't replace it with the raw original.
-- The 14-centre table in that same section (`#francais`) links each city to its `if-maroc.org` page and each address to a Google Maps URL. Two of those Maps links (Oujda, Tanger) and one (Ouarzazate, given by the user) are the site's own real short links; the rest are `google.com/maps/search/?api=1&query=...` built from the address or coordinates found on each centre's own contact page — that's Google's documented search-URL scheme, not a guessed link. If a centre moves, re-fetch its `if-maroc.org/<ville>/contact-acces/` page for the new address.
+- The 14-centre table in that same section (`#francais`) links each city to its `if-maroc.org` page and each address to a Google Maps URL. **All 14 map links are real `maps.app.goo.gl` short links the user supplied directly** (not constructed search URLs). **Oujda has two**, shown as "Site 1" / "Site 2" — the user flagged it as having two locations; no further distinction (e.g. which is the médiathèque) is known, don't invent one. If a centre moves, ask the user for the new Maps link rather than reconstructing one.
 - `quotes.md` — unrelated personal notes. Not part of the site.
 - `README.md` — one line, effectively empty. `CONTEXT.md` (this file) is the real documentation.
 
