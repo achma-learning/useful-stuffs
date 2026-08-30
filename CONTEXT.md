@@ -1,5 +1,5 @@
 # useful-stuffs — AI Context File
-_Last synced: 2026-08-29 @ 6c458e8_
+_Last synced: 2026-08-30_
 
 ## 1. What This Is (Plain English)
 
@@ -25,7 +25,7 @@ _Last synced: 2026-08-29 @ 6c458e8_
 - **Language + runtime:** Plain HTML5, CSS, and vanilla JavaScript (ES5-style, runs in any browser). No runtime, no package manager — there is no `package.json`, no lockfile, no `.nvmrc`.
 - **Framework / key libraries:** None. Zero dependencies, on purpose.
 - **What kind of project:** A single-file static web page plus a folder of PDF assets.
-- **External services:** None at runtime. The page only *links out* to Moroccan government and financial portals (cnie.ma, passeport.ma, idarati.ma, wraqi.ma, consulat.ma, watiqa.ma, alhalalmadania.ma, sgg.gov.ma, maroc.ma, cnss.ma, cnops.org.ma, listeselectorales.ma, tajnid.ma, recrutement.far.ma, casablanca-bourse.com, ammc.ma, bkam.ma, albaridbank.ma, groupebcp.com, tamwilcom.ma, passjeunes.ma, ae.gov.ma, rn.ae.gov.ma, rnp.ma, rsu.ma, chikaya.ma, lydec.co.ma, redal.ma, amendis.ma, onee.ma, and others). Nothing is fetched or posted.
+- **External services:** None at runtime. The page only *links out* to Moroccan government and financial portals (cnie.ma, passeport.ma, idarati.ma, wraqi.ma, consulat.ma, watiqa.ma, alhalalmadania.ma, sgg.gov.ma, maroc.ma, cnss.ma, cnops.org.ma, listeselectorales.ma, tajnid.ma, recrutement.far.ma, casablanca-bourse.com, ammc.ma, bkam.ma, albaridbank.ma, groupebcp.com, tamwilcom.ma, passjeunes.ma, ae.gov.ma, rn.ae.gov.ma, rnp.ma, rsu.ma, chikaya.ma, lydec.co.ma, redal.ma, amendis.ma, onee.ma, daamsakane.ma, e-blagh.ma, and others). Nothing is fetched or posted.
 
 ## 4. Code Map (The Important Files Only)
 
@@ -64,6 +64,7 @@ _Last synced: 2026-08-29 @ 6c458e8_
 
 ## 7. Current State
 
+- **Last shipped (2026-08-30):** Added two new h3 blocks to `#portails`, between the Wraqi and Consulat.ma blocks — Daam Sakane (daamsakane.ma, the state's direct housing-purchase aid program, ADESL 2024-2028, up to 100,000 DH) and E-Blagh (e-blagh.ma, the DGSN's portal for reporting illicit online content). Both sourced from press coverage (aujourdhui.ma, le360.ma, mapnews.ma etc.) since the sites themselves return 503 to fetch tools, same as idarati.ma/alhalalmadania.ma — worth a manual re-check against the live sites when they're reachable. Both have full Darija `data-ary` translations (unproofread, same caveat as the rest).
 - **Last shipped (two batches, same day):** Nine new sections total, aimed at 16–30 year-olds, inserted between the existing ones (all sourced per §5, all with Darija `data-ary` translations). Current section order: `cin` → `passjeunes` → `passeport` → `banque` → `epargne` → `autoentrepreneur` → `permis` → `assurance` → `sante` → `rnp` → `casier` → `cartegrise` → `utilities` → `chikaya` → `electoral` → `tajnid` → `francais` → `portails`.
   - **Batch 1:** `#epargne` (savings/investment: youth/national savings accounts, compte-titres + PEA + OPCVM, Intelaka/Forsa, crypto framed as a legal-risk warning); `#sante` (AMO/CNSS/CNOPS, AMO Étudiants); `#electoral` (voter registration via listeselectorales.ma); `#tajnid` (military census via tajnid.ma under loi 44-18, plus recrutement.far.ma).
   - **Batch 2** (in response to a follow-up review): `#passjeunes` (the free 16–30 discount app, legal framework since décret 2.25.153 of July 2026); `#autoentrepreneur` (self-employment status — 18+, 0.5%/1% libératoire tax, 500k/200k DH turnover ceilings, mandatory CNSS at 10.5% with a 1,200 DH/year minimum, registration on rn.ae.gov.ma); `#rnp` (Registre National de la Population / IDCS, pre-registration on rnp.ma + finalization in person, increasingly required for RSU social programs); `#utilities` (transferring water/electricity contracts when renting — which operator per city: Lydec, Redal, Amendis, RADEEMA, ONEE elsewhere — tied back to the CIN section's *attestation de résidence* requirement); `#chikaya` (promoted from a passing mention in Portails to its own section — 60-day legal response deadline, 3737 hotline).
