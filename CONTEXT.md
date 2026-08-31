@@ -39,7 +39,7 @@ _Last synced: 2026-08-30_
 - `assets/certifications-fr/` — TCF/DELF/DALF documents for the "Certifications de français" section: the Campus France/Institut français comparison leaflet, the official IFM 2026 tariff leaflet, the full bilingual 2026-2027 exam calendar, and the TCF score grid. **`depliant-ifm-2026-tarifs.pdf` was rebuilt at screen resolution** — the original download from if-maroc.org was 72MB (very high-res source images); this version is ~1.2MB and still fully legible. Don't replace it with the raw original.
 - The 14-centre table in that same section (`#francais`) links each city to its `if-maroc.org` page and each address to a Google Maps URL. **All 14 map links are real `maps.app.goo.gl` short links the user supplied directly** (not constructed search URLs). **Oujda has two**, shown as "Site 1" / "Site 2" — the user flagged it as having two locations; no further distinction (e.g. which is the médiathèque) is known, don't invent one. If a centre moves, ask the user for the new Maps link rather than reconstructing one.
 - `quotes.md` — unrelated personal notes. Not part of the site.
-- `README.md` — one line, effectively empty. `CONTEXT.md` (this file) is the real documentation.
+- `README.md` — the human-facing overview: what the page is, the list of 24 topics, how to run it locally, and a short contributing note. Keep it simple and short — it's for a person skimming GitHub, not an exhaustive doc. `CONTEXT.md` (this file) is the detailed one for AI assistants/contributors.
 
 ## 5. Rules For Editing This Code
 
@@ -92,3 +92,4 @@ _Last synced: 2026-08-30_
 > 4. Refresh the `_Last synced_` line with today's date and current commit SHA.
 > 5. Rewrite — do not append. One clean source of truth. Preserve still-true content, revise the rest.
 > 6. Keep §1 and §2 in plain English. Keep the file under ~350 lines.
+> 7. **Also update `README.md`** whenever a section is added/removed/renamed in `index.html`, or the run/setup instructions change. Keep `README.md` short and human-friendly (topic list, how to run it, how to contribute) — the exhaustive detail belongs here in `CONTEXT.md`, not there.
