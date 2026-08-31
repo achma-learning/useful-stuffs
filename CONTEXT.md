@@ -1,5 +1,5 @@
 # useful-stuffs — AI Context File
-_Last synced: 2026-08-30_
+_Last synced: 2026-08-31_
 
 ## 1. What This Is (Plain English)
 
@@ -71,7 +71,7 @@ _Last synced: 2026-08-30_
   - `#bourses` — the Minhaty university scholarship: eligibility (incl. the RNP+RSU prerequisite already documented in `#rnp`), the 2026/2027 campaign window, application via minhaty.ma.
   - `#legalisation` — diploma legalization for working/studying abroad: AREF for the bac vs. university/ministere for higher degrees, then Ministere des Affaires etrangeres, then the target country's embassy; typical delays by diploma level.
   - `#impots` — the two annual local taxes: the vignette (TSAV — cars by puissance fiscale, motorcycles by cylindree, deadline 31 Jan / 60 days for new vehicles, payable free via bank channels or vignette.ma/Daribati) and the taxe d'habitation + taxe de services communaux (owner/usufruitier; declaration deadline 31 Jan is a *separate* date from the payment deadline of 31 May, pushed to 1 June 2026; managed by DGI since June 2025 per loi 14-25). This was a fact-check-and-correct job — user-pasted AI-generated tax info wrongly conflated the TH/TSC declaration and payment deadlines, and wrongly described motorcycle vignette as computed like cars; both corrected after independent verification (maroc.ma, lebrief.ma, fnh.ma, ovoiture.ma).
-  - `#esc` — the EU's European Solidarity Corps ("Youth Europa"): fully-funded volunteering for 17-30 year-olds, Morocco eligible as an EU-neighbouring third country, registration via EU Login on youth.europa.eu/solidarity, CSM Maroc named as a local Quality-Label-holding partner org.
+  - `#esc` — the EU's European Solidarity Corps ("Youth Europa"): fully-funded volunteering for 17-30 year-olds, Morocco eligible as an EU-neighbouring third country, registration via EU Login on youth.europa.eu/solidarity, CSM Maroc named as a local Quality-Label-holding partner org. Gained a "Pays couverts" sub-block (sourced from youth.europa.eu's Countries covered page) listing the 3 country tiers — 27 EU countries, 4 programme-associated (Iceland, Liechtenstein, North Macedonia, Türkiye), and 22 non-associated (Morocco included) — plus a tip that Humanitarian Aid Volunteering is the one activity open beyond this list.
   - `#casier` gained an h3 sub-block for epolice.ma's certificat de bonne conduite (shahada husn sira) — an 8-step checklist plus a tip distinguishing it from the bulletin n°3 casier judiciaire already covered there (different issuer: DGSN/police vs. ministere de la Justice; epolice.ma launched Dec 2024).
   - `#portails` gained Daam Sakane (daamsakane.ma, state housing-purchase aid, up to 100,000 DH) and E-Blagh (e-blagh.ma, DGSN's illicit-content reporting portal) — both sourced from press coverage since the sites themselves return 503 to fetch tools, same as idarati.ma/alhalalmadania.ma.
   - Earlier same-week batches added `#epargne`, `#sante`, `#electoral`, `#tajnid`, `#passjeunes` (promo-code mechanism), `#autoentrepreneur`, `#rnp` (restructured into a two-step RNP -> RSU flow), `#utilities`, `#chikaya`.
